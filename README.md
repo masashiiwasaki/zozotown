@@ -21,8 +21,8 @@ Things you may want to cover:
 |email|string|null: false, unique: true|
 |password|string|null: false|
 |postcode|integer|
-|address-1|string|
-|address-2|string|
+|address_main|string|
+|address_sub|string|
 |tel_number|integer|
 
 ### Association
@@ -47,28 +47,28 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |price|integer|null: false|
-|item_name|string|null: false|
+|name|string|null: false|
 |description|text|null: false|
 |shop_id|references|null: false, foreign_key: true|
 |brand_id|references|null: false, foreign_key: true|
-|Item_subImages_id|references|null: false, foreign_key: true|
+|Item_sub_images_id|references|null: false, foreign_key: true|
 
 ### Association
 - has_many :item_lists
-- has_many :item_subImages
+- has_many :item_sub_images
 
-## item_subImagesテーブル
+## item_sub-imagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |item_id|references|null: false, foreign_key: true|
-|subImages_id|references|null: false, foreign_key: true|
+|sub_images_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :item
-- belongs_to :subImage
+- belongs_to :sub_image
 
-## subImagesテーブル
+## sub_imagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -76,7 +76,7 @@ Things you may want to cover:
 |img_url|string|null: false|
 
 ### Association
-- belongs_to :item_subImage
+- belongs_to :item_sub_image
 
 ## items_listsテーブル
 
