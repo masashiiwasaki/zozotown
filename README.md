@@ -48,6 +48,7 @@ Things you may want to cover:
 |------|----|-------|
 |price|integer|null: false|
 |item_name|string|null: false|
+|description|text|null: false|
 |shop_id|references|null: false, foreign_key: true|
 |brand_id|references|null: false, foreign_key: true|
 |Item_subImages_id|references|null: false, foreign_key: true|
@@ -56,7 +57,7 @@ Things you may want to cover:
 - has_many :item_lists
 - has_many :item_subImages
 
-##item_subImagesテーブル
+## item_subImagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -67,16 +68,15 @@ Things you may want to cover:
 - belongs_to :item
 - belongs_to :subImage
 
-##subImagesテーブル
+## subImagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |color_id|references|null: false, foreign_key: true|
-|img|references|null: false, foreign_key: true|
+|img_url|string|null: false|
 
 ### Association
 - belongs_to :item_subImage
-- belongs_to :color
 
 ## items_listsテーブル
 
