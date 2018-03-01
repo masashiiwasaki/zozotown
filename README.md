@@ -50,10 +50,31 @@ Things you may want to cover:
 |item_name|string|null: false|
 |shop_id|references|null: false, foreign_key: true|
 |brand_id|references|null: false, foreign_key: true|
-|image_url|string|
+|Item_subImages_id|references|null: false, foreign_key: true|
 
 ### Association
 - has_many :item_lists
+- has_many :item_subImages
+
+##item_subImagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item_id|references|null: false, foreign_key: true|
+|subImages_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :item
+- belongs_to :subImage
+
+##subImagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|color_id|references|null: false, foreign_key: true|
+|img|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :item_subImage
+- belongs_to :color
 
 ## items_listsテーブル
 |Column|Type|Option|
