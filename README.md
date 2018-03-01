@@ -57,6 +57,7 @@ Things you may want to cover:
 - has_many :item_subImages
 
 ##item_subImagesテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |item_id|references|null: false, foreign_key: true|
@@ -67,6 +68,7 @@ Things you may want to cover:
 - belongs_to :subImage
 
 ##subImagesテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |color_id|references|null: false, foreign_key: true|
@@ -77,6 +79,7 @@ Things you may want to cover:
 - belongs_to :color
 
 ## items_listsテーブル
+
 |Column|Type|Option|
 |------|----|------|
 |item_id|references|null: false, foreign_key: true|
@@ -88,26 +91,31 @@ Things you may want to cover:
 - belongs_to :item
 
 ## colorsテーブル
+
 |Column|Type|Option|
 |------|----|------|
 |color|string|
 
 ## sizesテーブル
+
 |Column|Type|Option|
 |------|----|------|
 |size|string|
 
 ## shopsテーブル
+
 |Column|Type|Option|
 |------|----|------|
 |name|string|
 
 ## brandsテーブル
+
 |Column|Type|Option|
 |------|----|------|
 |name|string|
 
 ##ordersテーブル
+
 |Column|Type|Option|
 |------|----|------|
 |user_id|references|null: false, foreign_key: true|
@@ -119,6 +127,7 @@ Things you may want to cover:
 - has_many :ordered_items, dependent: :destroy
 
 ## ordered_itemsテーブル
+
 |Column|Type|Option|
 |------|----|------|
 |order_id|references|null: false, foreign_key: true|
