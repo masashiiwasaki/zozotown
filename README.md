@@ -28,6 +28,7 @@ Things you may want to cover:
 ### Association
 - has_many :orders
 - has_many :carts, dependent: :destroy
+- has_many :items, through: :carts
 
 ## cartsテーブル
 
@@ -61,7 +62,8 @@ Things you may want to cover:
 - has_many :item_sub_images
 - has_many :sub_images, through: :item_sub_images
 - has_many :ordered_items
-- has_many :carts
+- has_many :orders, through: :ordered_items
+- has_many :carts, through: :carts
 - belongs_to :shop
 - belongs_to :brand
 
@@ -153,6 +155,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - has_many :ordered_items, dependent: :destroy
+- has_many :items, through: :ordered_items
 
 ## ordered_itemsテーブル
 
