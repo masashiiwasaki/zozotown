@@ -23,7 +23,7 @@ Things you may want to cover:
 |postcode|integer|
 |address_main|string|
 |address_sub|string|
-|tel_number|integer|
+|telephone_number|integer|
 
 ### Association
 - has_many :orders
@@ -37,10 +37,13 @@ Things you may want to cover:
 |item_id|references|null: false, foreign_key: true|
 |color_id|references|null: false, foreign_key: true|
 |size_id|references|null: false, foreign_key: true|
-|quontity|integer|null: false, default: 0|
+|quantity|integer|null: false, default: 0|
 
 ### Association
 - belongs_to :user
+- belongs_to :item
+- belongs_to :color
+- belongs_to :size
 
 ## itemsテーブル
 
@@ -51,18 +54,23 @@ Things you may want to cover:
 |description|text|null: false|
 |shop_id|references|null: false, foreign_key: true|
 |brand_id|references|null: false, foreign_key: true|
-|Item_sub_images_id|references|null: false, foreign_key: true|
+|image_url|string|null: false|
 
 ### Association
 - has_many :item_lists
 - has_many :item_sub_images
+- has_many :sub_images, through: :item_sub_images
+- has_many :ordered_items
+- has_many :carts
+- belongs_to :shop
+- belongs_to :brand
 
-## item_sub-imagesテーブル
+## item_sub_imagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |item_id|references|null: false, foreign_key: true|
-|sub_images_id|references|null: false, foreign_key: true|
+|sub_image_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :item
@@ -76,9 +84,10 @@ Things you may want to cover:
 |img_url|string|null: false|
 
 ### Association
-- belongs_to :item_sub_image
+- has_one :item_sub_image
+- belongs_to :color
 
-## items_listsテーブル
+## item_listsテーブル
 
 |Column|Type|Option|
 |------|----|------|
@@ -89,6 +98,8 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :item
+- belongs_to :color
+- belongs_to :size
 
 ## colorsテーブル
 
@@ -96,11 +107,22 @@ Things you may want to cover:
 |------|----|------|
 |color|string|
 
+### Association
+- has_many :carts
+- has_many :item_lists
+- has_many :sub_images
+- has_many :ordered_items
+
 ## sizesテーブル
 
 |Column|Type|Option|
 |------|----|------|
 |size|string|
+
+### Association
+- has_many :carts
+- has_many :item_lists
+- has_many :ordered_items
 
 ## shopsテーブル
 
@@ -108,11 +130,17 @@ Things you may want to cover:
 |------|----|------|
 |name|string|
 
+### Association
+- has_many :items
+
 ## brandsテーブル
 
 |Column|Type|Option|
 |------|----|------|
 |name|string|
+
+### Association
+- has_many :items
 
 ##ordersテーブル
 
@@ -134,10 +162,13 @@ Things you may want to cover:
 |item_id|references|null: false, foreign_key: true|
 |color_id|references|null: false, foreign_key: true|
 |size_id|references|null: false, foreign_key: true|
-|quontity|integer|null: false|
+|quantity|integer|null: false|
 
 ### Association
-- belongs_to :order, dependent: :destroy
+- belongs_to :order
+- belongs_to :item
+- belongs_to :color
+- belongs_to :size
 
 * Database initialization
 
