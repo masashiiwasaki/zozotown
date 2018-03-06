@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180306082825) do
+ActiveRecord::Schema.define(version: 20180306083637) do
 
   create_table "carts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",    null: false
@@ -27,10 +27,12 @@ ActiveRecord::Schema.define(version: 20180306082825) do
   end
 
   create_table "item_sub_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "items_id",   null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "items_id",      null: false
+    t.integer  "sub_images_id", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.index ["items_id"], name: "index_item_sub_images_on_items_id", using: :btree
+    t.index ["sub_images_id"], name: "index_item_sub_images_on_sub_images_id", using: :btree
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -44,6 +46,14 @@ ActiveRecord::Schema.define(version: 20180306082825) do
     t.datetime "updated_at",                null: false
     t.index ["brands_id"], name: "index_items_on_brands_id", using: :btree
     t.index ["shops_id"], name: "index_items_on_shops_id", using: :btree
+  end
+
+  create_table "sub_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "color_id_id", null: false
+    t.string   "image_url",   null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["color_id_id"], name: "index_sub_images_on_color_id_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
