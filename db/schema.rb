@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180306091509) do
+ActiveRecord::Schema.define(version: 20180306093632) do
 
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -137,9 +137,17 @@ ActiveRecord::Schema.define(version: 20180306091509) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "carts", "colors"
+  add_foreign_key "carts", "items"
+  add_foreign_key "carts", "sizes"
   add_foreign_key "carts", "users"
+  add_foreign_key "item_lists", "colors"
   add_foreign_key "item_lists", "items"
+  add_foreign_key "item_lists", "sizes"
   add_foreign_key "item_sub_images", "items"
+  add_foreign_key "item_sub_images", "sub_images"
+  add_foreign_key "items", "brands"
+  add_foreign_key "items", "shops"
   add_foreign_key "ordered_items", "colors"
   add_foreign_key "ordered_items", "items"
   add_foreign_key "ordered_items", "orders"
