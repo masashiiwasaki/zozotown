@@ -1,0 +1,434 @@
+/*-- Body style ---------------------------------- */
+body{
+  background: #fff;
+  color: #2d2d2d;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Lucida Grande", Verdana, "ＭＳ Ｐゴシック", sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.clearfix:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.textTruncate, .text-truncate{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: normal;
+  white-space: nowrap;
+}
+
+#wrapper{
+  width: 100%;
+  margin: auto;
+  text-align: left;
+  position: relative;
+}
+
+/*-- Header style ---------------------------------- */
+#gblHeaderStuck{
+  height: 51px;
+  #gblHeader{
+    z-index: 55;
+    position: relative;
+    _zoom: 1;
+    line-height: 1.6363;
+    text-align: left;
+    margin: auto;
+    width: 100%;
+    background: #ffffff;
+    #hWrapper{
+      width: 100%;
+      margin: auto;
+      background: #323232;
+      #hWrapperInner{
+        width: 980px;
+        margin: 0 auto;
+        height: 51px;
+        #header{
+          background: transparent;
+          z-index: 5;
+          position: relative;
+          padding: 0;
+          width: 980px;
+          #hHeader{
+            float: left;
+            padding: 11px 0;
+            position: relative;
+            z-index: 2;
+            #hLogo{
+              float: left;
+              margin: 1px 18px 0 0;
+              a{
+                width: 151px;
+                padding: 26px 0 0;
+                height: 0;
+                background: url(http://zozo.jp/common_2015/img/header/h_logo.gif) no-repeat center top;
+                display: block;
+                overflow: hidden;
+                line-height: 1.2;
+                -webkit-font-smoothing: antialiased;
+                -moz-font-smoothing: antialiased;
+                font-smoothing: antialiased;
+              }
+            }
+            #hItemSearch.clearfix{
+              float: left;
+              position: relative;
+              form{
+                float: left;
+                margin: 0 12px 0 0;
+                #hKeyword{
+                  margin: 0 -2px 0 0;
+                  float: left;
+                  #searchText{
+                    padding: 5px 5px 5px 11px;
+                    line-height: 19px;
+                    height: 18px;
+                    width: 210px;
+                    border: none;
+                    border-radius: 2px;
+                    position: relative;
+                    text-decoration: none;
+                  }
+                }
+                #hSubmit{
+                  margin: 0 0 0 0;
+                  height: 28px;
+                  position: relative;
+                  zoom: 1;
+                  float: left;
+                  color: #ffffff;
+                  text-align: center;
+                  border-radius: 0 2px 2px 0;
+                  background: #dcdcdc;
+                  cursor: pointer;
+                  input{
+                    padding: 0;
+                    height: 28px;
+                    width: 40px;
+                    cursor: pointer;
+                    text-align: center;
+                    border: none;
+                    background: url(http://zozo.jp/common_2015/img/common/ico_common.png) no-repeat 12px 5px;
+                    text-indent: -9999px;
+                  }
+                }
+              }
+            }
+          }
+          #hCtrl{
+            float: right;
+            line-height: 1.615384615;
+            position: relative;
+            z-index: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            #hCtrlList{
+              li{
+                float: left;
+                position: relative;
+                width: 54px;
+                background: #323232;
+                #hName{
+                  padding: 16px 26px 14px;
+                  display: inline-block;
+                  color: #fff;
+                  .userName{
+                    display: inline-block;
+                    max-width: 13em;
+                    vertical-align: bottom;
+                  }
+                }
+                .ico{
+                  color: #fff;
+                  padding: 15px 0;
+                  width: 54px;
+                  display: inline-block;
+                  background: url("http://zozo.jp/common_2015/img/common/ico_common.png") no-repeat;
+                  text-indent: -9999px;
+                  text-align: left;
+                  span{
+                    text-indent: -9999px;
+                  }
+                }
+                .ico_notice{
+                  background-position: 17px -25px;
+                }
+                .ico_favorite{
+                  background-position: 17px -70px;
+                }
+                .ico_cart{
+                  background-position: 14px -123px;
+                }
+                .ico_siteMap{
+                  background-position: 17px -177px;
+                }
+              }
+              li#hUserName{
+                width: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/*-- Header style ---------------------------------- */
+/*-- contentHeader style ---------------------------------- */
+#contentHeader{
+  width: 100%;
+  border-bottom: 0;
+  background: #f0f0f0;
+  overflow: hidden;
+  #headerInner{
+    width: 980px;
+    margin: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    #mainTab{
+      float: left;
+      li{
+        float: left;
+        a{
+          padding: 13px 21px 10px;
+          line-height: 1.385;
+          display: inline-block;
+          color: #808080;
+        }
+      }
+    }
+    #topNewsList{
+      float: right;
+      margin: 7px 0 0;
+      letter-spacing: 0.3px;
+      padding: 5px 0 4px;
+      li{
+        display: inline;
+        a{
+          color: #808080;
+        }
+      }
+    }
+  }
+}
+/*-- contentHeader style ---------------------------------- */
+/*-- body style ---------------------------------- */
+#body{
+  width: 980px;
+  margin: 0 auto 0;
+  position: relative;
+}
+/*-- body style ---------------------------------- */
+/*-- leftContent style ---------------------------------- */
+#leftContent{
+  position: relative;
+  z-index: 20;
+  padding: 0;
+  float: left;
+  width: 175px;
+  margin: 0;
+  .section{
+    padding: 22px 0 12px;
+  }
+  h2{
+    font-size: 18px;
+    position: relative;
+  }
+  .more{
+    margin: 18px 0 0;
+    text-align: right;
+  }
+  .lists{
+    position: relative;
+    z-index: 1;
+    font-size: 13px;
+    li{
+      margin: 10px 0 0;
+      color: #555555;
+      a{
+        color: #646464;
+        -webkit-font-smoothing: antialiased;
+        -moz-font-smoothing: antialiased;
+        font-smoothing: antialiased;
+      }
+    }
+  }
+  .menuCategory .lists{
+    margin: 17px 0 0;
+    padding: 0;
+    border-top: #ebebeb 1px solid;
+    li{
+      margin: 0;
+      line-height: 1.4;
+      font-size: 13px;
+      a{
+        border-bottom: solid 1px #f2f2f2;
+        padding: 10px 2px 8px 5px;
+        display: block;
+        background: url(http://zozo.jp/common_2015/img/ico/ico_arrow_4.png) no-repeat scroll 160px 14px;
+      }
+      a:hover {
+        -webkit-font-smoothing:subpixel-antialiased;
+        -moz-font-smoothing:subpixel-antialiased;
+        font-smoothing:subpixel-antialiased;
+        background-color: #f0f0f0;
+        text-decoration: none; }
+    }
+  }
+  #menuShop .lists li,
+  #menuBrand .lists li,
+  #menuFavorite .lists li{
+    margin: 8px 0 0 0px;
+  }
+  #menuShop .lists li span,
+  #menuBrand .lists li span{
+    float: left;
+  }
+  #menuShop .lists li a,
+  #menuBrand .lists li a{
+    width: 146px;
+    float: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .recruitBanner{
+    margin-top: 10px;
+    .bannerPickupItem{
+      margin-bottom: 15px;
+    }
+    .bannerRecriut{
+      border-bottom: 1px solid #f2f2f2;
+      .bannerRecriutItem{
+        border-top: 1px solid #f2f2f2;
+        .bannerRecriutLink{
+          display: block;
+          padding: 10px 0;
+          color: #333 !important;
+          .bannerRecruitKind{
+            font-size: 13px;
+            line-height: 1.384615385;
+          }
+          .bannerRecruitScope{
+            font-size: 10px;
+            color: #888;
+            margin-top: 3px;
+            line-height: 1.5;
+          }
+        }
+
+      }
+    }
+  }
+}
+/*-- leftContent style ---------------------------------- */
+
+/*-- rightContent style ---------------------------------- */
+
+#rightContent{
+  float: right;
+  width: 795px;
+  position: relative;
+  #rightContentMain{
+    float: left;
+    width: 542px;
+    margin: 0 0 0 15px;
+    .section{
+      border-bottom: solid 1px #ebebeb;
+      padding: 22px 0 25px;
+      #couponItem{
+        min-height: 485px;
+        position: relative;
+        width: 539px;
+        margin: 11px 0 0 3px;
+        ul.rankingList{
+          margin: 0 0 0 -17px;
+          li{
+            float: left;
+            width: 125px;
+            margin: 0 0 0 14px;
+            height: 215px;
+            .photo{
+              position: relative;
+              a{
+                display: block;
+              }
+            }
+          }
+          li.rank1,
+          li.rank2,
+          li.rank3{
+            float: left;
+            width: 171px;
+            margin: 0 0 0 14px;
+            height: 270px;
+            a{
+              height: 205px;
+            }
+          }
+          li.rank4,
+          li.rank5,
+          li.rank6,
+          li.rank7{
+            a{
+              height: 150px;
+            }
+
+          }
+        }
+      }
+    }
+  }
+  #rightContentSub{
+    float: right;
+    width: 212px;
+  }
+}
+
+section.section .sectionHeader h1,
+section.section .sectionHeader h2{
+  padding: 0;
+}
+
+#contentHeader h1,
+.sectionHeader h1,
+.sectionHeader h2{
+  font-size: 18px;
+  padding: 0 0 6px 0;
+}
+
+/*-- rightContent style ---------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

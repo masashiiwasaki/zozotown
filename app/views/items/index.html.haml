@@ -1,0 +1,1197 @@
+#wrapper
+  #gblHeaderStuck
+    .header#gblHeader
+      #hWrapper
+        #hWrapperInner
+          #header.clearfix
+            .clearfix#hHeader
+              %h1#hLogo
+                = link_to "ZOZOTOWN", "http://zozo.jp/"
+              #hItemSearch.clearfix
+                %form{action:"/search", method:"get", name:"keyword"}
+                  %p#hKeyword
+                    %input#searchText.def{type:"text",name:"p_keyv",placeholder:"何かお探しですか？",autocomplete:"off"}
+                  %p#hSubmit.hBtn
+                    %input{title:"検索",type:"submit"}
+            .clearfix#hCtrl
+              %ul.clearfix#hCtrlList
+                %li.hPopWrap.static#hUserName
+                  %p#hThumbs
+                    %span#hName
+                      %span.userName.textTruncate ああああ様
+                %li.hPopWrap.static#hNotice
+                  = link_to "/notice/" do
+                    %span.ico.ico_notice
+                      %span 通知機能
+                %li#hFavoriteLink.static.hPopWrap
+                  = link_to "/_member/favoritelist/" do
+                    %span#hFavorite.ico.ico_favorite
+                      %span お気に入り
+                %li#hCart
+                  %span.clearfix
+                    = link_to "/_cart/default.html" do
+                      %span.ico.ico_cart
+                        %span カート
+                %li#hServiceMap.static.hPopWrap
+                  %span.ico.ico_siteMap
+                    %span サイトマップ
+  #contentHeader
+    #headerInner.clearfix
+      %ul#mainTab.clearfix
+        %li#tabAll
+          = link_to "すべて", "./?c=SwitchType&ts=0"
+        %li#tabMEN
+          = link_to "メンズ", "./?c=SwitchType&ts=1"
+        %li#tabWOMEN
+          = link_to "レディース", "./?c=SwitchType&ts=2"
+        %li#tabKIDS
+          = link_to "キッズ", "./?c=SwitchType&ts=2"
+      #topNewsList.clearfix.hide
+        %ul
+          %li
+            = link_to "ZOZOTOWNからのお知らせ", "#footerNews"
+  #body
+    %article.clearfix
+      #rightContent.clearfix
+        #rightContentMain
+          %section#idxCouponItem.section
+            .sectionHeader.clearfix.lined
+              %h2 クーポン対象アイテム
+            #couponItem.loader.clearfix.id10457
+              %ul.rankingList.clearfix
+                %li.rank1
+                  .listInner.clearfix
+                    .photo
+                      = link_to "http://zozo.jp/shop/magine/goods-sale/23884912/?did=44245441&rid=1093" do
+                        = image_tag("//img5.zozo.jp/goodsimages/912/24884912/24884912B_2_D_215.jpg",alt:"Magine(マージン)のNYLON AQUA GUARD ZIP TACTICAL DOWN JKT:ナイロンアクアガード ジップタクティカルダウンジャケット(ダウンジャケット/コート)",width:"171",height:"205")
+                        .feed-tag-group
+                          .feed-tag-group-item
+                            %span.feed-tag.feed-tag-coupon.coupon_C3 ¥3,000クーポン
+                    %p.label Magine
+                    %p.price.discount
+                      ¥19,980
+                      %span.tax 税込
+                      %span.off (49%OFF)
+                %li.rank2
+                  .listInner.clearfix
+                    .photo
+                      = link_to "http://zozo.jp/shop/magine/goods-sale/23884912/?did=44245441&rid=1093" do
+                        = image_tag("//img5.zozo.jp/goodsimages/912/24884912/24884912B_2_D_215.jpg",alt:"Magine(マージン)のNYLON AQUA GUARD ZIP TACTICAL DOWN JKT:ナイロンアクアガード ジップタクティカルダウンジャケット(ダウンジャケット/コート)",width:"171",height:"205")
+                        .feed-tag-group
+                          .feed-tag-group-item
+                            %span.feed-tag.feed-tag-coupon.coupon_C3 ¥3,000クーポン
+                    %p.label Magine
+                    %p.price.discount
+                      ¥19,980
+                      %span.tax 税込
+                      %span.off (49%OFF)
+                %li.rank3
+                  .listInner.clearfix
+                    .photo
+                      = link_to "http://zozo.jp/shop/magine/goods-sale/23884912/?did=44245441&rid=1093" do
+                        = image_tag("//img5.zozo.jp/goodsimages/912/24884912/24884912B_2_D_215.jpg",alt:"Magine(マージン)のNYLON AQUA GUARD ZIP TACTICAL DOWN JKT:ナイロンアクアガード ジップタクティカルダウンジャケット(ダウンジャケット/コート)",width:"171",height:"205")
+                        .feed-tag-group
+                          .feed-tag-group-item
+                            %span.feed-tag.feed-tag-coupon.coupon_C3 ¥3,000クーポン
+                    %p.label Magine
+                    %p.price.discount
+                      ¥19,980
+                      %span.tax 税込
+                      %span.off (49%OFF)
+                %li.rank4
+                  .listInner.clearfix
+                    .photo
+                      = link_to "http://zozo.jp/shop/magine/goods-sale/23884912/?did=44245441&rid=1093" do
+                        = image_tag("//img5.zozo.jp/goodsimages/912/24884912/24884912B_2_D_215.jpg",alt:"Magine(マージン)のNYLON AQUA GUARD ZIP TACTICAL DOWN JKT:ナイロンアクアガード ジップタクティカルダウンジャケット(ダウンジャケット/コート)",width:"125",height:"150")
+                        .feed-tag-group
+                          .feed-tag-group-item
+                            %span.feed-tag.feed-tag-coupon.coupon_C3 ¥3,000クーポン
+                    %p.label Magine
+                    %p.price.discount
+                      ¥19,980
+                      %span.tax 税込
+                      %span.off (49%OFF)
+                %li.rank5
+                  .listInner.clearfix
+                    .photo
+                      = link_to "http://zozo.jp/shop/magine/goods-sale/23884912/?did=44245441&rid=1093" do
+                        = image_tag("//img5.zozo.jp/goodsimages/912/24884912/24884912B_2_D_215.jpg",alt:"Magine(マージン)のNYLON AQUA GUARD ZIP TACTICAL DOWN JKT:ナイロンアクアガード ジップタクティカルダウンジャケット(ダウンジャケット/コート)",width:"125",height:"150")
+                        .feed-tag-group
+                          .feed-tag-group-item
+                            %span.feed-tag.feed-tag-coupon.coupon_C3 ¥3,000クーポン
+                    %p.label Magine
+                    %p.price.discount
+                      ¥19,980
+                      %span.tax 税込
+                      %span.off (49%OFF)
+                %li.rank6
+                  .listInner.clearfix
+                    .photo
+                      = link_to "http://zozo.jp/shop/magine/goods-sale/23884912/?did=44245441&rid=1093" do
+                        = image_tag("//img5.zozo.jp/goodsimages/912/24884912/24884912B_2_D_215.jpg",alt:"Magine(マージン)のNYLON AQUA GUARD ZIP TACTICAL DOWN JKT:ナイロンアクアガード ジップタクティカルダウンジャケット(ダウンジャケット/コート)",width:"125",height:"150")
+                        .feed-tag-group
+                          .feed-tag-group-item
+                            %span.feed-tag.feed-tag-coupon.coupon_C3 ¥3,000クーポン
+                    %p.label Magine
+                    %p.price.discount
+                      ¥19,980
+                      %span.tax 税込
+                      %span.off (49%OFF)
+                %li.rank7
+                  .listInner.clearfix
+                    .photo
+                      = link_to "http://zozo.jp/shop/magine/goods-sale/23884912/?did=44245441&rid=1093" do
+                        = image_tag("//img5.zozo.jp/goodsimages/912/24884912/24884912B_2_D_215.jpg",alt:"Magine(マージン)のNYLON AQUA GUARD ZIP TACTICAL DOWN JKT:ナイロンアクアガード ジップタクティカルダウンジャケット(ダウンジャケット/コート)",width:"125",height:"150")
+                        .feed-tag-group
+                          .feed-tag-group-item
+                            %span.feed-tag.feed-tag-coupon.coupon_C3 ¥3,000クーポン
+                    %p.label Magine
+                    %p.price.discount
+                      ¥19,980
+                      %span.tax 税込
+                      %span.off (49%OFF)
+            %p.more
+              = link_to "クーポン対象アイテム一覧", "_search/?c=UnitShopSearch&cptypeid=10457"
+          %section#idxRankingItem.section.typeSale
+            #rankingHeader.clearfix.lined.sectionHeader
+              %h2 人気アイテムランキング
+            #rankingItem.loader.clearfix
+            %p.more
+              = link_to "ランキング一覧","/ranking/all-sales.html"
+          %section#coordinate.section
+            .sectionHeader.clearfix.lined
+              %h2
+                コーディネート
+                %span
+                  powered by
+                  = link_to "WEAR","http://wear.jp/",class:"ico_wear",target:"_blank"
+            #codWrapper.wrapper.loader
+              %ol#codList.coordinatelist.rankingList.clearfix
+              / /#codWrapper
+            %ul.more.clearfix
+              %li.rankingBtn
+                = link_to "コーディネートランキング","/coordinate/ranking/?c=SwitchType&ts=0"
+              %li.coordinateBtn
+                = link_to "コーディネート一覧","/coordinate/"
+            / /#coordinate
+          %section#pickupItems.section.pickup
+            .clearfix.sectionHeader
+              %h2 チェックしたアイテム
+            #pickupItem.loader.pickupList.clearfix
+            / /#pickupItem
+          %section#pickupShops.section.pickup
+            .clearfix.sectionHeader
+              %h2 チェックしたショップ
+            #pickupShop.loader.pickupList.clearfix
+            / /#pickupShop
+          %section#footerNews.section.pickup
+            .clearfix.sectionHeader
+              %h2 お知らせ
+            %ul.lists
+              %li
+                = link_to "「クロネコ代金後払い」サービス一時停止のお知らせ","http://zozo.jp/news/20180222_170964.html"
+              %li
+                = link_to "【2月20日更新】福井県への配送遅延","http://zozo.jp/news/20180220_170963.html"
+              %li
+                = link_to "お届け日「指定なし」のご注文について","http://zozo.jp/news/20180127_170954.html"
+            / /#footerNews
+          %section#about.section.pickup
+            .clearfix.sectionHeader
+              %h2 ZOZOTOWN（ゾゾタウン）のご紹介
+            .txt
+              %p ZOZOTOWNではトップス・パンツ・ワンピースなど最新トレンドアイテムをオンラインでご購入いただけます。ZOZOは6356ブランドの人気アイテムを公式に取扱うファッション通販サイトです！
+              %ul.clearfix
+                %li
+                  = link_to "ZOZOTOWNお買いものガイド", "http://zozo.jp/welcome/default.html"
+                %li
+                  = link_to "会員登録はこちらから", "https://zozo.jp/_member/regist/"
+                %li.last
+                  = link_to "メールマガジン購読","https://zozo.jp/_mail/"
+              / /.txt
+          / /#about
+        / /#rightContentMain
+        #rightContentSub.aSide
+          #sideBanner
+            .sideBannerItem
+              = link_to "/teikibin/" do
+                = image_tag("http://img4.zozo.jp/pc/pb/img/banner/teikibin_banner_20180221.jpg",alt:"あなたに似合う服をZOZOが選びます")
+            .sideBannerItem
+              = link_to "/search/?price=sale&p_disc=60&p_gtagid=522263" do
+                = image_tag("http://img4.zozo.jp/pc/_news/timesale/20180222/pc_bnr.png",alt:"MAX95%OFF 冬物最後のタイムセール 28日（水）24時まで")
+            .sideBannerItem
+              = link_to "/pb/" do
+                = image_tag("http://img4.zozo.jp/pc/pb/img/banner/original_brand_banner_20180215.jpg",alt:"be unique,be equal ZOZO販売開始")
+            .sideBannerItem
+              = link_to "/zozosuit/" do
+                = image_tag("http://img4.zozo.jp/pc/pb/img/banner/zozosuit_banner_20180215.jpg",alt:"ZOZOSUIT 3つの新しいサービスを体験しよう")
+            / /#sideBanner
+          %section#sideTopicsList.sideTopics.sidenav
+            %header.sidenavHeader
+              %h2.sidenavH ショップニュース
+            .sidenavBody
+              .loader{"data-widget" => "ranking"}
+              .sidenavMore
+                = link_to "ショップニュース一覧", "/topics/", class:"sidenavMoreLink"
+              / /.sidenavBody
+            / /#sideTopicsList
+          %section#sideFashionNewsList.sideTopics.sidenav
+            %header.sidenavHeader
+              %h2.sidenavH ファッションまとめ
+            .sidenavBody
+              .loader{"data-widget" => "ranking"}
+              .sidenavMore
+                %p.more
+                  = link_to "ファッションまとめ一覧", "/fashionnews/"
+              / /.sidenavBody
+            / /#sideFashionNewsList
+          #sidePickUpLink.section
+            %ul.links
+              %li
+                = link_to "/sale/", class:"sale" do
+                  %span.icon.ico_priceDownSale
+                  %span.txt 服祭り セール終了間近！
+              %li
+                = link_to "/giftwrapping/" do
+                  %span.icon.ico_giftWrapping
+                  %span.txt ギフトラッピングサービス
+              %li
+                = link_to "http://sell.zozo.jp/" do
+                  %span.icon.ico_zozoused
+                  %span.txt ブランド服を買取中！
+              %li
+                = link_to "/_card/zozocard.html" do
+                  %span.icon.ico_zozocard
+                  %span.txt ZOZOCARD
+              %li
+                = link_to "/_news/disney/default.html" do
+                  %span.icon.ico_disney
+                  %span.txt Disney on ZOZOTOWN
+            / /#sidePickUpLink
+          %section#sideMenuMale.menuBox.section
+            .maleList
+              = link_to "/designersbrandzone/" do
+                %h3
+                  %span.logo_designersBrand DESIGNERS BRAND ZONE
+                %p.lead 国内外のラグジュアリーブランドが集結したデザイナーズゾーン！
+            .maleList
+              = link_to "/zozoused/" do
+                %h3
+                  %span.logo_zozoused ZOZOUSED
+                %p.lead
+                  欲しいが必ず見つかる！
+                  %br>/
+                  ブランド古着が最大70％OFF！
+            .maleList.wear
+              = link_to "//wear.jp/" do
+                %h3
+                  %span.logo_wear WEAR
+                %p.lead 着こなしの検索や、コーデ投稿が出来るファッションアプリ登場
+              %ul.app.foot.clearfix
+                %li.ios
+                  = link_to "https://itunes.apple.com/jp/app/wear/id725208930", target:"_blank" do
+                    = image_tag("https://zozo.jp/common_2015/img/blank.gif",alt:"App Store",width:"100",height:"25")
+                %li.and
+                  = link_to "http://play.google.com/store/apps/details?id=com.starttoday.android.wear", target:"_blank" do
+                    = image_tag("https://zozo.jp/common_2015/img/blank.gif",alt:"Google play",width:"100",height:"25")
+            %dl
+              %dt 公式 SNS
+              %dd.clearfix
+                .for_sns_ico.clearfix
+                  %p.snsTw_ico
+                    = link_to "https://twitter.com/zozojp", target:"_blank" do
+                      = image_tag("https://zozo.jp/common_2015/img/blank.gif",alt:"Twitter",width:"42",height:"42")
+                  %p.snsFb_ico
+                    = link_to "https://www.facebook.com/zozotown", target:"_blank" do
+                      = image_tag("https://zozo.jp/common_2015/img/blank.gif",alt:"Facebook",width:"42",height:"42")
+                  %p.snsIn_ico
+                    = link_to "https://instagram.com/zozotown_official/", target:"_blank" do
+                      = image_tag("https://zozo.jp/common_2015/img/blank.gif",alt:"Instagram",width:"42",height:"42")
+            .maleList
+              = link_to "/line/" do
+                = image_tag("//img4.zozo.jp/pc/default_2015/line_omikuji/side_banner.png",alt:"【LINE×ZOZOTOWN】LINEから便利でお得な情報を配信",width:"212",height:"34")
+            / /#menuSite
+          / /#rightContentSub
+      / /#leftContent
+      #leftContent.aSide
+        %section#newItemList.menuBox.section
+          %h2 探す
+          %ul.lists
+            %li
+              = link_to "ブランドから探す","/brand/?p_no=1"
+            %li
+              = link_to "ショップから探す","/shop/?p_no=1"
+            %li
+              = link_to "ランキングから探す","/ranking/all-sales.html"
+            %li
+              = link_to "コーディネートから探す","/coordinate/"
+            %li
+              = link_to "こだわり条件から探す","/detail/"
+        %section#categoryList.menuBox.section.menuCategory
+          %h2 カテゴリ
+          %ul.lists.static
+            %li
+              = link_to "トップス", "/category/tops/"
+              / %div
+              /   %ul.clearfix
+              /     %li
+              /       = link_to "Tシャツ/カットソー", "/category/tops/tshirt-cutsew/"
+              /     %li
+              /       = link_to  "シャツ/ブラウス","/category/tops/shirt-blouse/"
+              /     %li
+              /       = link_to  "ポロシャツ","/category/tops/polo-shirt/"
+              /     %li
+              /       = link_to  "ニット/セーター","/category/tops/knit-sweater/"
+              /     %li
+              /       = link_to  "ベスト","/category/tops/vest/"
+              /     %li
+              /       = link_to  "パーカー","/category/tops/parka/"
+              /     %li
+              /       = link_to  "スウェット","/category/tops/sweat/"
+              /     %li
+              /       = link_to  "カーディガン","/category/tops/cardigan/"
+              /     %li
+              /       = link_to  "アンサンブル","/category/tops/ensemble/"
+              /     %li
+              /       = link_to  "ジャージ","/category/tops/jersey/"
+              /     %li
+              /       = link_to  "タンクトップ","/category/tops/tank-tops/"
+              /     %li
+              /       = link_to  "キャミソール","/category/tops/camisole/"
+              /     %li
+              /       = link_to  "チューブトップ","/category/tops/tube-top/"
+              /     %li
+              /       = link_to  "その他トップス","/category/tops/other-tops/"
+            %li
+              = link_to  "ジャケット/アウター","/category/jacket-outerwear/"
+              / %div
+              /   %ul.clearfix
+              /     %li
+              /       = link_to  "テーラードジャケット","/category/jacket-outerwear/tailored-jacket/"
+              /     %li
+              /       = link_to  "ノーカラージャケット","/category/jacket-outerwear/no-collar-jacket/"
+              /     %li
+              /       = link_to  "デニムジャケット","/category/jacket-outerwear/denim-jacket/"
+              /     %li
+              /       = link_to  "ライダースジャケット","/category/jacket-outerwear/riders-jacket/"
+              /     %li
+              /       = link_to  "ブルゾン","/category/jacket-outerwear/jacket/"
+              /     %li
+              /       = link_to  "カバーオール","/category/jacket-outerwear/coveralls/"
+              /     %li
+              /       = link_to  "ミリタリージャケット","/category/jacket-outerwear/military-jacket/"
+              /     %li
+              /       = link_to  "MA-1","/category/jacket-outerwear/ma1/"
+              /     %li
+              /       = link_to  "ダウンベスト","/category/jacket-outerwear/down-vest/"
+              /     %li
+              /       = link_to  "ダウンジャケット/コート","/category/jacket-outerwear/down-jacket/"
+              /     %li
+              /       = link_to  "ダッフルコート","/category/jacket-outerwear/duffle-coat/"
+              /     %li
+              /       = link_to  "モッズコート","/category/jacket-outerwear/mods-coat/"
+              /     %li
+              /       = link_to  "ピーコート","/category/jacket-outerwear/pea-coat/"
+              /     %li
+              /       = link_to  "ステンカラーコート","/category/jacket-outerwear/stand-collar-coat/"
+              /     %li
+              /       = link_to  "トレンチコート","/category/jacket-outerwear/trench-coat/"
+              /     %li
+              /       = link_to  "チェスターコート","/category/jacket-outerwear/chester-coat/"
+              /     %li
+              /       = link_to  "ムートンコート","/category/jacket-outerwear/mouton-coat/"
+              /     %li
+              /       = link_to  "ナイロンジャケット","/category/jacket-outerwear/nylon-jacket/"
+              /     %li
+              /       = link_to  "マウンテンパーカー","/category/jacket-outerwear/mountain-parker/"
+              /     %li
+              /       = link_to  "スタジャン","/category/jacket-outerwear/stadium-jumper/"
+              /     %li
+              /       = link_to  "ポンチョ","/category/jacket-outerwear/poncho/"
+              /     %li
+              /       = link_to  "その他アウター","/category/jacket-outerwear/other-outer/"
+            %li
+              = link_to  "パンツ","/category/pants/"
+              / %div
+              /   %ul
+              /     %li
+              /       = link_to  "デニムパンツ","/category/pants/denim-pants/"
+              /     %li
+              /       = link_to  "カーゴパンツ","/category/pants/cargo-pants/"
+              /     %li
+              /       = link_to  "チノパンツ","/category/pants/chino-pants/"
+              /     %li
+              /       = link_to  "スラックス","/category/pants/slacks/"
+              /     %li
+              /       = link_to  "パンツ","/category/pants/pants/"
+            %li
+              = link_to  "オールインワン","/category/allinone-salopette/"
+              / %div
+              /   %ul
+              /     %li
+              /       = link_to  "サロペット/オーバーオール","/category/allinone-salopette/salopette-overalls/"
+              /     %li
+              /       = link_to  "つなぎ/オールインワン","/category/allinone-salopette/connected-allinone/"
+            %li
+              = link_to  "スカート","/category/skirt/"
+              / %div
+              /   %ul
+              /     %li
+              /       = link_to  "スカート","/category/skirt/skirt/"
+              /     %li
+              /       = link_to  "デニムスカート","/category/skirt/denim-skirt/"
+            %li
+              = link_to  "ワンピース","/category/onepiece/"
+              / %div
+              /   %ul
+              /     %li
+              /       = link_to  "ワンピース","/category/onepiece/onepiece-dress/"
+              /     %li
+              /       = link_to  "シャツワンピース","/category/onepiece/shirts-onepiece/"
+              /     %li
+              /       = link_to  "ジャンパースカート","/category/onepiece/jumper-skirt/"
+              /     %li
+              /       = link_to  "チュニック","/category/onepiece/tunic/"
+              /     %li
+              /       = link_to  "ドレス","/category/onepiece/dress/"
+            %li
+              = link_to  "スーツ/ネクタイ","/category/suit/"
+              / %div
+              /   %ul
+              /     %li
+              /       = link_to  "スーツジャケット","/category/suit/suit-jacket/"
+              /     %li
+              /       = link_to  "スーツベスト","/category/suit/suit-vest/"
+              /     %li
+              /       = link_to  "スーツパンツ","/category/suit/suit-pants/"
+              /     %li
+              /       = link_to  "スーツスカート","/category/suit/suit-skirt/"
+              /     %li
+              /       = link_to  "セットアップ","/category/suit/setup/"
+              /     %li
+              /       = link_to  "ネクタイ","/category/suit/necktie/"
+              /     %li
+              /       = link_to  "蝶ネクタイ","/category/suit/bow-ties/"
+              /     %li
+              /       = link_to  "ネクタイピン","/category/suit/necktie-pin/"
+              /     %li
+              /       = link_to  "カフリンクス","/category/suit/cufflinks/"
+            %li
+              = link_to  "バッグ","/category/bag/"
+              / %div
+              /   %ul.clearfix
+              /     %li
+              /       = link_to  "ショルダーバッグ","/category/bag/shoulder-bag/"
+              /     %li
+              /       = link_to  "トートバッグ","/category/bag/tote-bag/"
+              /     %li
+              /       = link_to  "バックパック/リュック","/category/bag/backpack-rucksack/"
+              /     %li
+              /       = link_to  "ボストンバッグ","/category/bag/boston-bag/"
+              /     %li
+              /       = link_to  "ボディバッグ/ウエストポーチ","/category/bag/waist-pouch/"
+              /     %li
+              /       = link_to  "ハンドバッグ","/category/bag/handbag/"
+              /     %li
+              /       = link_to  "クラッチバッグ","/category/bag/clutch-bag/"
+              /     %li
+              /       = link_to  "メッセンジャーバッグ","/category/bag/messenger-bag/"
+              /     %li
+              /       = link_to  "ビジネスバッグ","/category/bag/business-bag/"
+              /     %li
+              /       = link_to  "スーツケース/キャリーバッグ","/category/bag/travel-bag/"
+              /     %li
+              /       = link_to  "ドラムバッグ","/category/bag/drum-bag/"
+              /     %li
+              /       = link_to  "エコバッグ/サブバッグ","/category/bag/eco-bag/"
+              /     %li
+              /       = link_to  "かごバッグ","/category/bag/basket-type-bag/"
+            %li
+              = link_to  "シューズ","/category/shoes/"
+              / %div
+              /   %ul.clearfix
+              /     %li
+              /       = link_to  "スニーカー","/category/shoes/sneakers/"
+              /     %li
+              /       = link_to  "スリッポン","/category/shoes/slip-on/"
+              /     %li
+              /       = link_to  "サンダル","/category/shoes/sandal/"
+              /     %li
+              /       = link_to  "パンプス","/category/shoes/pumps/"
+              /     %li
+              /       = link_to  "ブーツ","/category/shoes/boots/"
+              /     %li
+              /       = link_to  "ブーティ","/category/shoes/booties/"
+              /     %li
+              /       = link_to  "ドレスシューズ","/category/shoes/dress-shoes/"
+              /     %li
+              /       = link_to  "バレエシューズ","/category/shoes/ballet-slippers/"
+              /     %li
+              /       = link_to  "ローファー","/category/shoes/loafers/"
+              /     %li
+              /       = link_to  "モカシン/デッキシューズ","/category/shoes/moccasins/"
+              /     %li
+              /       = link_to  "レインシューズ","/category/shoes/rain-shoes/"
+              /     %li
+              /       = link_to  "ビーチサンダル","/category/shoes/flip-flops/"
+              /     %li
+              /       = link_to  "その他シューズ","/category/shoes/other-shoes/"
+              /     %li
+              /       = link_to  "シューケア/シューズ小物","/category/shoes/shoecare-items/"
+            %li
+              = link_to  "ファッション雑貨","/category/fashion-accessories/"
+              / %div
+              /   %ul.clearfix
+              /     %li
+              /       = link_to  "ストール/スヌード","/category/fashion-accessories/stole-snood/"
+              /     %li
+              /       = link_to  "マフラー/ショール","/category/fashion-accessories/muffler-shawl/"
+              /     %li
+              /       = link_to  "ベルト","/category/fashion-accessories/belt/"
+              /     %li
+              /       = link_to  "サスペンダー","/category/fashion-accessories/suspenders/"
+              /     %li
+              /       = link_to  "サングラス","/category/fashion-accessories/sunglasses/"
+              /     %li
+              /       = link_to  "メガネ","/category/fashion-accessories/eyeglasses/"
+              /     %li
+              /       = link_to  "手袋","/category/fashion-accessories/gloves/"
+              /     %li
+              /       = link_to  "ネックウォーマー","/category/fashion-accessories/neck-warmer/"
+              /     %li
+              /       = link_to  "イヤーマフ","/category/fashion-accessories/earmuffs/"
+              /     %li
+              /       = link_to  "長傘","/category/fashion-accessories/umbrella/"
+              /     %li
+              /       = link_to  "折りたたみ傘","/category/fashion-accessories/folding-umbrella/"
+              /     %li
+              /       = link_to  "レインコート/ポンチョ","/category/fashion-accessories/raincoat-poncho/"
+            %li
+              = link_to  "財布/小物","/category/wallet-accessory/"
+              / %div
+              /   %ul.clearfix
+              /     %li
+              /       = link_to  "財布","/category/wallet-accessory/wallet/"
+              /     %li
+              /       = link_to  "コインケース/札入れ","/category/wallet-accessory/coin-case-pocketbook/"
+              /     %li
+              /       = link_to  "名刺入れ","/category/wallet-accessory/business-card-holder/"
+              /     %li
+              /       = link_to  "ポーチ","/category/wallet-accessory/pouch/"
+              /     %li
+              /       = link_to  "手鏡/コンパクト","/category/wallet-accessory/hand-mirror-compact-mirror/"
+              /     %li
+              /       = link_to  "ハンカチ/ハンドタオル","/category/wallet-accessory/handkerchief/"
+              /     %li
+              /       = link_to  "バンダナ/スカーフ","/category/wallet-accessory/bandana-scarf/"
+              /     %li
+              /       = link_to  "キーホルダー","/category/wallet-accessory/key-chain/"
+              /     %li
+              /       = link_to  "キーケース/キーアクセサリー","/category/wallet-accessory/key-case-key-accessories/"
+              /     %li
+              /       = link_to  "ウォレットチェーン","/category/wallet-accessory/wallet-chain/"
+              /     %li
+              /       = link_to  "パスケース","/category/wallet-accessory/pass-holder/"
+              /     %li
+              /       = link_to  "カードケース","/category/wallet-accessory/card-case/"
+              /     %li
+              /       = link_to  "パスポートケース","/category/wallet-accessory/passport-case/"
+              /     %li
+              /       = link_to  "扇子/うちわ","/category/wallet-accessory/paper-hand-fan-paper-fan/"
+              /     %li
+              /       = link_to  "その他小物","/category/wallet-accessory/other-small-goods/"
+            %li
+              = link_to  "時計","/category/wrist-watch/"
+              / %div
+              /   %ul
+              /     %li
+              /       = link_to  "腕時計","/category/wrist-watch/wrist-watch/"
+              /     %li
+              /       = link_to  "置時計","/category/wrist-watch/table-clocks/"
+              /     %li
+              /       = link_to  "掛け時計","/category/wrist-watch/wall-clock/"
+            %li
+              = link_to  "ヘアアクセサリー","/category/hair-accessory/"
+              / %div
+              /   %ul
+              /     %li
+              /       = link_to  "ヘアゴム","/category/hair-accessory/pony-tail-holder/"
+              /     %li
+              /       = link_to  "ヘアバンド","/category/hair-accessory/hair-band/"
+              /     %li
+              /       = link_to  "カチューシャ","/category/hair-accessory/head-band/"
+              /     %li
+              /       = link_to  "バレッタ/ヘアクリップ","/category/hair-accessory/barrette/"
+              /     %li
+              /       = link_to  "ヘアピン","/category/hair-accessory/hairpin/"
+              /     %li
+              /       = link_to  "シュシュ","/category/hair-accessory/scrunchies/"
+              /     %li
+              /       = link_to  "その他ヘアアクセサリー","/category/hair-accessory/other-hair-accessories/"
+              /     %li
+              /       = link_to  "ウィッグ","/category/hair-accessory/wig/"
+            %li
+              = link_to  "アクセサリー","/category/accessory/"
+              / %div
+              /   %ul.clearfix
+              /     %li
+              /       = link_to  "ネックレス","/category/accessory/necklace/"
+              /     %li
+              /       = link_to  "リング","/category/accessory/ring/"
+              /     %li
+              /       = link_to  "ピアス（両耳用）","/category/accessory/earrings-for-both-ears/"
+              /     %li
+              /       = link_to  "ピアス（片耳用）","/category/accessory/earring-one-piece/"
+              /     %li
+              /       = link_to  "イヤリング（両耳用）","/category/accessory/earrings/"
+              /     %li
+              /       = link_to  "イヤリング(片耳用)","/category/accessory/single-earrings/"
+              /     %li
+              /       = link_to  "ブレスレット","/category/accessory/bracelet/"
+              /     %li
+              /       = link_to  "バングル/リストバンド","/category/accessory/bangle-wristband/"
+              /     %li
+              /       = link_to  "アンクレット","/category/accessory/anklet/"
+              /     %li
+              /       = link_to  "チョーカー","/category/accessory/choker/"
+              /     %li
+              /       = link_to  "ブローチ/コサージュ","/category/accessory/brooch-corsage/"
+              /     %li
+              /       = link_to  "チャーム","/category/accessory/charms/"
+            %li
+              = link_to  "アンダーウェア","/category/underwear/"
+              / %div
+              /   %ul
+              /     %li
+              /       = link_to  "ブラ","/category/underwear/bra/"
+              /     %li
+              /       = link_to  "ショーツ","/category/underwear/shorts/"
+              /     %li
+              /       = link_to  "ブラ&ショーツ","/category/underwear/bra-panties/"
+              /     %li
+              /       = link_to  "トランクス","/category/underwear/trunk-underwear/"
+              /     %li
+              /       = link_to  "ボクサーパンツ","/category/underwear/boxer-shorts/"
+              /     %li
+              /       = link_to  "ルームウェア/パジャマ","/category/underwear/room-wear/"
+              /     %li
+              /       = link_to  "その他アンダーウェア/インナー","/category/underwear/other-underwear-inner/"
+            %li
+              = link_to  "レッグウェア","/category/leg-wear/"
+              / %div
+              /   %ul
+              /     %li
+              /       = link_to  "ソックス/靴下","/category/leg-wear/socks/"
+              /     %li
+              /       = link_to  "タイツ/ストッキング","/category/leg-wear/tights-stockings/"
+              /     %li
+              /       = link_to  "レギンス/スパッツ","/category/leg-wear/leggings-spats/"
+              /     %li
+              /       = link_to  "レッグウォーマー","/category/leg-wear/leg-warmer/"
+            %li
+              = link_to  "帽子","/category/hat/"
+              / %div
+              /   %ul
+              /     %li
+              /       = link_to  "キャップ","/category/hat/cap/"
+              /     %li
+              /       = link_to  "ハット","/category/hat/hat/"
+              /     %li
+              /       = link_to  "ニットキャップ/ビーニー","/category/hat/knit-cap-beanies/"
+              /     %li
+              /       = link_to  "ハンチング/ベレー帽","/category/hat/hunting-beret/"
+              /     %li
+              /       = link_to  "キャスケット","/category/hat/casket/"
+              /     %li
+              /       = link_to  "サンバイザー","/category/hat/sun-visor/"
+            %li
+              = link_to  "インテリア","/category/interior/"
+              / %div
+              /   %ul
+              /     %li
+              /       = link_to  "クッション/クッションカバー","/category/interior/cushion-cushion-cover/"
+              /     %li
+              /       = link_to  "ルームシューズ/スリッパ","/category/interior/room-shoes-slippers/"
+              /     %li
+              /       = link_to  "フェイスタオル","/category/interior/face-towel/"
+              /     %li
+              /       = link_to  "バスタオル","/category/interior/towel/"
+              /     %li
+              /       = link_to  "キャンドル","/category/interior/candle/"
+              /     %li
+              /       = link_to  "お香/ルームフレグランス","/category/interior/incense-room-sprays/"
+              /     %li
+              /       = link_to  "インテリアアクセサリー","/category/interior/interior-accessory/"
+              /     %li
+              /       = link_to  "フォトフレーム","/category/interior/picture-frames/"
+              /     %li
+              /       = link_to  "フラワーベース","/category/interior/flower-base/"
+              /     %li
+              /       = link_to  "ベッドリネン","/category/interior/bed-linen/"
+              /     %li
+              /       = link_to  "ラグ/マット","/category/interior/rug-mat/"
+              /     %li
+              /       = link_to  "ブランケット","/category/interior/blanket/"
+              /     %li
+              /       = link_to  "収納グッズ","/category/interior/storage-items/"
+              /     %li
+              /       = link_to  "ダストボックス","/category/interior/dust-box/"
+              /     %li
+              /       = link_to  "照明","/category/interior/lightning/"
+              /     %li
+              /       = link_to  "家具","/category/interior/furniture/"
+              /     %li
+              /       = link_to  "生活家電/PCグッズ","/category/interior/home-electronics/"
+              /     %li
+              /       = link_to  "オーディオ家電","/category/interior/audio/"
+              /     %li
+              /       = link_to  "ミラー","/category/interior/mirror/"
+              /     %li
+              /       = link_to  "バス/トイレグッズ","/category/interior/bath-toilet-accessories/"
+              /     %li
+              /       = link_to  "ランドリーグッズ","/category/interior/laundry-goods/"
+            %li
+              = link_to  "食器/キッチン","/category/tableware-kitchenware/"
+              / %div
+              /   %ul
+              /     %li
+              /       = link_to  "食器","/category/tableware-kitchenware/tableware/"
+              /     %li
+              /       = link_to  "グラス/マグカップ/タンブラー","/category/tableware-kitchenware/glasses-mug-cup-tumbler/"
+              /     %li
+              /       = link_to  "カトラリー","/category/tableware-kitchenware/cutlery/"
+              /     %li
+              /       = link_to  "キッチンツール","/category/tableware-kitchenware/kitchen-tools/"
+              /     %li
+              /       = link_to  "エプロン","/category/tableware-kitchenware/apron/"
+              /     %li
+              /       = link_to  "キッチン家電","/category/tableware-kitchenware/kitchen-electronics/"
+            %li
+              = link_to  "雑貨/ホビー/スポーツ","/category/zakka-hobby-sports/"
+              / %div
+              /   %ul
+              /     %li
+              /       = link_to  "ペン類","/category/zakka-hobby-sports/pen/"
+              /     %li
+              /       = link_to  "手帳/メモ帳","/category/zakka-hobby-sports/journal-memo-pad/"
+              /     %li
+              /       = link_to  "ステッカー/テープ","/category/zakka-hobby-sports/sticker-tapes/"
+              /     %li
+              /       = link_to  "ステーショナリー","/category/zakka-hobby-sports/stationery/"
+              /     %li
+              /       = link_to  "モバイルケース/カバー","/category/zakka-hobby-sports/mobile-case-mobile-cover/"
+              /     %li
+              /       = link_to  "モバイルアクセサリー","/category/zakka-hobby-sports/mobile-accessory/"
+              /     %li
+              /       = link_to  "おもちゃ","/category/zakka-hobby-sports/toy/"
+              /     %li
+              /       = link_to  "フィギュア","/category/zakka-hobby-sports/figures/"
+              /     %li
+              /       = link_to  "バッジ","/category/zakka-hobby-sports/badge/"
+              /     %li
+              /       = link_to  "アッシュトレイ/ライター","/category/zakka-hobby-sports/ashtray-lighter/"
+              /     %li
+              /       = link_to  "ポスター/アート","/category/zakka-hobby-sports/poster-art/"
+              /     %li
+              /       = link_to  "スポーツグッズ","/category/zakka-hobby-sports/sports-goods/"
+              /     %li
+              /       = link_to  "ゴルフグッズ","/category/zakka-hobby-sports/golf-items/"
+              /     %li
+              /       = link_to  "カメラ/カメラグッズ","/category/zakka-hobby-sports/camera-camera-accessories/"
+              /     %li
+              /       = link_to  "ペットグッズ","/category/zakka-hobby-sports/pet-items/"
+              /     %li
+              /       = link_to  "トラベルグッズ","/category/zakka-hobby-sports/travel-goods/"
+              /     %li
+              /       = link_to  "コスチューム/パーティーグッズ","/category/zakka-hobby-sports/costume-party-goods/"
+              /     %li
+              /       = link_to  "その他雑貨","/category/zakka-hobby-sports/other-goods/"
+            %li
+              = link_to  "コスメ/香水","/category/cosmetics-perfume/"
+              / %div
+              /   %ul.clearfix
+              /     %li
+              /       = link_to  "香水","/category/cosmetics-perfume/perfume/"
+              /     %li
+              /       = link_to  "スキンケア","/category/cosmetics-perfume/skin-care-items/"
+              /     %li
+              /       = link_to  "メイクアップ","/category/cosmetics-perfume/makeup/"
+              /     %li
+              /       = link_to  "コンタクトレンズ","/category/cosmetics-perfume/contact-lenses/"
+              /     %li
+              /       = link_to  "ボディケア","/category/cosmetics-perfume/body-care/"
+              /     %li
+              /       = link_to  "ネイル/ハンドケア","/category/cosmetics-perfume/nail-hand-care-products/"
+              /     %li
+              /       = link_to  "リップケア","/category/cosmetics-perfume/lip-care-products/"
+              /     %li
+              /       = link_to  "ヘアケア","/category/cosmetics-perfume/hair-care/"
+              /     %li
+              /       = link_to  "美容器具","/category/cosmetics-perfume/beauty-equipment/"
+              /     %li
+              /       = link_to  "石鹸/ボディソープ","/category/cosmetics-perfume/soap-shower-gel/"
+              /     %li
+              /       = link_to  "入浴剤","/category/cosmetics-perfume/bath-care-products/"
+              /     %li
+              /       = link_to  "オーラルケア/歯磨きグッズ","/category/cosmetics-perfume/oral-care-dental-care-items/"
+              /     %li
+              /       = link_to  "メイク雑貨","/category/cosmetics-perfume/make-up-items/"
+              /     %li
+              /       = link_to  "ギフトセット","/category/cosmetics-perfume/gift-set/"
+              /     %li
+              /       = link_to  "その他コスメ","/category/cosmetics-perfume/other-cosmetics/"
+            %li
+              = link_to  "音楽/本・雑誌","/category/music-books/"
+              / %div
+              /   %ul
+              /     %li
+              /       = link_to  "CD","/category/music-books/cd/"
+              /     %li
+              /       = link_to  "DVD","/category/music-books/dvd/"
+              /     %li
+              /       = link_to  "レコード","/category/music-books/record/"
+              /     %li
+              /       = link_to  "本","/category/music-books/book/"
+              /     %li
+              /       = link_to  "雑誌","/category/music-books/magazine/"
+            %li
+              = link_to  "水着/着物・浴衣","/category/swimwear-kimono-yukata/"
+              / %div
+              /   %ul
+              /     %li
+              /       = link_to  "水着","/category/swimwear-kimono-yukata/swimsuit/"
+              /     %li
+              /       = link_to  "ラッシュガード","/category/swimwear-kimono-yukata/rash-guard/"
+              /     %li
+              /       = link_to  "スイムグッズ","/category/swimwear-kimono-yukata/swimming-accessories/"
+              /     %li
+              /       = link_to  "着物/浴衣","/category/swimwear-kimono-yukata/kimono-yukata/"
+              /     %li
+              /      = link_to  "和装小物","/category/swimwear-kimono-yukata/traditional-japanese-clothing-accessories/"
+            %li
+              = link_to  "マタニティ/ベビー","/category/maternity-baby/"
+              / %div
+              /   %ul
+              /     %li
+              /       = link_to  "マタニティウェア","/category/maternity-baby/maternity-wear/"
+              /     %li
+              /       = link_to  "マタニティグッズ","/category/maternity-baby/maternity-goods/"
+              /     %li
+              /       = link_to  "母子手帳ケース","/category/maternity-baby/maternity-health-record-cover/"
+              /     %li
+              /       = link_to  "マザーバッグ/収納ポーチ","/category/maternity-baby/bags-for-maternity/"
+              /     %li
+              /       = link_to  "スタイ/よだれかけ","/category/maternity-baby/bib/"
+              /     %li
+              /       = link_to  "ロンパース","/category/maternity-baby/rompers/"
+              /     %li
+              /       = link_to  "肌着","/category/maternity-baby/baby-innerwear/"
+              /     %li
+              /       = link_to  "おくるみ","/category/maternity-baby/swaddle/"
+              /     %li
+              /       = link_to  "ベビー用品","/category/maternity-baby/baby-products/"
+              /     %li
+              /       = link_to  "お食事グッズ","/category/maternity-baby/baby-tableware/"
+              /     %li
+              /       = link_to  "ベビーカー用品","/category/maternity-baby/baby-car-item/"
+              /     %li
+              /       = link_to  "ベビーシューズ","/category/maternity-baby/baby-shoes/"
+              /     %li
+              /       = link_to  "ベビーギフト","/category/maternity-baby/kids-gift-set/"
+            %li
+              = link_to  "その他","/category/others/"
+              / %div
+              /   %ul
+              /     %li
+              /       = link_to  "福袋・福箱","/category/others/lucky-box-lucky-bags/"
+              /     %li
+              /       = link_to  "ラッピングキット","/category/others/gift-wrap-kit/"
+              /     %li
+              /       = link_to  "採寸ボディースーツ","/category/others/measurement-suit/"
+              /     %li
+              /       = link_to  "その他","/category/others/others/"
+          %p.more
+            = link_to  "カテゴリ一覧","/category/"
+          / /#menuCategory
+
+
+
+
+
+        %section#myFavorite.menuCategory.menuBox.section
+          %h2 お気に入り
+          %ul.lists
+            %li.item
+              = link_to  "アイテム","/_member/favoritelist/"
+            %li#sideFavoriteBrand
+              = link_to  "ブランド","/_member/favoritelist/default_brand.html"
+              / %div
+              /   %ul.clearfix.nonmember
+              /     %li.tit お気に入りブランドはありません
+              /     %li.txt 気になるブランドを見つけよう！
+              /     %li.link
+              /       = link_to  "お気に入りブランドはこちら","/_member/favoritelist/default_brand.html"
+            %li#sideFavoriteShop
+              = link_to  "ショップ","/_member/favoritelist/default_shop.html"
+              / %div
+              /   %ul.clearfix.nonmember
+              /     %li.tit お気に入りショップはありません
+              /     %li.txt 気になるショップを見つけよう！
+              /     %li.link
+              /       = link_to  "お気に入りショップはこちら","/_member/favoritelist/default_shop.html"
+          / /#menuCategory
+        %section#menuBrand.menuBox.section
+          %h2 ブランド
+          %ol.lists.rankingList
+            %li.clearfix.rank
+              %span.iconSet.iconSet1.icoS 1
+              = link_to  "nano・universe","/brand/nanouniverse/", title: "BRAND nano・universe"
+            %li.clearfix.rank
+              %span.iconSet.iconSet2.icoS 2
+              = link_to  "BEAUTY&YOUTH UNITED ARROWS","/brand/beautyyouthunitedarrows/", title:"BRAND BEAUTY&YOUTH UNITED ARROWS"
+            %li.clearfix.rank
+              %span.iconSet.iconSet3.icoS 3
+              = link_to  "green label relaxing","/brand/greenlabelrelaxing/", title:"BRAND green label relaxing"
+            %li.clearfix.rank
+              %span.iconSet.iconSet4.icoS 4
+              = link_to  "Champion","/brand/champion/", title:"BRAND Champion"
+            %li.clearfix.rank
+              %span.iconSet.iconSet5.icoS 5
+              = link_to  "JOURNAL STANDARD","/brand/journalstandard/", title:"BRAND JOURNAL STANDARD"
+            %li.clearfix.rank
+              %span.iconSet.iconSet6.icoS 6
+              = link_to  "UNITED TOKYO","/brand/unitedtokyo/", title: "BRAND UNITED TOKYO"
+            %li.clearfix.rank
+              %span.iconSet.iconSet7.icoS 7
+              = link_to  "FREAK'S STORE","/brand/freaksstore/", title: "BRAND FREAK'S STORE"
+            %li.clearfix.rank
+              %span.iconSet.iconSet8.icoS 8
+              = link_to  "UNITED ARROWS","/brand/unitedarrows/", title: "BRAND UNITED ARROWS"
+            %li.clearfix.rank
+              %span.iconSet.iconSet9.icoS 9
+              = link_to  "IENA","/brand/iena/", title: "BRAND IENA"
+            %li.clearfix.rank
+              %span.iconSet.iconSet10.icoS 10
+              = link_to  "SHIPS","/brand/ships/", title: "BRAND SHIPS"
+            %li.clearfix.rank
+              %span.iconSet.iconSet11.icoS 11
+              = link_to  "STUDIOUS","/brand/studious/", title: "BRAND STUDIOUS"
+            %li.clearfix.rank
+              %span.iconSet.iconSet12.icoS 12
+              = link_to  "A BATHING APE","/brand/abathingape/", title: "BRAND A BATHING APE"
+            %li.clearfix.rank
+              %span.iconSet.iconSet13.icoS 13
+              = link_to  "SLOBE IENA","/brand/ienaslobe/", title: "BRAND SLOBE IENA"
+            %li.clearfix.rank
+              %span.iconSet.iconSet14.icoS 14
+              = link_to  "URBAN RESEARCH","/brand/urbanresearch/", title: "BRAND URBAN RESEARCH"
+            %li.clearfix.rank
+              %span.iconSet.iconSet15.icoS 15
+              = link_to  "URBAN RESEARCH DOORS","/brand/urbanresearchdoors/", title: "BRAND URBAN RESEARCH DOORS"
+            %li.clearfix.rank
+              %span.iconSet.iconSet16.icoS 16
+              = link_to  "adidas","/brand/adidas/", title: "BRAND adidas"
+            %li.clearfix.rank
+              %span.iconSet.iconSet17.icoS 17
+              = link_to  "NIKE","/brand/nike/", title: "BRAND NIKE"
+            %li.clearfix.rank
+              %span.iconSet.iconSet18.icoS 18
+              = link_to  "EDIFICE","/brand/edifice/", title: "BRAND EDIFICE"
+            %li.clearfix.rank
+              %span.iconSet.iconSet19.icoS 19
+              = link_to  "MACKINTOSH PHILOSOPHY","/brand/mackintoshphilosophy/", title: "BRAND MACKINTOSH PHILOSOPHY"
+            %li.clearfix.rank
+              %span.iconSet.iconSet20.icoS 20
+              = link_to  "JOURNAL STANDARD relume","/brand/journalstandardrelume/", title: "BRAND JOURNAL STANDARD relume"
+          %p.more
+            = link_to  "ブランド一覧","/brand/"
+          / /#menuBrand
+        %section#menuShop.menuBox.section
+          %h2 ショップ
+          %ol.lists.rankingList
+            %li.clearfix.rank
+              %span.iconSet.iconSet1.icoS 1
+              = link_to  "BEAUTY&YOUTH UNITED ARROWS","/shop/beautyandyouthunitedarrows/"
+            %li.clearfix.rank
+              %span.iconSet.iconSet2.icoS 2
+              = link_to  "nano･universe","/shop/nanouniverse/"
+            %li.clearfix.rank
+              %span.iconSet.iconSet3.icoS 3
+              = link_to  "JOURNAL STANDARD","/shop/journalstandard/"
+            %li.clearfix.rank
+              %span.iconSet.iconSet4.icoS 4
+              = link_to  "green label relaxing","/shop/greenlabel/"
+            %li.clearfix.rank
+              %span.iconSet.iconSet5.icoS 5
+              = link_to  "IENA","/shop/iena/"
+            %li.clearfix.rank
+              %span.iconSet.iconSet6.icoS 6
+              = link_to  "URBAN RESEARCH","/shop/urbanresearch/"
+            %li.clearfix.rank
+              %span.iconSet.iconSet7.icoS 7
+              = link_to  "BEAMS MEN","/shop/beams/"
+            %li.clearfix.rank
+              %span.iconSet.iconSet8.icoS 8
+              = link_to  "EDIFICE","/shop/edifice/"
+            %li.clearfix.rank
+              %span.iconSet.iconSet9.icoS 9
+              = link_to  "BEAMS WOMEN","/shop/beamswomen/"
+            %li.clearfix.rank
+              %span.iconSet.iconSet10.icoS 10
+              = link_to  "FREAK'S STORE","/shop/freaksstore/"
+            %li.clearfix.rank
+              %span.iconSet.iconSet11.icoS 11
+              = link_to  "UNITED ARROWS","/shop/unitedarrows/"
+            %li.clearfix.rank
+              %span.iconSet.iconSet12.icoS 12
+              = link_to  "UNITED TOKYO","/shop/unitedtokyo/"
+            %li.clearfix.rank
+              %span.iconSet.iconSet13.icoS 13
+              = link_to  "STUDIOUS","/shop/studious/"
+            %li.clearfix.rank
+              %span.iconSet.iconSet14.icoS 14
+              = link_to  "A BATHING APE","/shop/bapeland/"
+            %li.clearfix.rank
+              %span.iconSet.iconSet15.icoS 15
+              = link_to  "Spick & Span","/shop/spickandspan/"
+            %li.clearfix.rank
+              %span.iconSet.iconSet16.icoS 16
+              = link_to  "URBAN RESEARCH DOORS","/shop/urbanresearchdoors/"
+            %li.clearfix.rank
+              %span.iconSet.iconSet17.icoS 17
+              = link_to  "SHIPS","/shop/ships/"
+            %li.clearfix.rank
+              %span.iconSet.iconSet18.icoS 18
+              = link_to  "Right-on","/shop/right-on/"
+            %li.clearfix.rank
+              %span.iconSet.iconSet19.icoS 19
+              = link_to  "MACKINTOSH PHILOSOPHY","/shop/mackintoshphilosophy/"
+            %li.clearfix.rank
+              %span.iconSet.iconSet20.icoS 20
+              = link_to  "ABC-MART","/shop/abc-mart/"
+          %p.more
+            = link_to  "ショップ一覧","/shop/"
+          / /#menuShop
+        %section#menuSite.menuBox.section
+          %h2 モール
+          %ul.lists
+            %li
+              = link_to  "ZOZOUSED","/zozoused/"
+          / /#menuSite
+        #menuBanner.menuBox.section
+          %ul
+            %li
+              = link_to  "//sell.zozo.jp/?utm_source=zozo&utm_medium=referral&utm_campaign=top_banner" do
+                = image_tag("//img4.zozo.jp/fix/town/default/pc_banner_used_20170907.png", alt:"つめて送るだけ ZOZOTOWNに洋服を売ってみませんか？ かんたん買取サービス", height:"88", width:"174")
+          / /#menuBanner
+        %section.menuBox.section
+          %h2 採用情報
+          .recruitBanner
+            %ul.bannerPickup
+              %li.bannerPickupItem
+                = link_to "https://www.starttoday.jp/recruit/part/salesstaff/",target:"_blank",class:"bannerPickupLink" do
+                  = image_tag("//img4.zozo.jp/fix/town/default/pc_banner_recruit_20180223_st.png",alt:"東京（青山）勤務 ZOZO販売員募集",height:"88",width:"174")
+              %li.bannerPickupItem
+                = link_to "https://www.starttoday.jp/recruit/salesstaff/",target:"_blank" do
+                  = image_tag("//img4.zozo.jp/fix/town/default/pc_banner_recruit_20180215_st.png",alt:"在宅ワーク可能！ZOZO販売員募集 日本全国どこからでも応募OK",height:"88",width:"174")
+            %ul.bannerRecriut
+              %li.bannerRecriutItem
+                = link_to "https://www.starttoday.jp/recruit/part/logistics/", target:"_blank", class:"bannerRecriutLink" do
+                  %p.bannerRecruitKind 商品管理スタッフ アルバイト採用
+                  %p.bannerRecruitScope ZOZOTOWN
+              %li.bannerRecriutItem
+                = link_to "https://www.st-komuten.jp/recruit/", target:"_blank", class:"bannerRecriutLink" do
+                  %p.bannerRecruitKind エンジニア・アナリスト中途採用
+                  %p.bannerRecruitScope ZOZOTOWN・WEAR
+              %li.bannerRecriutItem
+                = link_to "https://www.crownjewel.co.jp/recruit/", target:"_blank", class:"bannerRecriutLink" do
+                  %p.bannerRecruitKind 経理・商品管理など中途採用
+                  %p.bannerRecruitScope ZOZOUSED
+        / /#leftContent
+  / /#body
+%hr/
+#gblFooter.footer
+  #fWrapper
+    #fInner.clearfix
+      #fService.fBox
+        %ul
+          %li
+            = link_to  "ZOZOTOWN","/?p_no=1", target:"_self"
+          %li
+            = link_to  "ZOZOUSED","/zozoused/", target:"_self"
+          %li
+            = link_to  "WEAR(ウェア)","http://wear.jp/", target:"_self"
+      #fContents.fBox
+        %ul
+          %li
+            = link_to  "カテゴリ一覧","/category/?p_no=1"
+          %li
+            = link_to  "ブランド一覧","/brand/?p_no=1"
+          %li
+            = link_to  "ショップ一覧","/shop/?p_no=1"
+          %li
+            = link_to  "ランキング一覧","/ranking/all-sales.html"
+          %li
+            = link_to  "こだわり検索","/detail/?p_no=1"
+        %ul
+          %li
+            = link_to  "ショップニュース一覧","/topics/?p_no=1"
+          %li
+            = link_to  "コーディネート一覧","/coordinate/"
+          %li
+            = link_to  "ファッションまとめ一覧","/fashionnews/?p_no=1"
+          %li
+            = link_to  "注目キーワード一覧","/keyword/"
+      #fMember.fBox
+        %ul
+          %li
+            = link_to  "ブランド古着買取サービス","//sell.zozo.jp/"
+          %li
+            = link_to  "ZOZOCARD","/_card/zozocard.html?p_no=1", target:"_self"
+          %li
+            = link_to  "メールマガジン購読","https://zozo.jp/_mail/?p_no=1", target:"_self"
+          %li
+            = link_to  "ギフトラッピングサービス","/giftwrapping/?p_no=1", target:"_self"
+      #fHelp.fBox
+        .clearfix
+          %ul
+            %li
+              = link_to  "ヘルプ","/_help/default.html?p_no=1", target:"_self"
+            %li
+              = link_to  "初めての方へ","/welcome/default.html?p_no=1", target:"_self"
+            %li
+              = link_to  "サイトマップ","/sitemap.html", target:"_self"
+      #fMobile.fBox
+        %ul
+          %li
+            = link_to  "iPhoneアプリ","//itunes.apple.com/jp/app/zozotown/id404529222?mt=8&p_no=1", target:"_blank"
+          %li
+            = link_to  "Androidアプリ","//play.google.com/store/apps/details?id=jp.zozo.android.town", target:"_blank"
+          %li.ico.ico_tw
+            = link_to  "Twitter","//twitter.com/zozojp", target:"_blank"
+          %li.ico.ico_fb
+            = link_to  "Facebook","//www.facebook.com/zozotown", target:"_blank"
+          %li.ico.ico_in
+            = link_to  "Instagram","//instagram.com/zozotown_official/", target:"_blank"
+      / /#finner
+    #fCorporate.clearfix
+      %ul.clearfix
+        %li
+          = link_to  "コーポレートサイト","//www.starttoday.jp/?p_no=1", target:"_blank", class:"ico_blank"
+        %li
+          = link_to  "会社概要","//www.starttoday.jp/about/profile/", target:"_blank", class:"ico_blank"
+        %li
+          = link_to  "IR情報","//www.starttoday.jp/ir/", target:"_blank", class:"ico_blank"
+        %li
+          = link_to  "採用情報","//www.starttoday.jp/recruit/", target:"_blank", class:"ico_blank"
+        %li
+          = link_to  "利用規約","/info/kiyaku.html?p_no=1"
+        %li
+          = link_to  "個人情報保護方針","/info/pp.html?p_no=1"
+        %li
+          = link_to  "特定商取引法に基づく表示・古物営業法に基づく表示","/_newhelp/help_resort_torihikihou.html?p_no=1"
+      #fCopyRight
+        %p#copy COPYRIGHT © START TODAY CO.,LTD. ALL RIGHTS RESERVED.
+        %p サイト内の文章、画像などの著作物は株式会社スタートトゥデイに属します。複製、無断転載を禁止します。
+      / /#fCorporate
+    / /#fWrapper
+  / /#gblFooter
