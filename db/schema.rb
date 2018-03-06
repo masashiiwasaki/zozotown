@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180306083637) do
+ActiveRecord::Schema.define(version: 20180306084512) do
 
   create_table "carts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",    null: false
@@ -26,34 +26,46 @@ ActiveRecord::Schema.define(version: 20180306083637) do
     t.index ["user_id"], name: "index_carts_on_user_id", using: :btree
   end
 
+  create_table "item_lists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "item_id",    null: false
+    t.integer  "color_id",   null: false
+    t.integer  "size_id",    null: false
+    t.integer  "stock",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["color_id"], name: "index_item_lists_on_color_id", using: :btree
+    t.index ["item_id"], name: "index_item_lists_on_item_id", using: :btree
+    t.index ["size_id"], name: "index_item_lists_on_size_id", using: :btree
+  end
+
   create_table "item_sub_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "items_id",      null: false
-    t.integer  "sub_images_id", null: false
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["items_id"], name: "index_item_sub_images_on_items_id", using: :btree
-    t.index ["sub_images_id"], name: "index_item_sub_images_on_sub_images_id", using: :btree
+    t.integer  "item_id",      null: false
+    t.integer  "sub_image_id", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["item_id"], name: "index_item_sub_images_on_item_id", using: :btree
+    t.index ["sub_image_id"], name: "index_item_sub_images_on_sub_image_id", using: :btree
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "price",                     null: false
     t.string   "name",                      null: false
     t.text     "description", limit: 65535, null: false
-    t.integer  "shops_id",                  null: false
-    t.integer  "brands_id",                 null: false
+    t.integer  "shop_id",                   null: false
+    t.integer  "brand_id",                  null: false
     t.string   "image_url",                 null: false
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
-    t.index ["brands_id"], name: "index_items_on_brands_id", using: :btree
-    t.index ["shops_id"], name: "index_items_on_shops_id", using: :btree
+    t.index ["brand_id"], name: "index_items_on_brand_id", using: :btree
+    t.index ["shop_id"], name: "index_items_on_shop_id", using: :btree
   end
 
   create_table "sub_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "color_id_id", null: false
-    t.string   "image_url",   null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["color_id_id"], name: "index_sub_images_on_color_id_id", using: :btree
+    t.integer  "color_id",   null: false
+    t.string   "image_url",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["color_id"], name: "index_sub_images_on_color_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -79,5 +91,6 @@ ActiveRecord::Schema.define(version: 20180306083637) do
   end
 
   add_foreign_key "carts", "users"
-  add_foreign_key "item_sub_images", "items", column: "items_id"
+  add_foreign_key "item_lists", "items"
+  add_foreign_key "item_sub_images", "items"
 end
