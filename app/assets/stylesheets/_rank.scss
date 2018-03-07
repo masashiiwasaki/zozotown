@@ -1,0 +1,47 @@
+.iconSet{
+  background: #fff;
+  border-radius: 50%;
+  border: 1px solid #e6e6e6;
+  color: #8C8C8C;
+  font-size: 15px;
+  font-family: helvetica;
+  height: 28px;
+  line-height: 30px;
+  padding: 0;
+  text-align: center;
+  width: 28px;
+  zoom: 1;
+  z-index: 5;
+}
+
+.rankingList .iconSet{
+  position: relative;
+  border: 1px solid #dedede;
+  display: inline-block;
+  z-index: 5;
+  margin: 0 5px 0 0;
+}
+
+.rank{
+  .icoS{
+  font-size: 11px;
+  height: 22px;
+  line-height: 23px;
+  width: 22px;
+  }
+  .iconSet1{
+    background: #d9b340;
+    border-color: #d9b340;
+    color: #ffffff;
+  }
+  .iconSet2{
+    background: #6f7b83;
+    border-color: #6f7b83;
+    color: #ffffff
+  }
+  .iconSet3{
+    background: #a15326;
+    border-color: #a15326;
+    color: #ffffff;
+  }
+}

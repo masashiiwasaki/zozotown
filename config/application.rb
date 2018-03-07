@@ -10,7 +10,7 @@ module Zozo
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically
+    # -- all .rb files in that directory are automatically loaded.
     config.generators do |g|
       g.javascripts false
       g.helper false

@@ -1,0 +1,41 @@
+.feed-tag-group{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 0;
+  line-height: 1;
+  text-align: left;
+}
+
+.feed-tag-group,
+.feed-tag-group:before,
+.feed-tag-group:after,
+.feed-tag-group *,
+.feed-tag-group *:before,
+.feed-tag-group *:after{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.feed-tag-coupon{
+  color: #ffffff;
+}
+
+.feed-tag-coupon.coupon_C3{
+  background: rgba(140, 28, 51, 0.9);
+}
+
+.feed-tag{
+  display: inline-block;
+  overflow: hidden;
+  padding: 0 5px;
+  max-width: 100%;
+  font-size: 11px;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  word-wrap: normal;
+  white-space: nowrap;
+  vertical-align: middle;
+}
