@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: zozo_production
-  username: zozo
-  password: <%= ENV['ZOZO_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
