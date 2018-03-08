@@ -28,6 +28,18 @@ gem 'haml-rails'
 
 gem 'erb2haml'
 
+group :production do
+  gem 'unicorn'
+end
+
+group :development, :test do
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
+end
+
 group :development, :test do
   gem 'byebug', platform: :mri
 end
@@ -40,4 +52,4 @@ group :development do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
+gem 'devise'
