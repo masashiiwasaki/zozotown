@@ -1,0 +1,694 @@
+%body#zozotown
+  #wrapper
+    #gblHeader.header
+      #hWrapper
+        #header.clearfix
+          %p#hLogo
+            %a{:href => "http://zozo.jp/"} ZOZOTOWN
+        / /#hWrapper
+      / /#gblHeader
+    #body.clearfix
+      #content
+        %article
+          #contentHeader.clearfix
+            %h1 お届け先・配送方法・お支払い方法
+            %p.navi
+              %img{:alt => "ログイン・情報入力", :height => "70", :src => "img/step_01.gif", :width => "295"}/
+          #twoColumn.clearfix
+            %form#f1.decorateForm.clearfix{:action => "select.html", :method => "POST"}
+              %input{:name => "c", :type => "hidden", :value => "ReceiveDestinationAndPay"}/
+              %input{:name => "ctoken", :type => "hidden", :value => ""}/
+              / 左カラム
+              #mainContent
+                .inner
+                  #registAddress
+                    #addressFrom.atAd.clearfix
+                      %dl#addCheck.accordions.clearfix
+                        %dt.tit お届け先
+                        %dd.accordion.top
+                          .deliveryAdd.clearfix
+                            %label.trigger{:for => "addRegist0"}
+                              %input#addRegist0{:checked => "checked", :name => "de", :type => "radio", :value => "0"}/
+                              %span.wrap
+                                %span.name 宮川 潤 様
+                                %span.add
+                                  〒1010041
+                                  %span.deliveryNowTag 即日配送可能
+                                %span.add 住所：東京都千代田区神田須田町1-6-5ガラステージ神田201
+                                %span.tel 電話：080-1075-5385
+                        %dd.accordion.keep
+                          %dl
+                            %dt
+                              %label.trigger{:for => "addNew"}
+                                %input#addNew{:name => "de", :type => "radio", :value => "-1"}>/
+                                新しいお届け先を追加する
+                                %input{:name => "AddAddress", :type => "hidden", :value => "1"}/
+                          .accInner.formItem.clearfix
+                            .accDetail
+                              #registeredAddress.atAd
+                                %dl#registeredTblType.pullDownWrapper.clearfix
+                                  %dt 種別
+                                  %dd.select
+                                    %select.pullId{:name => "TypeName"}
+                                      %option{:value => "勤務先・職場"} 勤務先・職場
+                                      %option{:value => "友人・知人宅"} 友人・知人宅
+                                      %option{:value => "実家"} 実家
+                                      %option{:value => "その他"} その他
+                                  /
+                                    dd>
+                                    <p class="pullDownSelect">種別</p>
+                                    </dd
+                                %dl#registeredTblName.clearfix
+                                  %dt お名前
+                                  %dd
+                                    %input.inputL.jpn{:name => "Name_Add", :placeholder => "姓 名(全角)", :type => "text", :value => ""}/
+                                %dl.clearfix.tblZip
+                                  %dt 郵便番号
+                                  %dd#tblZip.linedParent
+                                    %input#zipCodeNum.inputL.num{:maxlength => "7", :name => "Zipcode_Add", :placeholder => "例） 2617116", :type => "text", :value => ""}/
+                                    / p class="autoAddBtn"><a class="grayBtn" href="#">自動入力</a></p
+                                    / a target="_blank" href="http://www.post.japanpost.jp/zipcode/index.html">検索</a
+                                %dl.pullDownWrapper.clearfix.tblArea
+                                  %dt 都道府県
+                                  %dd
+                                    %p.pref 郵便番号を入力してください
+                                    %input{:name => "PrefID_Add", :type => "hidden", :value => ""}/
+                                %dl.clearfix.tblAddress1
+                                  %dt 住所1
+                                  %dd
+                                    %input.inputL{:maxlength => "50", :name => "Address1_Add", :placeholder => "市区町村、番地など", :type => "text", :value => ""}/
+                                %dl#registeredTblAddress2.clearfix
+                                  %dt 住所2
+                                  %dd
+                                    %input.inputL{:maxlength => "50", :name => "Address2_Add", :placeholder => "建物名など（任意）", :type => "text", :value => ""}/
+                                %dl#registeredTblTel1.clearfix
+                                  %dt 電話番号
+                                  %dd.listParent.telForm
+                                    %ul.clearfix.list.plural
+                                      %li
+                                        %input.inputS.num.del{:maxlength => "5", :name => "Tel1_Add", :placeholder => "例） 090", :type => "text", :value => ""}/
+                                      %li
+                                        %input.inputS.num{:maxlength => "5", :name => "Tel2_Add", :placeholder => "1234", :type => "text", :value => ""}/
+                                      %li
+                                        %input.inputS.num{:maxlength => "5", :name => "Tel3_Add", :placeholder => "5678", :type => "text", :value => ""}/
+                                / /#registeredAddress
+                        / /#addCheck
+                      / /#addressFrom
+                    %dl#deliveryCheck.accordions.clearfix
+                      %dt.tit
+                        配送方法
+                        %br>/
+                        お届け予定日
+                      %dd.loader 郵便番号を入力後にお選びいただけます
+                      / /#deliveryCheck
+                    #paymentForm.clearfix
+                      %dl#paymentCheck.accordions.clearfix.radioWrap.covPayWrap
+                        %dt.tit お支払い方法
+                        %dd.accordion.keep
+                          %dl#atobarai2.cleafix.atobarai2.enab
+                            %dt
+                              %label.trigger{:for => "atobaraiPayment2"}
+                                %input#atobaraiPayment2{:name => "ph_zc", :type => "radio", :value => "8"}>/
+                                ツケ払い
+                                %span.icoNew NEW
+                                %br/
+                                %span.txt ※商品購入から2ヶ月以内にコンビニ、銀行でお支払いください。
+                            %dd.point.atobaraiPoint2 75ポイント還元
+                            %dd.charge ¥324
+                          .accInner
+                            .accDetail
+                              .payInfo
+                                %ul.txt12
+                                  %li
+                                    ※代金の請求、並びに請求に関してご連絡が必要となる場合、GMOペイメントサービスがおこないます。
+                                    %a{:href => "/_help/default.html?cid=9#help_4140", :target => "_blank"}> 詳細はこちら
+                                    。
+                                  %li ※GMOペイメントサービスに対して与信・代金の回収等の目的で、安全が確保できる手段を用いて必要な情報を提供いたします。また、利用者はこれにご同意のうえ注文を確定してください。
+                                  %li ※当社はGMOペイメントサービス株式会社より支払い状況に関する情報等を受領いたします。当社は、当該情報等を利用し、利用者に対して別途指定する方法にて支払い状況にかかるご案内を差し上げます。
+                                  %li ※支払期限を過ぎてもお支払の確認ができない場合、それ以降のご利用が制限されます。
+                                  %li ※ご注文いただいた商品の配送先に請求書が送付されるため、配送先のご登録はご本人様とし、プレゼント等でのご利用はお控えください。
+                        %dd.accordion.keep
+                          %dl#zozoCard.cleafix
+                            %dt
+                              %label.trigger{:for => "zozocard"}
+                                %input#zozocard{:name => "ph_zc", :type => "radio", :value => "0"}>/
+                                ZOZOCARD
+                            %dd.point 150ポイント還元
+                            %dd.charge ¥0
+                          .accInner.credit.formItem.clearfix
+                            .accDetail
+                              %dl.clearfix
+                                %dt カード番号
+                                %dd
+                                  %input.inputM.num{:maxlength => "30", :name => "cn_zozo", :placeholder => "半角数字のみ（ハイフンなし）", :type => "text", :value => ""}/
+                              %dl.securtyCode.clearfix
+                                %dt セキュリティコード
+                                %dd
+                                  %input.inputM.num{:maxlength => "30", :name => "scn_zozo", :placeholder => "半角数字のみ", :type => "text", :value => ""}/
+                                  %span.info.secCode
+                                    %a セキュリティコードについて
+                                    %span.pop
+                              %dl.date.clearfix
+                                %dt 有効期限
+                                %dd.pullDownWrap.expirationDate
+                                  %select{:name => "em_zozo"}
+                                    %option{:value => "01"} 01
+                                    %option{:value => "02"} 02
+                                    %option{:value => "03"} 03
+                                    %option{:value => "04"} 04
+                                    %option{:value => "05"} 05
+                                    %option{:value => "06"} 06
+                                    %option{:value => "07"} 07
+                                    %option{:value => "08"} 08
+                                    %option{:value => "09"} 09
+                                    %option{:value => "10"} 10
+                                    %option{:value => "11"} 11
+                                    %option{:value => "12"} 12
+                                  %span 月
+                                  %select{:name => "ey_zozo"}
+                                    %option{:value => "18"} 18
+                                    %option{:value => "19"} 19
+                                    %option{:value => "20"} 20
+                                    %option{:value => "21"} 21
+                                    %option{:value => "22"} 22
+                                    %option{:value => "23"} 23
+                                    %option{:value => "24"} 24
+                                    %option{:value => "25"} 25
+                                    %option{:value => "26"} 26
+                                    %option{:value => "27"} 27
+                                    %option{:value => "28"} 28
+                                  %span 年
+                              %dl.clearfix
+                                %dt お支払い方法
+                                %dd
+                                  %select{:name => "cp_zozo"}
+                                    %option{:value => "1"} 一括払い
+                                    %option{:value => "7"} 2回払い
+                                    %option{:value => "2"} 3回払い
+                                    %option{:value => "3"} 6回払い
+                                    %option{:value => "4"} 12回払い
+                                    %option{:value => "5"} 24回払い
+                                    %option{:value => "6"} リボ払い
+                                    %option{:value => "8"} ボーナス払い
+                              %p.rgist
+                                %label{:for => "rgist_zozo"}
+                                  %input#rgist_zozo{:name => "CardRegist_zozo", :type => "checkbox", :value => "1"}>/
+                                  このクレジットカード情報を登録する
+                              %p.rgistPremium.hide
+                                カード情報は自動的に登録されます。
+                                %span.info ※申込みにはクレジット情報が必須になります。
+                              %p.note
+                                ※クレジットカード情報の取扱いにつきましては、
+                                %a{:href => "http://zozo.jp/_help/default.html?cid=9#help_4110", :target => "_blank"}> こちら
+                                をご確認ください。
+                              / /.accDetail
+                            / /.accordion
+                        %dd.accordion.keep
+                          %dl#creditCard.cleafix
+                            %dt
+                              %label.trigger{:for => "creditcard"}
+                                %input#creditcard{:name => "ph_zc", :type => "radio", :value => "1"}>/
+                                クレジットカード
+                            %dd.point 75ポイント還元
+                            %dd.charge ¥0
+                          .accInner.credit.formItem.clearfix
+                            .accDetail
+                              .accordion.keep.clarfix
+                                %dl.credit.clearfix
+                                  %dt カード番号
+                                  %dd.registedCard
+                                    %label.trigger{:for => "cardNum5963333"}
+                                      %input#cardNum5963333{:name => "CreditCardID", :type => "radio", :value => "5963333"}/
+                                      2845
+                                    %span.date 01/2023
+                                .accInner.formItem.clearfix.moreCards
+                                  .accDetail
+                                    %dl.securtyCode.clearfix
+                                      %dt セキュリティコード
+                                      %dd
+                                        %input.inputM.num{:maxlength => "30", :name => "scn5963333", :placeholder => "半角数字のみ", :type => "text", :value => ""}/
+                                        %span.info.secCode
+                                          %a セキュリティコードについて
+                                          %span.pop
+                                    %dl.clearfix
+                                      %dt お支払い方法
+                                      %dd
+                                        %select{:name => "cp5963333"}
+                                          %option{:value => "1"} 一括払い
+                                          %option{:value => "7"} 2回払い
+                                          %option{:value => "2"} 3回払い
+                                          %option{:value => "3"} 6回払い
+                                          %option{:value => "4"} 12回払い
+                                          %option{:value => "5"} 24回払い
+                                          %option{:value => "6"} リボ払い
+                                          %option{:value => "8"} ボーナス払い
+                              %dl.accordion.keep.clearfix.cardNew_normal
+                                %dt
+                                  %label.trigger{:for => "cardNew_normal"}
+                                    %input#cardNew_normal{:name => "CreditCardID", :type => "radio", :value => "-1"}>/
+                                    新しいカードを追加
+                                %dd.moreNewCards.keep
+                                  .accInner.formItem.clearfix
+                                    .accDetail
+                                      %p.img
+                                        %img{:alt => "", :height => "35", :src => "img/card_company.gif", :width => "350"}/
+                                      %dl.clearfix
+                                        %dt カード番号
+                                        %dd
+                                          %input.inputM.num{:maxlength => "30", :name => "cn_normal", :placeholder => "半角数字のみ（ハイフンなし）", :type => "text", :value => ""}/
+                                      %dl.securtyCode.clearfix
+                                        %dt セキュリティコード
+                                        %dd
+                                          %input.inputM.num{:maxlength => "30", :name => "scn_normal", :placeholder => "半角数字のみ", :type => "text", :value => ""}/
+                                          %span.info.secCode
+                                            %a セキュリティコードについて
+                                            %span.pop
+                                      %dl.date.clearfix
+                                        %dt 有効期限
+                                        %dd.pullDownWrap.expirationDate
+                                          %select{:name => "em_normal"}
+                                            %option{:value => "01"} 01
+                                            %option{:value => "02"} 02
+                                            %option{:value => "03"} 03
+                                            %option{:value => "04"} 04
+                                            %option{:value => "05"} 05
+                                            %option{:value => "06"} 06
+                                            %option{:value => "07"} 07
+                                            %option{:value => "08"} 08
+                                            %option{:value => "09"} 09
+                                            %option{:value => "10"} 10
+                                            %option{:value => "11"} 11
+                                            %option{:value => "12"} 12
+                                          %span 月
+                                          %select{:name => "ey_normal"}
+                                            %option{:value => "18"} 18
+                                            %option{:value => "19"} 19
+                                            %option{:value => "20"} 20
+                                            %option{:value => "21"} 21
+                                            %option{:value => "22"} 22
+                                            %option{:value => "23"} 23
+                                            %option{:value => "24"} 24
+                                            %option{:value => "25"} 25
+                                            %option{:value => "26"} 26
+                                            %option{:value => "27"} 27
+                                            %option{:value => "28"} 28
+                                          %span 年
+                                      %dl.clearfix
+                                        %dt 支払回数
+                                        %dd
+                                          %select{:name => "cp_normal"}
+                                            %option{:value => "1"} 一括払い
+                                            %option{:value => "7"} 2回払い
+                                            %option{:value => "2"} 3回払い
+                                            %option{:value => "3"} 6回払い
+                                            %option{:value => "4"} 12回払い
+                                            %option{:value => "5"} 24回払い
+                                            %option{:value => "6"} リボ払い
+                                            %option{:value => "8"} ボーナス払い
+                                      %p.rgist
+                                        %label{:for => "rgist_normal"}
+                                          %input#rgist_normal{:name => "CardRegist_normal", :type => "checkbox", :value => "1"}>/
+                                          このクレジットカード情報を登録する
+                                      / /.accDetail
+                                    / /.accordion
+                              %p.note
+                                ※クレジットカード情報の取扱いにつきましては、
+                                %a{:href => "http://zozo.jp/_help/default.html?cid=9#help_4110", :target => "_blank"}> こちら
+                                をご確認ください。
+                              / /.accDetail
+                            / /.accordion
+                        %dd.accordion.keep
+                          %dl#payingCash.cleafix
+                            %dt
+                              %label.trigger{:for => "collectOnDelivery"}
+                                %input#collectOnDelivery{:name => "ph_zc", :type => "radio", :value => "2"}>/
+                                代金引換
+                            %dd.point 75ポイント還元
+                            %dd.charge ¥324
+                        %dd.accordion.keep
+                          %dl#linePay.cleafix.linepay
+                            %dt
+                              %label.trigger{:for => "linepay"}
+                                %input#linepay{:name => "ph_zc", :type => "radio", :value => "6"}>/
+                                LINE Pay
+                            %dd.point 75ポイント還元
+                            %dd.charge ¥0
+                        %dd.accordion.keep
+                          %dl#convenience.cleafix
+                            %dt
+                              %label.trigger{:for => "conveniencePayment"}
+                                %input#conveniencePayment{:name => "ph_zc", :type => "radio", :value => "3"}>/
+                                コンビニ
+                            %dd.point 75ポイント還元
+                            %dd.charge ¥324
+                          .accInner.convi.clearfix.formItem
+                            #convenienceList.accDetail
+                              %dl.clearfix.firstConv
+                                %dt
+                                  %label{:for => "lawson"}
+                                    %input#lawson{:name => "cv_cmp", :type => "radio", :value => "00001"}/
+                                    %img{:alt => "ローソン", :height => "75", :src => "img/conv_01.gif", :width => "110"}/
+                                %dd.txt
+                                  Loppiのあるローソンで
+                                  %br>/
+                                  ご利用いただけます。
+                              %dl.clearfix
+                                %dt
+                                  %label{:for => "familymart"}
+                                    %input#familymart{:name => "cv_cmp", :type => "radio", :value => "00002"}/
+                                    %img{:alt => "ファミリーマート", :height => "75", :src => "img/conv_02.gif", :width => "110"}/
+                                %dd.txt
+                                  Famiポートのある
+                                  %br>/
+                                  ファミリーマートで
+                                  %br>/
+                                  ご利用いただけます。
+                              %dl.clearfix
+                                %dt
+                                  %label{:for => "sunkus"}
+                                    %input#sunkus{:name => "cv_cmp", :type => "radio", :value => "00003"}/
+                                    %img{:alt => "サンクス", :height => "75", :src => "img/conv_03.gif", :width => "110"}/
+                                %dd.txt
+                                  Ｋステーションのある
+                                  %br>/
+                                  サンクスでご利用いただけます。
+                              %dl.clearfix
+                                %dt
+                                  %label{:for => "circlek"}
+                                    %input#circlek{:name => "cv_cmp", :type => "radio", :value => "00004"}/
+                                    %img{:alt => "サークルＫ", :height => "75", :src => "img/conv_04.gif", :width => "110"}/
+                                %dd.txt
+                                  Ｋステーションのある
+                                  %br>/
+                                  サークルＫでご利用いただけます。
+                              %dl.clearfix
+                                %dt
+                                  %label{:for => "ministop"}
+                                    %input#ministop{:name => "cv_cmp", :type => "radio", :value => "00005"}/
+                                    %img{:alt => "ミニストップ", :height => "75", :src => "img/conv_05.gif", :width => "110"}/
+                                %dd.txt
+                                  Loppiのあるミニストップで
+                                  %br>/
+                                  ご利用いただけます。
+                              %dl.clearfix
+                                %dt
+                                  %label{:for => "daily"}
+                                    %input#daily{:name => "cv_cmp", :type => "radio", :value => "00006"}/
+                                    %img{:alt => "デイリーヤマザキ", :height => "75", :src => "img/conv_06.gif", :width => "110"}/
+                                %dd.txt
+                                  デイリーヤマザキ全店および
+                                  %br>/
+                                  同系列のヤマザキデイリーストアで
+                                  %br>/
+                                  ご利用いただけます。
+                              %dl.clearfix
+                                %dt
+                                  %label{:for => "sevene"}
+                                    %input#sevene{:name => "cv_cmp", :type => "radio", :value => "00007"}/
+                                    %img{:alt => "セブンイレブン", :height => "75", :src => "img/conv_07.gif", :width => "110"}/
+                                %dd.txt
+                                  セブンイレブン全店で
+                                  %br>/
+                                  ご利用いただけます。
+                              .info
+                                %p.time コンビニ支払期限：2018/03/11 23:59
+                                %p.txt
+                                  期限内でのお支払いが確認できなかった場合、ご注文は自動的に
+                                  キャンセルとなり以後、ご利用に制限をかけさせていただくことも
+                                  ございますので、ご注意ください。
+                                %p.otherLink
+                                  %a{:href => "/_newhelp/help_shopping_convenience.html", :target => "_blank"} お支払い方法について
+                              / /.accDetail
+                            / /.accordion
+                        %dd.accordion.keep
+                          %dl#atobarai.cleafix.atobarai
+                            %dt
+                              %label.trigger.not{:for => "atobaraiPayment"}
+                                %input#atobaraiPayment.disableForPremium{:disabled => "disabled", :name => "ph_zc", :type => "radio", :value => "7"}>/
+                                クロネコ代金後払い
+                            %dd.point.disabledAtt ※予約商品にのみご利用いただけます
+                            %dd.point.atobaraiPoint.hide 75ポイント還元
+                            %dd.charge.hide ¥324
+                      / /#registAddress
+                    / /#paymentForm
+                  / /.inner
+                / /#mainContent
+              / /左カラム
+              / 右カラム
+              #moveWrap
+                #moveContainer
+                  #goToNext
+                    .priceList
+                      %p.btn
+                        %input.gBtn.btnL.btnSubmit{:type => "submit", :value => "次へ進む"}/
+                      .price.clearfix
+                        %dl.orderPrice.clearfix
+                          %dt 商品合計
+                          %dd#subTotal ¥8,100
+                        %dl.shipment.clearfix
+                          %dt 送料
+                          %dd#postage ¥200
+                        %dl.shipment.clearfix.hide
+                          %dt 即日配送手数料
+                          %dd#deliverynowfee ¥350
+                        %dl.shipment.clearfix
+                          %dt 支払い手数料
+                          %dd#fee ¥0
+                        %dl.totalPrice.clearfix
+                          %dt
+                            合計
+                            %span.tax （税込）
+                          %dd#total.att ¥8,300
+                      / /.priceList
+                    / /#goToNext
+                  / moveContainer
+                / /#moveWrap
+              / /右カラム
+            / /#twoColumn
+          #attention
+            %ul
+              %li
+                ※
+                %a{:href => "https://zozo.jp/_card/zozocard.html", :target => "_blank"} ZOZOCARDとは？
+              %li
+                ※デビット機能付きカード、カード会社発行のプリペイドカードのご利用はお控えください。詳しくは、
+                %a{:href => "/_help/default.html?cid=9#help_4110", :target => "_blank"}> 注意事項
+                をご確認ください。
+                %br/
+              %li ※コンビニを選択された場合、お支払いを確認後に配送方法「指定なし」でのお届けとなります。
+        / /#content
+      / /#body
+    %hr/
+    / /#wrapper
+  #gblFooter.footer
+    #fWrapper
+      #fCorporate.clearfix
+        %ul.clearfix
+          %li
+            %a{:href => "http://www.starttoday.jp/?p_no=1"} コーポレートサイト
+          %li
+            %a{:href => "http://www.starttoday.jp/about/profile/"} 会社概要
+          %li
+            %a{:href => "http://www.starttoday.jp/ir/"} IR情報
+          %li
+            %a{:href => "http://www.starttoday.jp/recruit/"} 採用情報
+          %li
+            %a{:href => "/info/kiyaku.html?p_no=1"} 利用規約
+          %li
+            %a{:href => "/info/pp.html?p_no=1"} 個人情報保護方針
+          %li
+            %a{:href => "/_newhelp/help_resort_torihikihou.html?p_no=1"} 特定商取引法に基づく表示・古物営業法に基づく表示
+        #fCopyRight
+          %p#copy COPYRIGHT © START TODAY CO.,LTD. ALL RIGHTS RESERVED.
+          %p サイト内の文章、画像などの著作物は株式会社スタートトゥデイに属します。複製、無断転載を禁止します。
+        / /#fCorporate
+      / /#fWrapper
+    / /#gblFooter
+  / 住所複数選択
+  #zipSelectBox.popup.formItem.hide.decorateForm
+    .inner
+      %h3 住所の選択
+      %p.ttl 郵便番号に該当する住所
+      / /#inner
+    / /#zipSelectBox
+  / /住所複数選択
+  #clearBg.hide
+  #clearBg_ov.hide
+  / script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" charset="UTF-8"></script
+  %script{:charset => "UTF-8", :src => "/common_2013/lib/jquery/jquery.js"}
+  %script{:charset => "Shift_JIS", :src => "/common_2013/js/common.js?20140331"}
+  %script{:charset => "Shift_JIS", :src => "/common_2013/js/gsa_suggest.js"}
+  :javascript
+    window.__app = window.__app || {};
+    window.__app.eMaintenanceMode = parseInt("0", 10);
+    window.__app.eMaintenanceMessage = '';
+    window.__app.date = '2018/03/08 19:21:30 +0900';
+    window.__app.loginStatus = parseInt("1", 10);
+    window.__app.mmid = '';
+  %script{:charset => "Shift_JIS", :src => "../js/cart_common_tmp2015.js?20161116"}
+  %script{:charset => "Shift_JIS", :src => "js/select_2015.js?20180227"}
+  %script{:charset => "Shift_JIS", :src => "../../common_2015/js/error_common_pc.js?20160831"}
+  :javascript
+    if($('#usearNameSei')!= 0){
+      $(function() {
+        $.fn.autoKana('#usearNameSei', '#usearNameSeiKana', {
+          katakana : true  //true：カタカナ、false：ひらがな（デフォルト）
+        });
+        $.fn.autoKana('#usearNameMei', '#usearNameMeiKana',{
+          katakana : true  //true：カタカナ、false：ひらがな（デフォルト）
+        });
+      });
+    }
+  :javascript
+    $(function(){
+      $('.accordion').each(function(){
+        if($(this).find('.trigger').find(':radio').prop('checked')){
+          if($(this).closest('dl').next('.accInner')[0]){
+            $(this).parents('.accordion').addClass('open');
+          }
+          accordion.open($(this));
+        }
+      });
+    });
+  %script#tplDeliveryDateBox{:type => "text/x-jquery-tmpl"}
+    :cdata
+      {{if type==0 }}
+      <dd class="accordion" id="deliveryNormal">
+      <dl>
+      <dt><label for="deliveryRegular" class="trigger"><input type="radio" name="si" value="${type}" id="deliveryRegular" {{if selected=='true'}} checked{{/if}}{{if enabled=='false'}} disabled{{/if}}>指定なし</label></dt>
+      <dd class="date">1～3日以内に発送</dd>
+      <dd class="price">¥200</dd>
+      </dl>
+      </dd>
+      {{else type==3}}
+      
+      <dd class="accordion keep" id="tblDeliveryDayTime">
+      <dl>
+      <dt><label for="deliveryDayTime" class="trigger"><input type="radio" name="si" value="${type}" id="deliveryDayTime" {{if selected=='true'}} checked{{/if}}{{if enabled=='false'}} disabled{{/if}}>日時指定</label></dt>
+      {{if enabled=="true"}}
+      <dd class="date dayTime">希望日時を選択してください</dd>
+      <dd class="price">¥200</dd>
+      {{else}}
+      <dd class="mid disabledAtt">日時指定はお選びいただけません
+      
+      </dd>
+      {{/if}}
+      </dl>
+      {{if enabled=="true"}}
+      <div class="accInner formItem clearfix">
+      <div class="accDetail">
+      <div class="deliveryTime clearfix">
+      <select class="date" name="dd" id="deliveryDateDay">
+      {{each list}}
+      <option value="${day.val}"{{if day.disabled=='true'}} disabled{{/if}}>${day.txt}</option>
+      {{/each}}
+      </select>
+      <select class="time" name="dt" id="deliveryDateTime">
+      {{each(i,v) list}}
+      {{if i==idx}}
+      {{each time}}
+      <option value="${val}"{{if disabled=='true'}} disabled{{/if}}>${txt}</option>
+      {{/each}}
+      {{/if}}
+      {{/each}}
+      </select>
+      </div>
+      </div>
+      </div>
+      {{/if}}
+      </dd>
+      {{else (type==1 || type==2)}}
+      <dd class="accordion" id="tblDeliveryNow">
+      <dl class="clearfix hasCount">
+      <dt><label for="deliveryNow" class="trigger"><input type="radio" name="si" value="${type}" id="deliveryNow"{{if selected=='true'}} checked{{/if}}{{if enabled=='false'}} disabled{{/if}}>即日配送</label></td>
+      {{if enabled=='true'}}
+      <dd class="date enableNow">
+      <span class="theDay"><span class="att">最短</span> ${fastdate}</span>
+      </dd>
+      <dd class="price">¥550<br><span class="txt10">（送料¥200+手数料¥350）</span></dd>
+      {{else}}
+      <dd class="mid disabledAtt">
+      \※今回のご注文では選択できません
+      {{if reason==5}}
+      <a class="ovTrigger" href="#msgID5"><img src="../img/ico_disabled.png" alt="" width="16" height="15"></a>
+      {{else reason==6}}
+      <a class="ovTrigger" href="#msgID6"><img src="../img/ico_disabled.png" alt="" width="16" height="15"></a>
+      {{else reason==7}}
+      <a class="ovTrigger" href="#msgID7"><img src="../img/ico_disabled.png" alt="" width="16" height="15"></a>
+      {{else reason==8}}
+      <a class="ovTrigger" href="#msgID8"><img src="../img/ico_disabled.png" alt="" width="16" height="15"></a>
+      {{else reason==9}}
+      <a class="ovTrigger" href="#msgID9"><img src="../img/ico_disabled.png" alt="" width="16" height="15"></a>
+      {{else}}
+      <a class="ovTrigger" href="#msgID15"><img src="../img/ico_disabled.png" alt="" width="16" height="15"></a>
+      {{/if}}
+      </dd>
+      {{/if}}
+      </dl>
+      
+      {{if enabled=='true'}}
+      
+      
+      <div class="accInner formItem clearfix">
+      <div class="accDetail">
+      <div class="deliveryNowTime clearfix">
+      <select class="date" id="deliveryNowDateDay">
+      {{each(i,v) list}}
+      {{each time}}
+      <option value="${val}"{{if disabled=='true'}} disabled{{/if}}>${txt}</option>
+      {{/each}}
+      {{/each}}
+      </select>
+      <input type="hidden" name="ddnow" id="ddNow" value="" />
+      <input type="hidden" name="dtnow" id="dtNow" value="" />
+      </div>
+      </div>
+      </div>
+      {{/if}}
+      </dd>
+      {{/if}}
+  :javascript
+    var cstatus = 'general';
+    window.__gaLogin = parseInt("2", 10);
+  .gblAnalyze
+    / Google Tag Manager
+    %noscript
+      %iframe{:height => "0", :src => "https://www.googletagmanager.com/ns.html?id=GTM-KVPWWK", :style => "display:none;visibility:hidden", :width => "0"}
+    :javascript
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KVPWWK');
+    / End Google Tag Manager
+    :javascript
+      var _gaq = _gaq || []; // dummy
+    / /.gblAnalyze
+  .gblAnalyze
+    :javascript
+      (function(w,d){var a='//rtm.zozo.jp/cfm-realtime-marketing/rest/accesslog?';
+      var b={_u:'P9193%3A30557132%3A573851992',_m:'16421157',_c:1,_s:1,_l:encodeURIComponent(location.href),
+      _r:encodeURIComponent(document.referrer),_n:encodeURIComponent(navigator.userAgent),_a:1,_i:[]};
+      b._i=w.crmPrm||[];var c=[];for(var e in b){if(b.hasOwnProperty(e)&&e!='_i'){c.push(e+'='+b[e])}}
+      if(b.hasOwnProperty('_i')){var f=[];for(var i=0,len=b._i.length;i<len;i++){for(var e in b._i[i]){
+      if(b._i[i].hasOwnProperty(e)&&e!='_i'){f.push(e+':'+b._i[i][e])}}}c.push('_i='+encodeURIComponent(f.join(',')))}
+      d.write('<img src="'+a+c.join('&')+'" alt="" width="1" height="1" />')})(window,document);
+    / /.gblAnalyze
+  %noscript
+    #noscript
+      %p
+        ZOZOTOWNではJavaScriptを使用しています。
+        ご利用の際にはブラウザ設定でJavaScript有効にしてください。
+    :css
+      <!--
+      /* noscript warning */
+      #noscript{position:absolute; top:10px; width:100%; z-index:10; }
+      #noscript p{ padding: 5px 0; text-align:center; border:solid 1px #cc0000; color:#cc0000; background:#ffffff; width:980px; margin:auto; }
+      #wrapper{padding: 45px 0 0;}
+      -->
+  :javascript
+    (function(doc,tag){
+      var elm=doc.createElement(tag),tgt=doc.getElementsByTagName(tag)[0],d=new Date();
+      elm.src='https://p01.mul-pay.jp/ext/js/token.js'+'?'+d.getFullYear()+('0'+(d.getMonth()+1)).slice(-2)+('0'+(d.getDate())).slice(-2)+('0'+(d.getHours())).slice(-2);
+      tgt.parentNode.insertBefore(elm,tgt);
+    }(document,'script'));
