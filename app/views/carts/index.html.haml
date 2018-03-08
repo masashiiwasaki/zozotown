@@ -1,0 +1,19 @@
+=render 'carts/header'
+
+.content
+  %article
+    #contentHeader
+      %h1 ショッピングカート
+    #mainContent
+      .notification
+        - flash.each do |key, value|
+          = content_tag :div, value, class: key
+      %table#goodsList.clearfix
+        = render @carts
+      #totalPrice.clearfix
+        商品合計 :
+        = @total_price
+      #linkOrder
+      %span
+        = link_to "/orders/new" do
+          %span レジへ進む

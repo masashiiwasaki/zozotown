@@ -1,0 +1,13 @@
+%tr
+  %td.photo
+    %img{src: cart.item.image_url, alt: cart.item.name}
+  %td.detail
+    %p #{cart.item.shop.name}
+    %p #{cart.item.name}
+    %p カラー : #{cart.color.color}
+    %p サイズ : #{cart.size.size}
+  %td.price
+    ¥#{cart.item.price}
+  %td.fluctuation
+    数量: #{cart.quantity}
+    = link_to "DELETE", "/carts/#{cart.id}", method: :delete
