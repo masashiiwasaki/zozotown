@@ -59,7 +59,7 @@
               %h2 クーポン対象アイテム
             #couponItem.loader.clearfix.id10457
               %ul.rankingList.clearfix
-                = render partial: 'items/item', collection: @items
+                = render @items
             %p.more
               = link_to "クーポン対象アイテム一覧", "_search/?c=UnitShopSearch&cptypeid=10457"
           %section#idxRankingItem.section.typeSale

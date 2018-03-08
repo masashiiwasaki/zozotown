@@ -1,7 +1,7 @@
 %li
   .listInner.clearfix
     .photo
-      = link_to item_path(item.id) do
+      = link_to item_path(item) do
         = image_tag(item.image_url,alt: item.description,width:"171",height:"205")
         .feed-tag-group
           .feed-tag-group-item
