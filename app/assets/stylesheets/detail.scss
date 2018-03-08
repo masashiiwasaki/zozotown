@@ -1,0 +1,371 @@
+.err, .error, .att, .noStock, .new, .sale{
+  color: #E73656 !important;
+}
+
+
+#topBanner{
+  height: 46px;
+  margin: auto;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  a{
+    background: url(http://img4.zozo.jp/shop/common/shop_1177/bar_0.jpg) repeat center center;
+    display: block;
+    height: 46px;
+    img{
+      width: 100%;
+    }
+  }
+}
+#headNavi{
+  #breadCrumb{
+    padding: 25px 0;
+    margin: 0 auto;
+    width: 980px;
+    font-size: 13px;
+    ul{
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      li{
+        background-position: right 0.1em;
+        -webkit-font-smoothing: antialiased;
+        -moz-font-smoothing: antialiased;
+        font-smoothing: antialiased;
+        padding-right: 17px;
+        padding-left: 3px;
+        background: url(http://zozo.jp/common_2015/img/ico/ico_pankuzu.png) no-repeat right 0.1em;
+        display: inline;
+        font-size: 13px;
+        line-height: 1.417;
+        color: #808080;
+      }
+      li:last-child{
+        background: none;
+        padding-right: 0;
+      }
+    }
+  }
+}
+#body{
+  width: 980px;
+  margin: 0 auto 0;
+  position: relative;
+  #goods{
+    min-width: 980px;
+    max-width: 1280px;
+    margin: auto;
+    .innerMain{
+      margin: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-font-smoothing: antialiased;
+      font-smoothing: antialiased;
+      #goodMainArea{
+        padding: 0 0 25px 0;
+        #goodsLeft{
+          width: 560px;
+          float: left;
+          z-index: 30;
+          position: relative;
+          #photoGallery{
+            position: relative;
+            width: 560px;
+            margin-bottom: 5px;
+            #photoMain{
+              width: 500px;
+              height: 600px;
+              background: url(http://zozo.jp/common_2015/img/loader.gif) no-repeat center center;
+              margin: auto;
+              text-align: center;
+              overflow: hidden;
+              position: relative;
+              img{
+                display: block;
+                height: 100%;
+                margin: auto;
+              }
+            }
+            #prevNextCtrl{
+              position: absolute;
+              top: 0;
+              width: 500px;
+              left: 30px;
+              li{
+                position: absolute;
+                top: 0;
+                height: 600px;
+                width: 30px;
+                cursor: pointer;
+                z-index: 5;
+                span{
+                  top: 230px;
+                  position: absolute;
+                  display: block;
+                  padding: 138px 0 0 0;
+                  width: 20px;
+                  height: 0;
+                  text-indent: -9999px;
+                  overflow: hidden;
+                  cursor: pointer;
+                }
+              }
+              #btnPrev{
+                left: -30px;
+                span{
+                  left: 0px;
+                  background: url(http://zozo.jp/common_2015/img/ico/ico_prev_big.png) no-repeat center center;
+                }
+              }
+              #btnNext{
+                right: -30px;
+                span{
+                  right: 0px;
+                  background: url(http://zozo.jp/common_2015/img/ico/ico_next_big.png) no-repeat center center;
+                }
+              }
+            }
+            #photoCaption{
+              font-size: 10px;
+              line-height: 1.2;
+              text-align: center;
+              height: auto;
+              margin: 13px 10px 8px;
+            }
+            #photoThimb{
+              margin: 0 0 0 8px;
+              li{
+                position: relative;
+                z-index: 1;
+                vertical-align: top;
+                display: inline-block;
+                zoom: 1;
+                font-size: 10px;
+                text-align: left !important;
+                width: 36px;
+                margin: 15px 0 0 22px;
+                div{
+                  span{
+                    display: block;
+                    background: #ffffff;
+                    font-size: 10px;
+                    line-height: 1.2;
+                    margin: 0;
+                    text-align: center;
+                  }
+                }
+                p{
+                  margin: 3px 0 0 0;
+                  line-height: 1.3;
+                  width: 45px;
+                }
+                span.imCaption{
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+        #zozoReviewStatus.item_show_control.section.loadApiData{
+            padding: 21px 0 0 0;
+            margin-top: 30px;
+            .tit .h{
+              background: url("http://zozo.jp/common_2015/img/ico/ico_zozo_review.gif") no-repeat scroll left top;
+              padding: 0 0 0 40px;
+              float: none;
+              font-size: 18px;
+            }
+            .container{
+              position: relative;
+              padding: 0;
+              .zozoStaff{
+                margin: 30px 0 0;
+                .feedMedia{
+                  border: none;
+                  border-width: 1px 0;
+                  .feedLink{
+                    padding: 0;
+                    float: left;
+                    display: block;
+                    table-layout: fixed;
+                    position: relative;
+                    width: 140px;
+                    height: 100%;
+                    color: #808080;
+                    text-decoration: none;
+                  }
+                  .feedImg{
+                    width: 140px;
+                  }
+                }
+              }
+            }
+          }
+        #goodsRight{
+          float: right;
+          margin: 0;
+          width: 395px;
+          position: relative;
+          .innerRight{
+            margin: 0;
+            padding: 0;
+
+            #item-intro{
+              border-bottom: 1px #dcdcdc solid;
+              padding: 0 0 20px 0;
+              #nameList{
+                li{
+                  font-size: 13px;
+                  a{
+                    color: #646464;
+                  }
+                }
+              }
+              h1{
+                font-size: 18px;
+                margin: 14px 0 0 0;
+              }
+              #isLaterPay{
+                margin-top: 10px;
+                .priceWrapper{
+                  float: left;
+                  margin-top: 0;
+                  .price{
+                    float: left;
+                    margin-top: 0;
+                    margin: 9px 0 0 0;
+                    font-size: 34px;
+                    line-height: 1.12;
+                    padding: 0;
+                    font-family: helvetica;
+                    span{
+                      padding: 0;
+                      font-size: 12px;
+                      font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ","Lucida Grande",Verdana,"ＭＳ Ｐゴシック",sans-serif;
+                    }
+                  }
+                }
+              }
+              #privilege{
+                margin: 12px 0 0;
+                p{
+                  margin: 5px 0 0 0;
+                  font-size: 13px;
+                }
+                .privilegePoint{
+                  background: url(http://zozo.jp/shop/img/goods_common.png) no-repeat left 2px;
+                  padding: 0 0 0 26px;
+                }
+                #userBookmark{
+                  background: url(http://zozo.jp/shop/img/goods_common.png) no-repeat left -35px;
+                  padding: 0 0 0 26px;
+                }
+              }
+              #exShipping{
+                display: none;
+                position: absolute;
+                z-index: 100;
+                width: 550px;
+                background: #f9f6f4;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+                left: -386px;
+                z-index: 9999;
+              }
+              .reserveBox{
+                background: #f2f2f2;
+                padding: 20px 0px 23px 17px;
+                margin: 25px 0 0 0;
+                border-radius: 2px;
+                .tit{
+                  background: url(http://zozo.jp/shop/img/goods_common.png) no-repeat left -260px;
+                  padding: 2px 0 0 31px;
+                  font-size: 18px;
+                }
+                #arriveScheduleViewArea{
+                  font-size: 15px;
+                  margin: 5px 0 0;
+                }
+                .attention{
+                  margin: 6px 0 0;
+                }
+                ul.info{
+                  font-size: 11px;
+                  margin: 5px 0 0 0;
+                  color: #808080;
+                }
+              }
+              .cartBlock{
+                .blockMain{
+                  border-bottom: 1px solid #dcdcdc;
+                  dl{
+                    padding: 0 0 0 2px;
+                    margin: -1px 0 0;
+                    border-top: 1px solid #dcdcdc;
+                    dt{
+                      display: table-cell;
+                      width: 63px;
+                      padding: 10px 0;
+                      vertical-align: top;
+                      span{
+                        display: block;
+                        width: 63px;
+                      }
+                      span.txt{
+                        font-size: 10px;
+                        line-height: 1.25;
+                        margin: 5px 0 0;
+                      }
+                    }
+                    dd{
+                      display: table-cell;
+                      width: 330px;
+                      ul{
+                        li{
+                          width: 330px;
+                          border-top: 1px solid #ebebeb;
+                          margin: -1px 0 0;
+                          position: relative;
+                        }
+                        li:first-child{
+                          border-top: 1px solid #dcdcdc;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+
+              #reviewAnchor{
+                display: inline-block;
+                margin: 1px 0 0 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
