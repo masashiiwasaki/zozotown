@@ -112,6 +112,10 @@
                                 クレジットカード
                             %dd.point 75ポイント還元
                             %dd.charge ¥0
+                            = form_tag(controller: :orders , action: :create, method: :post) do
+                              = number_field_tag 'amount' , in: 50..9999999
+                              = javascript_include_tag "https://checkout.pay.jp/",'class' => "payjp-button",'data-key' => "#{PAYJP_PUBLIC_KEY}",'type' => "text/javascript", 'data-partial' => "true"
+                              = submit_tag "決済へ"
               #moveWrap
                 #moveContainer
                   #goToNext
