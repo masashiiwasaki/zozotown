@@ -45,6 +45,7 @@ GEM
     bindex (0.5.0)
     builder (3.2.3)
     byebug (10.0.0)
+    coderay (1.1.2)
     capistrano (3.10.1)
       airbrussh (>= 1.0.0)
       i18n
@@ -139,9 +140,9 @@ GEM
     orm_adapter (0.5.0)
     payjp (0.0.6)
       rest-client (~> 2.0)
-    pry (0.11.3)
-      coderay (~> 1.1.0)
-      method_source (~> 0.9.0)
+    pry-byebug (3.6.0)
+      byebug (~> 10.0)
+      pry (~> 0.10)
     pry-rails (0.3.6)
       pry (>= 0.10.4)
     puma (3.11.2)
@@ -259,6 +260,7 @@ DEPENDENCIES
   listen (~> 3.0.5)
   mysql2 (>= 0.3.18, < 0.5)
   payjp
+  pry-byebug
   pry-rails
   puma (~> 3.0)
   rails (~> 5.0.6)

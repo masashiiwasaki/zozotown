@@ -1,0 +1,47 @@
+.content{
+  padding-top: 20px;
+  padding-left: 40px;
+}
+
+#contentHeader h1{
+  font-size: 23px;
+  background-color: white;
+}
+
+.notification{
+  color: red;
+}
+
+.photo{
+  float: left;
+}
+
+.detail{
+  float: left;
+  padding-left: 10px;
+  text-overflow: ellipsis;
+  width: 221px;
+  white-space: nowrap;
+  word-break: break-all;
+  overflow: hidden;
+}
+
+.price{
+  float: left;
+  padding-left: 30px;
+  padding-top: 40px;
+}
+
+.fluctuation{
+  float: left;
+  padding-left: 30px;
+  padding-top: 40px;
+}
+
+#totalPrice{
+  font-size: 15px;
+}
+
+#linkOrder{
+  padding-top: 10px;
+}
