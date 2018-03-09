@@ -145,7 +145,6 @@ ActiveRecord::Schema.define(version: 20180307062455) do
   add_foreign_key "item_lists", "items"
   add_foreign_key "item_lists", "sizes"
   add_foreign_key "item_sub_images", "items"
-  add_foreign_key "item_sub_images", "sub_images"
   add_foreign_key "items", "brands"
   add_foreign_key "items", "shops"
   add_foreign_key "ordered_items", "colors"
@@ -153,4 +152,5 @@ ActiveRecord::Schema.define(version: 20180307062455) do
   add_foreign_key "ordered_items", "orders"
   add_foreign_key "ordered_items", "sizes"
   add_foreign_key "orders", "users"
+  add_foreign_key "sub_images", "colors"
 end

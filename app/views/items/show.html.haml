@@ -221,183 +221,167 @@
                             人
                           / p class="shipping">送料無料</p
                           / /privilege
-                        .reserveBox
-                          %p.tit.att
-                            この商品は一部予約商品です
-                          #arriveScheduleViewArea
-                            %p
-                              お届け：
-                              %span#arriveScheduleView サイズ・カラーで異なります
-                            %p
-                              %a#showArriveSchedule{:href => "#"} お届け予定の確認はこちら
-                          %p.attention
-                            予約商品は、
-                            %span.att> 注文取り消し・返品・交換対象外
-                            です。
-                          %ul.info
-                            %li ※実際にお届けする商品と仕様やサイズが異なる場合がございます。
-                            %li ※生産の都合上、お届け時期が前後する場合がございます。
-                          / /.reserveBox
-                          / [***予約***]
                           / [/グッズ情報]
                         / /#item-intro
                         / [カート関連]
-                        .cartBlock.clearfix
-                          .blockMain
-                            %dl.clearfix
-                              %dt
-                                %span.img
-                                  %img{:alt => "", :src => "http://img5.zozo.jp/goodsimages/152/23301152/23301152B_1_D_35.jpg"}/
-                                %span.txt ホワイト
-                              %dd
-                                %ul
-                                  %li#cart_did_42063854.clearfix{"data-size" => "38"}
-                                    .cartbox
-                                      .stock
-                                        %p
-                                          %span 38 / 
-                                          %span 予約可能
-                                        %p.zozosize
-                                          %span.sizeZ
-                                            %span M
-                                      .cart
-                                        %form{:action => "/_cart/default.html", :method => "post"}
-                                          %input{:name => "c", :type => "hidden", :value => "put"}/
-                                          %input{:name => "sid", :type => "hidden", :value => "33986647"}/
-                                          %input{:name => "rid", :type => "hidden", :value => "1093"}/
-                                          %input{:name => "p_seckey", :type => "hidden", :value => "7a54a0f5eefd49623471186d51aaaf73"}/
-                                          %span.btn
-                                            %input.btn.reserveBtn{:type => "submit", :value => "予約する"}/
-                                      / [***予約***]
-                                      .bkmk
-                                        %form{:action => "#", :onsubmit => "return false;"}
-                                          %span.btn
-                                            %input{:type => "submit", :value => ""}/
-                                          %input{:name => "gid", :type => "hidden", :value => "22301152"}/
-                                          %input{:name => "did", :type => "hidden", :value => "42063854"}/
-                                          %input{:name => "zsids", :type => "hidden", :value => ""}/
-                                  %li#cart_did_42063857.clearfix{"data-size" => "40"}
-                                    .cartbox
-                                      .stock
-                                        %p
-                                          %span 40 / 
-                                          %span 予約可能
-                                      .cart
-                                        %form{:action => "/_cart/default.html", :method => "post"}
-                                          %input{:name => "c", :type => "hidden", :value => "put"}/
-                                          %input{:name => "sid", :type => "hidden", :value => "33986648"}/
-                                          %input{:name => "rid", :type => "hidden", :value => "1093"}/
-                                          %input{:name => "p_seckey", :type => "hidden", :value => "7a54a0f5eefd49623471186d51aaaf73"}/
-                                          %span.btn
-                                            %input.btn.reserveBtn{:type => "submit", :value => "予約する"}/
-                                      / [***予約***]
-                                      .bkmk
-                                        %form{:action => "#", :onsubmit => "return false;"}
-                                          %span.btn
-                                            %input{:type => "submit", :value => ""}/
-                                          %input{:name => "gid", :type => "hidden", :value => "22301152"}/
-                                          %input{:name => "did", :type => "hidden", :value => "42063857"}/
-                                          %input{:name => "zsids", :type => "hidden", :value => ""}/
-                            %dl.clearfix
-                              %dt
-                                %span.img
-                                  %img{:alt => "", :src => "http://img5.zozo.jp/goodsimages/152/23301152/23301152B_8_D_35.jpg"}/
-                                %span.txt ブラック
-                              %dd
-                                %ul
-                                  %li#cart_did_42063858.clearfix{"data-size" => "38"}
-                                    .cartbox
-                                      .stock
-                                        %p
-                                          %span 38 / 
-                                          %span 在庫あり
-                                      .cart
-                                        %form{:action => "/_cart/default.html", :method => "post"}
-                                          %input{:name => "c", :type => "hidden", :value => "put"}/
-                                          %input{:name => "sid", :type => "hidden", :value => "33986649"}/
-                                          %input{:name => "rid", :type => "hidden", :value => "1093"}/
-                                          %input{:name => "p_seckey", :type => "hidden", :value => "7a54a0f5eefd49623471186d51aaaf73"}/
-                                          %span.btn
-                                            %input{:type => "submit", :value => "カートへ入れる"}/
-                                      .bkmk
-                                        %form{:action => "#", :onsubmit => "return false;"}
-                                          %span.btn
-                                            %input{:type => "submit", :value => ""}/
-                                          %input{:name => "gid", :type => "hidden", :value => "22301152"}/
-                                          %input{:name => "did", :type => "hidden", :value => "42063858"}/
-                                          %input{:name => "zsids", :type => "hidden", :value => ""}/
-                                  %li#cart_did_42063859.clearfix{"data-size" => "40"}
-                                    .cartbox
-                                      .stock
-                                        %p
-                                          %span 40 / 
-                                          %span 在庫あり
-                                      .cart
-                                        %form{:action => "/_cart/default.html", :method => "post"}
-                                          %input{:name => "c", :type => "hidden", :value => "put"}/
-                                          %input{:name => "sid", :type => "hidden", :value => "33986650"}/
-                                          %input{:name => "rid", :type => "hidden", :value => "1093"}/
-                                          %input{:name => "p_seckey", :type => "hidden", :value => "7a54a0f5eefd49623471186d51aaaf73"}/
-                                          %span.btn
-                                            %input{:type => "submit", :value => "カートへ入れる"}/
-                                      .bkmk
-                                        %form{:action => "#", :onsubmit => "return false;"}
-                                          %span.btn
-                                            %input{:type => "submit", :value => ""}/
-                                          %input{:name => "gid", :type => "hidden", :value => "22301152"}/
-                                          %input{:name => "did", :type => "hidden", :value => "42063859"}/
-                                          %input{:name => "zsids", :type => "hidden", :value => ""}/
-                            %dl.clearfix
-                              %dt
-                                %span.img
-                                  %img{:alt => "", :src => "http://img5.zozo.jp/goodsimages/152/23301152/23301152B_34_D_35.jpg"}/
-                                %span.txt ブルー
-                              %dd
-                                %ul
-                                  %li#cart_did_50713659.clearfix{"data-size" => "38"}
-                                    .cartbox
-                                      .stock
-                                        %p
-                                          %span 38 / 
-                                          %span 予約可能
-                                      .cart
-                                        %form{:action => "/_cart/default.html", :method => "post"}
-                                          %input{:name => "c", :type => "hidden", :value => "put"}/
-                                          %input{:name => "sid", :type => "hidden", :value => "40573142"}/
-                                          %input{:name => "rid", :type => "hidden", :value => "1093"}/
-                                          %input{:name => "p_seckey", :type => "hidden", :value => "7a54a0f5eefd49623471186d51aaaf73"}/
-                                          %span.btn
-                                            %input.btn.reserveBtn{:type => "submit", :value => "予約する"}/
-                                      / [***予約***]
-                                      .bkmk
-                                        %form{:action => "#", :onsubmit => "return false;"}
-                                          %span.btn
-                                            %input{:type => "submit", :value => ""}/
-                                          %input{:name => "gid", :type => "hidden", :value => "22301152"}/
-                                          %input{:name => "did", :type => "hidden", :value => "50713659"}/
-                                          %input{:name => "zsids", :type => "hidden", :value => ""}/
-                                  %li#cart_did_50713660.clearfix{"data-size" => "40"}
-                                    .cartbox
-                                      .stock
-                                        %p
-                                          %span 40 / 
-                                          %span 予約可能
-                                      .cart
-                                        %form{:action => "/_cart/default.html", :method => "post"}
-                                          %input{:name => "c", :type => "hidden", :value => "put"}/
-                                          %input{:name => "sid", :type => "hidden", :value => "40573143"}/
-                                          %input{:name => "rid", :type => "hidden", :value => "1093"}/
-                                          %input{:name => "p_seckey", :type => "hidden", :value => "7a54a0f5eefd49623471186d51aaaf73"}/
-                                          %span.btn
-                                            %input.btn.reserveBtn{:type => "submit", :value => "予約する"}/
-                                      / [***予約***]
-                                      .bkmk
-                                        %form{:action => "#", :onsubmit => "return false;"}
-                                          %span.btn
-                                            %input{:type => "submit", :value => ""}/
-                                          %input{:name => "gid", :type => "hidden", :value => "22301152"}/
-                                          %input{:name => "did", :type => "hidden", :value => "50713660"}/
-                                          %input{:name => "zsids", :type => "hidden", :value => ""}/
+                      .cartBlock.clearfix
+                        .blockMain
+                          %dl.clearfix
+                            %dt
+                              %span.img
+                                %img{:alt => "", :src => "http://img5.zozo.jp/goodsimages/152/23301152/23301152B_1_D_35.jpg"}/
+                              %span.txt ホワイト
+                            %dd
+                              %ul
+                                %li#cart_did_42063854.clearfix{"data-size" => "38"}
+                                  .cartbox
+                                    .stock
+                                      %p
+                                        %span 38 / 
+                                        %span 予約可能
+                                      %p.zozosize
+                                        %span.sizeZ
+                                          %span M
+                                    .cart
+                                      %span.btn
+                                        = link_to 'カートに入れる',carts_path(item_id: 1,color_id: 1,size_id: 1), method: :post
+                                      / = form_for @cart,:url => { :controller => :cart, :action => :create } do |f|
+                                      /   = f.hidden_field :item_id, value: 1
+                                      /   = f.hidden_field :color_id, value: 1
+                                      /   = f.hidden_field :size_id, value: 1
+                                      /   = f.hidden_field :quantity, value: 1
+                                      / %span.btn
+                                      /   = f.submit 'カートへ入れる', class: 'btn'
+                                    / [***予約***]
+                                    .bkmk
+                                      %form{:action => "#", :onsubmit => "return false;"}
+                                        %span.btn
+                                          %input{:type => "submit", :value => ""}/
+                                        %input{:name => "gid", :type => "hidden", :value => "22301152"}/
+                                        %input{:name => "did", :type => "hidden", :value => "42063854"}/
+                                        %input{:name => "zsids", :type => "hidden", :value => ""}/
+                                %li#cart_did_42063857.clearfix{"data-size" => "40"}
+                                  .cartbox
+                                    .stock
+                                      %p
+                                        %span 40 / 
+                                        %span 予約可能
+                                    .cart
+                                      %form{:action => "/_cart/default.html", :method => "post"}
+                                        %input{:name => "c", :type => "hidden", :value => "put"}/
+                                        %input{:name => "sid", :type => "hidden", :value => "33986648"}/
+                                        %input{:name => "rid", :type => "hidden", :value => "1093"}/
+                                        %input{:name => "p_seckey", :type => "hidden", :value => "7a54a0f5eefd49623471186d51aaaf73"}/
+                                        %span.btn
+                                          %input.btn.reserveBtn{:type => "submit", :value => "カートへ入れる"}/
+                                    / [***予約***]
+                                    .bkmk
+                                      %form{:action => "#", :onsubmit => "return false;"}
+                                        %span.btn
+                                          %input{:type => "submit", :value => ""}/
+                                        %input{:name => "gid", :type => "hidden", :value => "22301152"}/
+                                        %input{:name => "did", :type => "hidden", :value => "42063857"}/
+                                        %input{:name => "zsids", :type => "hidden", :value => ""}/
+                          %dl.clearfix
+                            %dt
+                              %span.img
+                                %img{:alt => "", :src => "http://img5.zozo.jp/goodsimages/152/23301152/23301152B_8_D_35.jpg"}/
+                              %span.txt ブラック
+                            %dd
+                              %ul
+                                %li#cart_did_42063858.clearfix{"data-size" => "38"}
+                                  .cartbox
+                                    .stock
+                                      %p
+                                        %span 38 / 
+                                        %span 在庫あり
+                                    .cart
+                                      %form{:action => "/_cart/default.html", :method => "post"}
+                                        %input{:name => "c", :type => "hidden", :value => "put"}/
+                                        %input{:name => "sid", :type => "hidden", :value => "33986649"}/
+                                        %input{:name => "rid", :type => "hidden", :value => "1093"}/
+                                        %input{:name => "p_seckey", :type => "hidden", :value => "7a54a0f5eefd49623471186d51aaaf73"}/
+                                        %span.btn
+                                          %input{:type => "submit", :value => "カートへ入れる"}/
+                                    .bkmk
+                                      %form{:action => "#", :onsubmit => "return false;"}
+                                        %span.btn
+                                          %input{:type => "submit", :value => ""}/
+                                        %input{:name => "gid", :type => "hidden", :value => "22301152"}/
+                                        %input{:name => "did", :type => "hidden", :value => "42063858"}/
+                                        %input{:name => "zsids", :type => "hidden", :value => ""}/
+                                %li#cart_did_42063859.clearfix{"data-size" => "40"}
+                                  .cartbox
+                                    .stock
+                                      %p
+                                        %span 40 / 
+                                        %span 在庫あり
+                                    .cart
+                                      %form{:action => "/_cart/default.html", :method => "post"}
+                                        %input{:name => "c", :type => "hidden", :value => "put"}/
+                                        %input{:name => "sid", :type => "hidden", :value => "33986650"}/
+                                        %input{:name => "rid", :type => "hidden", :value => "1093"}/
+                                        %input{:name => "p_seckey", :type => "hidden", :value => "7a54a0f5eefd49623471186d51aaaf73"}/
+                                        %span.btn
+                                          %input{:type => "submit", :value => "カートへ入れる"}/
+                                    .bkmk
+                                      %form{:action => "#", :onsubmit => "return false;"}
+                                        %span.btn
+                                          %input{:type => "submit", :value => ""}/
+                                        %input{:name => "gid", :type => "hidden", :value => "22301152"}/
+                                        %input{:name => "did", :type => "hidden", :value => "42063859"}/
+                                        %input{:name => "zsids", :type => "hidden", :value => ""}/
+                          %dl.clearfix
+                            %dt
+                              %span.img
+                                %img{:alt => "", :src => "http://img5.zozo.jp/goodsimages/152/23301152/23301152B_34_D_35.jpg"}/
+                              %span.txt ブルー
+                            %dd
+                              %ul
+                                %li#cart_did_50713659.clearfix{"data-size" => "38"}
+                                  .cartbox
+                                    .stock
+                                      %p
+                                        %span 38 / 
+                                        %span 予約可能
+                                    .cart
+                                      %form{:action => "/_cart/default.html", :method => "post"}
+                                        %input{:name => "c", :type => "hidden", :value => "put"}/
+                                        %input{:name => "sid", :type => "hidden", :value => "40573142"}/
+                                        %input{:name => "rid", :type => "hidden", :value => "1093"}/
+                                        %input{:name => "p_seckey", :type => "hidden", :value => "7a54a0f5eefd49623471186d51aaaf73"}/
+                                        %span.btn
+                                          %input.btn.reserveBtn{:type => "submit", :value => "予約する"}/
+                                    / [***予約***]
+                                    .bkmk
+                                      %form{:action => "#", :onsubmit => "return false;"}
+                                        %span.btn
+                                          %input{:type => "submit", :value => ""}/
+                                        %input{:name => "gid", :type => "hidden", :value => "22301152"}/
+                                        %input{:name => "did", :type => "hidden", :value => "50713659"}/
+                                        %input{:name => "zsids", :type => "hidden", :value => ""}/
+                                %li#cart_did_50713660.clearfix{"data-size" => "40"}
+                                  .cartbox
+                                    .stock
+                                      %p
+                                        %span 40 / 
+                                        %span 予約可能
+                                    .cart
+                                      %form{:action => "/_cart/default.html", :method => "post"}
+                                        %input{:name => "c", :type => "hidden", :value => "put"}/
+                                        %input{:name => "sid", :type => "hidden", :value => "40573143"}/
+                                        %input{:name => "rid", :type => "hidden", :value => "1093"}/
+                                        %input{:name => "p_seckey", :type => "hidden", :value => "7a54a0f5eefd49623471186d51aaaf73"}/
+                                        %span.btn
+                                          %input.btn.reserveBtn{:type => "submit", :value => "予約する"}/
+                                    / [***予約***]
+                                    .bkmk
+                                      %form{:action => "#", :onsubmit => "return false;"}
+                                        %span.btn
+                                          %input{:type => "submit", :value => ""}/
+                                        %input{:name => "gid", :type => "hidden", :value => "22301152"}/
+                                        %input{:name => "did", :type => "hidden", :value => "50713660"}/
+                                        %input{:name => "zsids", :type => "hidden", :value => ""}/
                           / /.blockMain
                         / /.cartBlock
                         / [/カート関連]

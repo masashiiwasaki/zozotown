@@ -3,5 +3,6 @@ class ItemsController < ApplicationController
     @items = Item.includes(:shop).includes(:brand)
   end
   def show
+    @item = Item.new
   end
 end
