@@ -15,10 +15,7 @@
             %p.navi
               %img{:alt => "ログイン・情報入力", :height => "70", :src => "https://zozo.jp/_cart/order/img/step_01.gif", :width => "295"}/
           #twoColumn.clearfix
-            %form#f1.decorateForm.clearfix{action: :create, method: "POST"}
-              %input{:name => "c", :type => "hidden", :value => "ReceiveDestinationAndPay"}/
-              %input{:name => "ctoken", :type => "hidden", :value => ""}/
-              / 左カラム
+            = form_tag(action: :create, method: "POST") do
               #mainContent
                 .inner
                   #registAddress
