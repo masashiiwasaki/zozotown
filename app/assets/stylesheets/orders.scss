@@ -1,3 +1,59 @@
-// Place all the styles related to the orders controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*-- Body style ---------------------------------- */
+body{
+  background: #fff;
+  color: #2d2d2d;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Lucida Grande", Verdana, "ＭＳ Ｐゴシック", sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.clearfix:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.textTruncate, .text-truncate{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: normal;
+  white-space: nowrap;
+}
+
+#wrapper{
+  width: 100%;
+  margin: auto;
+  text-align: left;
+  position: relative;
+}
+
+#hLogo{
+  width: 184px;
+  padding: 26px 0 0;
+  height: 0;
+  background: url(https://zozo.jp/common_2014/img/header/h_logo.gif) no-repeat -2px top;
+  display: block;
+  overflow: hidden;
+  line-height: 1.2;
+  -webkit-font-smoothing: antialiased;
+}
+
+#header {
+    background: transparent;
+    z-index: 5;
+    position: relative;
+    padding: 0;
+}
+
+#contentHeader{
+  %h1{
+    float: left;
+  }
+  %p.navi{
+    float: right;
+  }
+}

@@ -1,0 +1,182 @@
+%body#zozotown
+  #wrapper
+    #gblHeader.header
+      #hWrapper
+        #header.clearfix
+          %p#hLogo
+            %a{:href => "http://zozo.jp/"} ZOZOTOWN
+        / /#hWrapper
+      / /#gblHeader
+    #body.clearfix
+      #content
+        %article
+          #contentHeader.clearfix
+            %h1 お届け先・配送方法・お支払い方法
+            %p.navi
+              %img{:alt => "ログイン・情報入力", :height => "70", :src => "https://zozo.jp/_cart/order/img/step_01.gif", :width => "295"}/
+          #twoColumn.clearfix
+            = form_tag(action: :create, method: "POST") do
+              #mainContent
+                .inner
+                  #registAddress
+                    #addressFrom.atAd.clearfix
+                      %dl#addCheck.accordions.clearfix
+                        %dt.tit お届け先
+                        %dd.accordion.top
+                          .deliveryAdd.clearfix
+                            %label.trigger{:for => "addRegist0"}
+                              %input#addRegist0{:checked => "checked", :name => "de", :type => "radio", :value => "0"}/
+                              %span.wrap
+                                %span.name あああ 様
+                                %span.add
+                                  〒XXXXXX
+                                  %span.deliveryNowTag 即日配送可能
+                                %span.add 住所：東京都XXXXXXXXXXXXXXXXXXX
+                                %span.tel 電話：XXX-XXXX-XXXX
+                        %dd.accordion.keep
+                          %dl
+                            %dt
+                              %label.trigger{:for => "addNew"}
+                                %input#addNew{:name => "de", :type => "radio", :value => "-1"}>/
+                                新しいお届け先を追加する
+                                %input{:name => "AddAddress", :type => "hidden", :value => "1"}/
+                          .accInner.formItem.clearfix
+                            .accDetail
+                              #registeredAddress.atAd
+                                %dl#registeredTblType.pullDownWrapper.clearfix
+                                  %dt 種別
+                                  %dd.select
+                                    %select.pullId{:name => "TypeName"}
+                                      %option{:value => "勤務先・職場"} 勤務先・職場
+                                      %option{:value => "友人・知人宅"} 友人・知人宅
+                                      %option{:value => "実家"} 実家
+                                      %option{:value => "その他"} その他
+                                  /
+                                    dd>
+                                    <p class="pullDownSelect">種別</p>
+                                    </dd
+                                %dl#registeredTblName.clearfix
+                                  %dt お名前
+                                  %dd
+                                    %input.inputL.jpn{:name => "Name_Add", :placeholder => "姓 名(全角)", :type => "text", :value => ""}/
+                                %dl.clearfix.tblZip
+                                  %dt 郵便番号
+                                  %dd#tblZip.linedParent
+                                    %input#zipCodeNum.inputL.num{:maxlength => "7", :name => "Zipcode_Add", :placeholder => "例） 2617116", :type => "text", :value => ""}/
+                                    / p class="autoAddBtn"><a class="grayBtn" href="#">自動入力</a></p
+                                    / a target="_blank" href="http://www.post.japanpost.jp/zipcode/index.html">検索</a
+                                %dl.pullDownWrapper.clearfix.tblArea
+                                  %dt 都道府県
+                                  %dd
+                                    %p.pref 郵便番号を入力してください
+                                    %input{:name => "PrefID_Add", :type => "hidden", :value => ""}/
+                                %dl.clearfix.tblAddress1
+                                  %dt 住所1
+                                  %dd
+                                    %input.inputL{:maxlength => "50", :name => "Address1_Add", :placeholder => "市区町村、番地など", :type => "text", :value => ""}/
+                                %dl#registeredTblAddress2.clearfix
+                                  %dt 住所2
+                                  %dd
+                                    %input.inputL{:maxlength => "50", :name => "Address2_Add", :placeholder => "建物名など（任意）", :type => "text", :value => ""}/
+                                %dl#registeredTblTel1.clearfix
+                                  %dt 電話番号
+                                  %dd.listParent.telForm
+                                    %ul.clearfix.list.plural
+                                      %li
+                                        %input.inputS.num.del{:maxlength => "5", :name => "Tel1_Add", :placeholder => "例） 090", :type => "text", :value => ""}/
+                                      %li
+                                        %input.inputS.num{:maxlength => "5", :name => "Tel2_Add", :placeholder => "1234", :type => "text", :value => ""}/
+                                      %li
+                                        %input.inputS.num{:maxlength => "5", :name => "Tel3_Add", :placeholder => "5678", :type => "text", :value => ""}/
+                                / /#registeredAddress
+                        / /#addCheck
+                      / /#addressFrom
+                    %dl#deliveryCheck.accordions.clearfix
+                      %dt.tit
+                        配送方法
+                        %br>/
+                        お届け予定日
+                      %dd.loader 郵便番号を入力後にお選びいただけます
+                      / /#deliveryCheck
+                    #paymentForm.clearfix
+                      %dl#paymentCheck.accordions.clearfix.radioWrap.covPayWrap
+                        %dt.tit お支払い方法
+                        %dd.accordion.keep
+                          %dl#creditCard.cleafix
+                            %dt
+                              %label.trigger{:for => "creditcard"}
+                                %input#creditcard{:name => "ph_zc", :type => "radio", :value => "1"}>/
+                                クレジットカード
+                            %dd.point 75ポイント還元
+                            %dd.charge ¥0
+              #moveWrap
+                #moveContainer
+                  #goToNext
+                    .priceList
+                      = javascript_include_tag "https://checkout.pay.jp/",'class' => "payjp-button",'data-key' => "#{PAYJP_PUBLIC_KEY}",'type' => "text/javascript", 'data-partial' => "true"
+                      %p.btn
+                        %input.gBtn.btnL.btnSubmit{:type => "submit", :value => "次へ進む"}/
+                      .price.clearfix
+                        %dl.orderPrice.clearfix
+                          %dt 商品合計
+                          %dd#subTotal ¥8,100
+                        %dl.shipment.clearfix
+                          %dt 送料
+                          %dd#postage ¥200
+                        %dl.shipment.clearfix.hide
+                          %dt 即日配送手数料
+                          %dd#deliverynowfee ¥350
+                        %dl.shipment.clearfix
+                          %dt 支払い手数料
+                          %dd#fee ¥0
+                        %dl.totalPrice.clearfix
+                          %dt
+                            合計
+                            %span.tax （税込）
+                          %dd#total.att
+                            = number_field_tag 'amount' , in: 50..9999999
+                    / /.priceList
+                  / /#goToNext
+                / moveContainer
+              / /#moveWrap
+            / /右カラム
+          / /#twoColumn
+          #attention
+            %ul
+              %li
+                ※
+                %a{:href => "https://zozo.jp/_card/zozocard.html", :target => "_blank"} ZOZOCARDとは？
+              %li
+                ※デビット機能付きカード、カード会社発行のプリペイドカードのご利用はお控えください。詳しくは、
+                %a{:href => "/_help/default.html?cid=9#help_4110", :target => "_blank"}> 注意事項
+                をご確認ください。
+                %br/
+              %li ※コンビニを選択された場合、お支払いを確認後に配送方法「指定なし」でのお届けとなります。
+        / /#content
+      / /#body
+    %hr/
+    / /#wrapper
+  #gblFooter.footer
+    #fWrapper
+      #fCorporate.clearfix
+        %ul.clearfix
+          %li
+            %a{:href => "http://www.starttoday.jp/?p_no=1"} コーポレートサイト
+          %li
+            %a{:href => "http://www.starttoday.jp/about/profile/"} 会社概要
+          %li
+            %a{:href => "http://www.starttoday.jp/ir/"} IR情報
+          %li
+            %a{:href => "http://www.starttoday.jp/recruit/"} 採用情報
+          %li
+            %a{:href => "/info/kiyaku.html?p_no=1"} 利用規約
+          %li
+            %a{:href => "/info/pp.html?p_no=1"} 個人情報保護方針
+          %li
+            %a{:href => "/_newhelp/help_resort_torihikihou.html?p_no=1"} 特定商取引法に基づく表示・古物営業法に基づく表示
+        #fCopyRight
+          %p#copy COPYRIGHT © START TODAY CO.,LTD. ALL RIGHTS RESERVED.
+          %p サイト内の文章、画像などの著作物は株式会社スタートトゥデイに属します。複製、無断転載を禁止します。
+        / /#fCorporate
+      / /#fWrapper
+    / /#gblFooter

@@ -28,11 +28,14 @@ gem 'haml-rails'
 
 gem 'erb2haml'
 
+gem 'payjp'
+
 group :production do
   gem 'unicorn'
 end
 
 group :development, :test do
+  gem 'pry-rails'
   gem 'capistrano'
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
