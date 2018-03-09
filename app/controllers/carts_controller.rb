@@ -30,8 +30,8 @@ class CartsController < ApplicationController
 
 private
   def cart_params
-    params.require(:cart).permit(:item_id, :color_id, :size_id, :quantity).merge(user_id: 1)
-    # .merge(user_id: current_user.id)
+    params.permit(:item_id, :color_id, :size_id).merge(user_id: 1)
+
   end
 
   def total_price(carts)
