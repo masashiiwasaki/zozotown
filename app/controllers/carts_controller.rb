@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
   # before_action後で設定
+  # 本実装ではログイン時の分岐を足す
   def index
     user = User.find(1)
     # user = User.find(current_user.id)
