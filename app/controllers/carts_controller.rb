@@ -5,7 +5,7 @@ class CartsController < ApplicationController
     user = User.find(1)
     # user = User.find(current_user.id)
     @carts = user.carts
-    total_price(@carts)
+    @total_price = Cart.total_price(@carts)
   end
 
   def create
@@ -32,12 +32,5 @@ private
   def cart_params
     params.permit(:item_id, :color_id, :size_id, :quantity).merge(user_id: 1)
 
-  end
-
-  def total_price(carts)
-    @total_price = 0
-    carts.each do |cart|
-      @total_price += cart.item.price
-    end
   end
 end
