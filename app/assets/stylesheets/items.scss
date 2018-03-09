@@ -386,13 +386,67 @@ body{
           }
         }
       }
+      .lists{
+        li{
+          margin: 7px 0 0 0;
+        }
+      }
+      .txt{
+        margin: 10px 0 0 0;
+        p{
+          color: #808080;
+        }
+        ul{
+          margin: 11px 0 0 0;
+          li{
+            float: left;
+            border-right: 1px solid #dcdcdc;
+            padding: 0 9px 0 0;
+            margin: 4px 10px 0 0;
+            line-height: 1;
+          }
+          .last{
+            border-right: none;
+          }
+        }
+      }
+
     }
   }
   #rightContentSub{
     float: right;
     width: 212px;
+        .sideBannerItem:first-child{
+          margin: 27px 0 0 0;
+        }
+        .sideBannerItem{
+          margin: 15px 0 0 0;
+          a{
+            display: block;
+            position: relative;
+            overflow: hidden;
+          }
+        }
+        .sidenav{
+          margin-top: 22px;
+          padding-bottom: 26px;
+          word-wrap: break-word;
+          .sidenavHeader{
+            display: table;
+            width: 100%;
+            .sidenavH{
+              white-space: nowrap;
+              display: table-cell;
+              vertical-align: baseline;
+              font-size: 18px;
+              line-height: 1.6;
+            }
+          }
+        }
   }
 }
+
+
 
 section.section .sectionHeader h1,
 section.section .sectionHeader h2{
@@ -406,11 +460,120 @@ section.section .sectionHeader h2{
   padding: 0 0 6px 0;
 }
 
+
 /*-- rightContent style ---------------------------------- */
 
+/*-- footer style ---------------------------------- */
+#gblFooter{
+  margin-top: 30px;
+  width: 100%;
+  font-size: 12px;
+  background: #f0f0f0;
+  a{
+    color: #808080;
+  }
+  #fWrapper{
+    margin: auto;
+    width: 980px;
+    position: relative;
+    #fInner{
+      overflow: hidden;
+      .fBox{
+        float: left;
+        border-right: 1px solid #e5e5e5;
+        padding: 0 0 600px 0;
+        margin: 55px 0 -600px 0;
+        li:first-child{
+          margin: 0;
+        }
+        ul{
+          padding: 0px 37px 5px 39px;
+          li{
+            margin: 2px 0 0;
+            a{
+              line-height: 1.455;
+            }
+          }
+          li.ico{
+            background: url(http://zozo.jp/common_2015/img/common/ico_common.png) no-repeat;
+            padding: 0 0 0 22px;
+          }
+          li.ico_tw{
+            background-position: -1px -712px;
+            margin: 4px 0 0 0;
+          }
+          li.ico_fb{
+            background-position: 1px -785px;
+            margin: 3px 0 0 0;
+          }
+          li.ico_in{
+            background-position: -2px -1374px;
+            margin: 3px 0 0 0;
+          }
+        }
+      }
+      #fService{
+        width: 127px;
+        margin-left: 0;
+        ul{
+          padding: 0px 0 5px;
+        }
+      }
+      #fContents{
+        padding: 0 25px 600px 40px;
+        ul:first-child{
+          padding: 0 25px 5px 0;
+        }
+        ul{
+          float: left;
+          padding: 0 0 5px;
+        }
+      }
+      #fMobile{
+        border-right: none;
+      }
+    }
+    #fCorporate{
+      margin: auto;
+      text-align: left;
+      padding: 21px 0 12px;
+      ul{
+        padding: 12px 0 10px;
+        border-bottom: 1px solid #e5e5e5;
+        border-top: 1px solid #e5e5e5;
+        li{
+          float: left;
+          padding: 0 7px 0 0;
+          margin: 0 10px 0 0;
+          border-right: 1px solid #e5e5e5;
+          letter-spacing: 0.2px;
+          a.ico_blank{
+            background: url(http://zozo.jp/common_2015/img/ico/ico_blank_03.png) no-repeat right 0.2em;
+            padding-right: 16px;
+            padding-top: 1px;
+          }
+        }
+      }
+      #fCopyRight{
+        margin: 15px 0 0 0;
+        font-size: 10px;
+        color: #808080;
+        letter-spacing: 0.2px;
+        background: url(http://zozo.jp/common_2015/img/common/ico_common.png) no-repeat 0 -637px;
+        padding: 0 0 0 39px;
+        #copy{
+          font-size: 11px;
+        }
+      }
+    }
+
+  }
 
 
 
+}
+
+/*-- footer style ---------------------------------- */
 
 
 
