@@ -135,6 +135,7 @@
                             %span.tax （税込）
                           %dd#total.att
                             = label_tag(:amount, "#{@items_total_price}")
+                            = hidden_field_tag(:amount, @items_total_price)
                     / /.priceList
                   / /#goToNext
                 / moveContainer
