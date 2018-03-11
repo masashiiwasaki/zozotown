@@ -11,4 +11,12 @@ class Cart < ApplicationRecord
     end
     return total_price
   end
+
+  def self.add_order_items_and_destory_carts(carts, ordered_id)
+    carts.each {|cart|
+      binding.pry
+      OrderedItem.create(order_id: ordered_id, item_id: cart.item_id, color_id: cart.color_id, size_id: cart.size_id, quantity: cart.quantity)
+      cart.destroy
+    }
+  end
 end
