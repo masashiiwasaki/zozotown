@@ -134,7 +134,7 @@
                             合計
                             %span.tax （税込）
                           %dd#total.att
-                            = number_field_tag 'amount' , in: 50..9999999
+                            = label_tag(:amount, "#{@items_total_price}")
                     / /.priceList
                   / /#goToNext
                 / moveContainer
