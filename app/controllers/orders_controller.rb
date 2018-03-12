@@ -5,17 +5,21 @@ class OrdersController < ApplicationController
   end
 
   def create
-    # ZOZOTOWNのDBに注文データ登録
-    carts = Cart.where(user_id: 1) # あとで修正
-    order = Order.new(user_id: 1, total_price: params[:amount].to_i, status: 1)
-    if order.save
-      ordered_id = Order.last.id
-      Cart.add_order_items_and_destory_carts(carts, ordered_id)
-    else
-    end
+    ActiveRecord::Base.transaction do
+      # ZOZOTOWNのDBに注文データ登録
+      carts = Cart.where(user_id: 1) # あとで修正
+      order = Order.new(user_id: 1, total_price: params[:amount].to_i, status: 1)
+      if order.save!
+        ordered_id = Order.last.id
+        Cart.add_order_items_and_destory_carts(carts, ordered_id)
+      else
+      end
 
-    # PAYJPサーバに決済データ送信
-    Payjp.api_key = PAYJP_SECRET_KEY
-    Payjp::Charge.create(currency: 'jpy', amount: params[:amount], card: params['payjp-token'])
+      # PAYJPサーバに決済データ送信
+      Payjp.api_key = PAYJP_SECRET_KEY
+      Payjp::Charge.create(currency: 'jpy', amount: params[:amount], card: params['payjp-token'])
+    end
+    rescue => e
+      render plain: e.message
   end
 end
