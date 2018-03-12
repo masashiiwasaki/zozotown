@@ -13,8 +13,6 @@ Things you may want to cover:
 
 * Database creation
 
-<!-- 以下は仮実装のDB設計 -->
-
 ## usersテーブル
 
 |Column|Type|Options|
