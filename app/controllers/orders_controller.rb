@@ -1,12 +1,12 @@
 class OrdersController < ApplicationController
   def new
-    carts = Cart.where(user_id: 1)
+    carts = Cart.where(user_id: 1) # あとで修正
     @items_total_price = carts.inject(0){|result, cart| result + cart.quantity * cart.item.price }
   end
 
   def create
     # ZOZOTOWNのDBに注文データ登録
-    carts = Cart.where(user_id: 1)
+    carts = Cart.where(user_id: 1) # あとで修正
     order = Order.new(user_id: 1, total_price: params[:amount].to_i, status: 1)
     if order.save
       ordered_id = Order.last.id
