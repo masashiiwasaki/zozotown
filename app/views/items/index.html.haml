@@ -89,7 +89,7 @@
               %h2 チェックしたアイテム
             #pickupItem.loader.pickupList.clearfix
               %ul.pickupList.clearfix
-                - unless @checked_items.blank?
+                - if @checked_items.present?
                   - @checked_items.each do |checked_item|
                     = render partial: "item", locals: { item: checked_item }
           %section#pickupShops.section.pickup
