@@ -7,9 +7,7 @@ class ItemsController < ApplicationController
   def show
     # チェックした商品をsessionに保存し、チェック済商品を画面表示できるようにする
     # sessionがない場合は初期化
-    unless session[:checked_item_ids]
-      session[:checked_item_ids] = []
-    end
+    session[:checked_item_ids] = session[:checked_item_ids].present? ? session[:checked_item_ids] : []
     # sessionにチェックした商品IDを保存
     session[:checked_item_ids] << params[:id]
     @checked_items = Item.where(id: session[:checked_item_ids])
