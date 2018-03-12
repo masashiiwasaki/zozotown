@@ -12,7 +12,6 @@ class OrdersController < ApplicationController
       if order.save!
         ordered_id = Order.last.id
         Cart.add_order_items_and_destory_carts(carts, ordered_id)
-      else
       end
 
       # PAYJPサーバに決済データ送信
