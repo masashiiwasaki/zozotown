@@ -273,3 +273,32 @@
 ### Association
 - belongs_to :order_history
 - belongs_to :item
+
+## paymentsテーブル
+
+|Column|Type|Option|
+|------|----|------|
+|method|string|null: flase|
+|fee|integer|null: false|
+
+### Association
+- has_many :orders
+
+## shipmentsテーブル
+
+|Column|Type|Option|
+|------|----|------|
+|method|string|null: flase|
+|fee|integer|null: false|
+
+### Association
+- has_many :orders
+
+## shipment_statusテーブル
+
+|Column|Type|Option|
+|------|----|------|
+|status|string|null: flase|
+
+### Association
+- has_many :order_histories
