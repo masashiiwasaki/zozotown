@@ -56,6 +56,15 @@ ActiveRecord::Schema.define(version: 20180313102450) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "item_id",    null: false
+    t.string   "image_url",  null: false
+    t.integer  "color_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["color_id"], name: "index_images_on_color_id", using: :btree
+    t.index ["item_id"], name: "index_images_on_item_id", using: :btree
+
   create_table "favorite_brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",    null: false
     t.integer  "brand_id",   null: false
@@ -95,24 +104,24 @@ ActiveRecord::Schema.define(version: 20180313102450) do
     t.index ["size_id"], name: "index_item_lists_on_size_id", using: :btree
   end
 
-  create_table "item_sub_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "item_id",      null: false
-    t.integer  "sub_image_id", null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["item_id"], name: "index_item_sub_images_on_item_id", using: :btree
-    t.index ["sub_image_id"], name: "index_item_sub_images_on_sub_image_id", using: :btree
-  end
-
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "price",                     null: false
-    t.string   "name",                      null: false
-    t.text     "description", limit: 65535, null: false
-    t.integer  "shop_id",                   null: false
-    t.integer  "brand_id",                  null: false
-    t.string   "image_url",                 null: false
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "name",                                        null: false
+    t.text     "description",     limit: 65535,               null: false
+    t.integer  "shop_id",                                     null: false
+    t.integer  "brand_id",                                    null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+    t.integer  "regular_price",                               null: false
+    t.integer  "proposed_price",                              null: false
+    t.integer  "point_get",                     default: 0,   null: false
+    t.integer  "gender_id",                                   null: false
+    t.integer  "category_id",                                 null: false
+    t.string   "material"
+    t.string   "made_in"
+    t.integer  "shipping_fee",                  default: 200, null: false
+    t.integer  "shipping_option",               default: 0,   null: false
+    t.integer  "lapping_option",                default: 0,   null: false
+    t.integer  "ident_code"
     t.index ["brand_id"], name: "index_items_on_brand_id", using: :btree
     t.index ["shop_id"], name: "index_items_on_shop_id", using: :btree
   end
@@ -188,14 +197,6 @@ ActiveRecord::Schema.define(version: 20180313102450) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "sub_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "color_id",   null: false
-    t.string   "image_url",  null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["color_id"], name: "index_sub_images_on_color_id", using: :btree
-  end
-
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -228,7 +229,6 @@ ActiveRecord::Schema.define(version: 20180313102450) do
   add_foreign_key "item_lists", "colors"
   add_foreign_key "item_lists", "items"
   add_foreign_key "item_lists", "sizes"
-  add_foreign_key "item_sub_images", "items"
   add_foreign_key "items", "brands"
   add_foreign_key "items", "shops"
   add_foreign_key "order_histories", "orders"
@@ -240,5 +240,4 @@ ActiveRecord::Schema.define(version: 20180313102450) do
   add_foreign_key "orders", "payments"
   add_foreign_key "orders", "shipments"
   add_foreign_key "orders", "users"
-  add_foreign_key "sub_images", "colors"
 end
