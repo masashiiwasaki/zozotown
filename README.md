@@ -262,7 +262,7 @@
 |Column|Type|Option|
 |------|----|------|
 |ordered_history_id|references|null: false, foreign_key: true|
-|item_id|references|null: false, foreign_key: true|
+|item_list_id|references|null: false, foreign_key: true|
 |item_name|string|null: flase|
 |shop_name|string|null: flase|
 |color|string|null: flase|
