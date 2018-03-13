@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180313065920) do
+ActiveRecord::Schema.define(version: 20180313102450) do
+
+  create_table "address_lists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",          null: false
+    t.string   "name",             null: false
+    t.integer  "postcode",         null: false
+    t.string   "address_main",     null: false
+    t.string   "address_sub"
+    t.integer  "telephone_number", null: false
+    t.integer  "default_flag"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["user_id"], name: "index_address_lists_on_user_id", using: :btree
+  end
 
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -113,26 +126,48 @@ ActiveRecord::Schema.define(version: 20180313065920) do
     t.index ["shop_id"], name: "index_items_on_shop_id", using: :btree
   end
 
+  create_table "order_histories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "order_id",          null: false
+    t.datetime "shipping_schedule"
+    t.date     "shipped_date"
+    t.integer  "shiping_status_id", null: false
+    t.index ["order_id"], name: "index_order_histories_on_order_id", using: :btree
+    t.index ["shiping_status_id"], name: "index_order_histories_on_shiping_status_id", using: :btree
+  end
+
   create_table "ordered_items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "order_id",   null: false
-    t.integer  "item_id",    null: false
-    t.integer  "color_id",   null: false
-    t.integer  "size_id",    null: false
-    t.integer  "quantity",   null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "order_id",         null: false
+    t.integer  "color_id",         null: false
+    t.integer  "size_id",          null: false
+    t.integer  "quantity",         null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "regular_price",    null: false
+    t.string   "item_name",        null: false
+    t.string   "shop_name",        null: false
+    t.string   "color",            null: false
+    t.string   "size",             null: false
+    t.integer  "order_history_id", null: false
     t.index ["color_id"], name: "index_ordered_items_on_color_id", using: :btree
-    t.index ["item_id"], name: "index_ordered_items_on_item_id", using: :btree
+    t.index ["order_history_id"], name: "index_ordered_items_on_order_history_id", using: :btree
     t.index ["order_id"], name: "index_ordered_items_on_order_id", using: :btree
     t.index ["size_id"], name: "index_ordered_items_on_size_id", using: :btree
   end
 
   create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",     null: false
-    t.integer  "total_price", null: false
-    t.integer  "status",      null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "user_id",                       null: false
+    t.integer  "total_price",                   null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.datetime "shipping_schedule"
+    t.integer  "point_used",        default: 0, null: false
+    t.integer  "point_get",                     null: false
+    t.integer  "address_list_id",               null: false
+    t.integer  "shipment_id",                   null: false
+    t.integer  "payment_id",                    null: false
+    t.index ["address_list_id"], name: "index_orders_on_address_list_id", using: :btree
+    t.index ["payment_id"], name: "index_orders_on_payment_id", using: :btree
+    t.index ["shipment_id"], name: "index_orders_on_shipment_id", using: :btree
     t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
   end
 
@@ -196,9 +231,13 @@ ActiveRecord::Schema.define(version: 20180313065920) do
   add_foreign_key "item_lists", "sizes"
   add_foreign_key "items", "brands"
   add_foreign_key "items", "shops"
+  add_foreign_key "order_histories", "orders"
   add_foreign_key "ordered_items", "colors"
-  add_foreign_key "ordered_items", "items"
+  add_foreign_key "ordered_items", "order_histories"
   add_foreign_key "ordered_items", "orders"
   add_foreign_key "ordered_items", "sizes"
+  add_foreign_key "orders", "address_lists"
+  add_foreign_key "orders", "payments"
+  add_foreign_key "orders", "shipments"
   add_foreign_key "orders", "users"
 end
