@@ -10,20 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180313071233) do
-
-  create_table "address_lists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",          null: false
-    t.string   "name",             null: false
-    t.integer  "postcode",         null: false
-    t.string   "address_main",     null: false
-    t.string   "address_sub"
-    t.integer  "telephone_number", null: false
-    t.integer  "default_flag"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.index ["user_id"], name: "index_address_lists_on_user_id", using: :btree
-  end
+ActiveRecord::Schema.define(version: 20180313064447) do
 
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -138,6 +125,20 @@ ActiveRecord::Schema.define(version: 20180313071233) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
+  end
+
+  create_table "payments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string  "method", null: false
+    t.integer "fee",    null: false
+  end
+
+  create_table "shipments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string  "method", null: false
+    t.integer "fee",    null: false
+  end
+
+  create_table "shipping_statuses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "status", null: false
   end
 
   create_table "shops", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
