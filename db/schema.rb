@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180307062455) do
+ActiveRecord::Schema.define(version: 20180313072635) do
 
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -32,8 +32,40 @@ ActiveRecord::Schema.define(version: 20180307062455) do
     t.index ["user_id"], name: "index_carts_on_user_id", using: :btree
   end
 
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "main"
+    t.string   "sub"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "colors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "demensions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "item_id",        null: false
+    t.integer  "size_id",        null: false
+    t.integer  "shoulder_width"
+    t.integer  "body_width"
+    t.integer  "arm_length"
+    t.integer  "weight"
+    t.integer  "waist"
+    t.integer  "rise"
+    t.integer  "inseam"
+    t.integer  "hem"
+    t.integer  "thigh"
+    t.integer  "hip"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["item_id"], name: "index_demensions_on_item_id", using: :btree
+    t.index ["size_id"], name: "index_demensions_on_size_id", using: :btree
+  end
+
+  create_table "genders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "gender"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -141,6 +173,8 @@ ActiveRecord::Schema.define(version: 20180307062455) do
   add_foreign_key "carts", "items"
   add_foreign_key "carts", "sizes"
   add_foreign_key "carts", "users"
+  add_foreign_key "demensions", "items"
+  add_foreign_key "demensions", "sizes"
   add_foreign_key "item_lists", "colors"
   add_foreign_key "item_lists", "items"
   add_foreign_key "item_lists", "sizes"
