@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180313064447) do
+ActiveRecord::Schema.define(version: 20180307062455) do
 
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -18,22 +18,17 @@ ActiveRecord::Schema.define(version: 20180313064447) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "cart_records", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",      null: false
-    t.integer  "item_list_id", null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["item_list_id"], name: "index_cart_records_on_item_list_id", using: :btree
-    t.index ["user_id"], name: "index_cart_records_on_user_id", using: :btree
-  end
-
   create_table "carts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",                  null: false
-    t.integer  "quantity",     default: 0, null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.integer  "item_list_id",             null: false
-    t.index ["item_list_id"], name: "index_carts_on_item_list_id", using: :btree
+    t.integer  "user_id",                null: false
+    t.integer  "item_id",                null: false
+    t.integer  "color_id",               null: false
+    t.integer  "size_id",                null: false
+    t.integer  "quantity",   default: 0, null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.index ["color_id"], name: "index_carts_on_color_id", using: :btree
+    t.index ["item_id"], name: "index_carts_on_item_id", using: :btree
+    t.index ["size_id"], name: "index_carts_on_size_id", using: :btree
     t.index ["user_id"], name: "index_carts_on_user_id", using: :btree
   end
 
@@ -41,33 +36,6 @@ ActiveRecord::Schema.define(version: 20180313064447) do
     t.string   "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "favorite_brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",    null: false
-    t.integer  "brand_id",   null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["brand_id"], name: "index_favorite_brands_on_brand_id", using: :btree
-    t.index ["user_id"], name: "index_favorite_brands_on_user_id", using: :btree
-  end
-
-  create_table "favorite_items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",      null: false
-    t.integer  "item_list_id", null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["item_list_id"], name: "index_favorite_items_on_item_list_id", using: :btree
-    t.index ["user_id"], name: "index_favorite_items_on_user_id", using: :btree
-  end
-
-  create_table "favorite_shops", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",    null: false
-    t.integer  "shop_id",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["shop_id"], name: "index_favorite_shops_on_shop_id", using: :btree
-    t.index ["user_id"], name: "index_favorite_shops_on_user_id", using: :btree
   end
 
   create_table "item_lists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -127,20 +95,6 @@ ActiveRecord::Schema.define(version: 20180313064447) do
     t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
   end
 
-  create_table "payments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string  "method", null: false
-    t.integer "fee",    null: false
-  end
-
-  create_table "shipments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string  "method", null: false
-    t.integer "fee",    null: false
-  end
-
-  create_table "shipping_statuses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "status", null: false
-  end
-
   create_table "shops", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -162,8 +116,13 @@ ActiveRecord::Schema.define(version: 20180313064447) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",                   default: "", null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
+    t.integer  "postcode"
+    t.string   "address_main"
+    t.string   "address_sub"
+    t.integer  "telephone_number"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -174,22 +133,14 @@ ActiveRecord::Schema.define(version: 20180313064447) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.integer  "points",                 default: 0
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "address_lists", "users"
-  add_foreign_key "cart_records", "item_lists"
-  add_foreign_key "cart_records", "users"
-  add_foreign_key "carts", "item_lists"
+  add_foreign_key "carts", "colors"
+  add_foreign_key "carts", "items"
+  add_foreign_key "carts", "sizes"
   add_foreign_key "carts", "users"
-  add_foreign_key "favorite_brands", "brands"
-  add_foreign_key "favorite_brands", "users"
-  add_foreign_key "favorite_items", "item_lists"
-  add_foreign_key "favorite_items", "users"
-  add_foreign_key "favorite_shops", "shops"
-  add_foreign_key "favorite_shops", "users"
   add_foreign_key "item_lists", "colors"
   add_foreign_key "item_lists", "items"
   add_foreign_key "item_lists", "sizes"
