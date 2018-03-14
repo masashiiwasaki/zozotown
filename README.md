@@ -262,7 +262,7 @@
 |Column|Type|Option|
 |------|----|------|
 |ordered_history_id|references|null: false, foreign_key: true|
-|item_id|references|null: false, foreign_key: true|
+|item_list_id|references|null: false, foreign_key: true|
 |item_name|string|null: flase|
 |shop_name|string|null: flase|
 |color|string|null: flase|
@@ -273,3 +273,32 @@
 ### Association
 - belongs_to :order_history
 - belongs_to :item
+
+## paymentsテーブル
+
+|Column|Type|Option|
+|------|----|------|
+|method|string|null: flase|
+|fee|integer|null: false|
+
+### Association
+- has_many :orders
+
+## shipmentsテーブル
+
+|Column|Type|Option|
+|------|----|------|
+|method|string|null: flase|
+|fee|integer|null: false|
+
+### Association
+- has_many :orders
+
+## shipment_statusテーブル
+
+|Column|Type|Option|
+|------|----|------|
+|status|string|null: flase|
+
+### Association
+- has_many :order_histories
