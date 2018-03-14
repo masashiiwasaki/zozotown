@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180313102450) do
+ActiveRecord::Schema.define(version: 20180314055806) do
 
   create_table "address_lists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",          null: false
@@ -158,12 +158,12 @@ ActiveRecord::Schema.define(version: 20180313102450) do
   end
 
   create_table "order_histories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "order_id",          null: false
+    t.integer  "order_id",           null: false
     t.datetime "shipping_schedule"
     t.date     "shipped_date"
-    t.integer  "shiping_status_id", null: false
+    t.integer  "shipping_status_id", null: false
     t.index ["order_id"], name: "index_order_histories_on_order_id", using: :btree
-    t.index ["shiping_status_id"], name: "index_order_histories_on_shiping_status_id", using: :btree
+    t.index ["shipping_status_id"], name: "index_order_histories_on_shipping_status_id", using: :btree
   end
 
   create_table "ordered_items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -265,6 +265,7 @@ ActiveRecord::Schema.define(version: 20180313102450) do
   add_foreign_key "items", "brands"
   add_foreign_key "items", "shops"
   add_foreign_key "order_histories", "orders"
+  add_foreign_key "order_histories", "shipping_statuses"
   add_foreign_key "ordered_items", "colors"
   add_foreign_key "ordered_items", "order_histories"
   add_foreign_key "ordered_items", "orders"
