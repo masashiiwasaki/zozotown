@@ -50,11 +50,42 @@ ActiveRecord::Schema.define(version: 20180313102450) do
     t.index ["user_id"], name: "index_carts_on_user_id", using: :btree
   end
 
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "main"
+    t.string   "sub"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "colors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "demensions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "item_id",        null: false
+    t.integer  "size_id",        null: false
+    t.integer  "shoulder_width"
+    t.integer  "body_width"
+    t.integer  "arm_length"
+    t.integer  "weight"
+    t.integer  "waist"
+    t.integer  "rise"
+    t.integer  "inseam"
+    t.integer  "hem"
+    t.integer  "thigh"
+    t.integer  "hip"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["item_id"], name: "index_demensions_on_item_id", using: :btree
+    t.index ["size_id"], name: "index_demensions_on_size_id", using: :btree
+  end
+
+  create_table "genders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "gender"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "item_id",    null: false
@@ -220,6 +251,8 @@ ActiveRecord::Schema.define(version: 20180313102450) do
   add_foreign_key "cart_records", "users"
   add_foreign_key "carts", "item_lists"
   add_foreign_key "carts", "users"
+  add_foreign_key "demensions", "items"
+  add_foreign_key "demensions", "sizes"
   add_foreign_key "favorite_brands", "brands"
   add_foreign_key "favorite_brands", "users"
   add_foreign_key "favorite_items", "item_lists"
