@@ -82,20 +82,6 @@ ActiveRecord::Schema.define(version: 20180314055806) do
     t.index ["size_id"], name: "index_demensions_on_size_id", using: :btree
   end
 
-  create_table "genders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "gender"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-
-  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "item_id",    null: false
-    t.string   "image_url",  null: false
-    t.integer  "color_id",   null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["color_id"], name: "index_images_on_color_id", using: :btree
-    t.index ["item_id"], name: "index_images_on_item_id", using: :btree
-
   create_table "favorite_brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",    null: false
     t.integer  "brand_id",   null: false
@@ -121,6 +107,22 @@ ActiveRecord::Schema.define(version: 20180314055806) do
     t.datetime "updated_at", null: false
     t.index ["shop_id"], name: "index_favorite_shops_on_shop_id", using: :btree
     t.index ["user_id"], name: "index_favorite_shops_on_user_id", using: :btree
+  end
+
+  create_table "genders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "gender"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "item_id",    null: false
+    t.string   "image_url",  null: false
+    t.integer  "color_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["color_id"], name: "index_images_on_color_id", using: :btree
+    t.index ["item_id"], name: "index_images_on_item_id", using: :btree
   end
 
   create_table "item_lists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
