@@ -88,7 +88,10 @@
             .clearfix.sectionHeader
               %h2 チェックしたアイテム
             #pickupItem.loader.pickupList.clearfix
-            / /#pickupItem
+              %ul.pickupList.clearfix
+                - if @checked_items.present?
+                  - @checked_items.each do |checked_item|
+                    = render partial: "item", locals: { item: checked_item }
           %section#pickupShops.section.pickup
             .clearfix.sectionHeader
               %h2 チェックしたショップ

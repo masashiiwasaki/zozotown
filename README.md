@@ -1,93 +1,95 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
 ## usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
 |email|string|null: false, unique: true|
 |password|string|null: false|
-|postcode|integer|
-|address_main|string|
-|address_sub|string|
-|telephone_number|integer|
+|points|integer|default: 0|
 
 ### Association
 - has_many :orders
+- has_many :address_lists, dependent: :destroy
 - has_many :carts, dependent: :destroy
-- has_many :items, through: :carts
+- has_many :cart_records
+- has_many :item_lists, through: :carts
+- has_many :favorite_items, dependent: :destroy
+- has_many :favorite_shops, dependent: :destroy
+- has_many :favorite_brands, dependent: :destroy
+
+## address_listsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true|
+|name|string|null: false|
+|postcode|integer|null: false|
+|address_main|string|null: false|
+|address_sub|string|
+|telephone_number|integer|null: false|
+|default_flag|integer|
+
+- belongs_to :user
+- has_many :orders
 
 ## cartsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
-|item_id|references|null: false, foreign_key: true|
-|color_id|references|null: false, foreign_key: true|
-|size_id|references|null: false, foreign_key: true|
+|item_list_id|references|null: false, foreign_key: true|
 |quantity|integer|null: false, default: 0|
 
 ### Association
 - belongs_to :user
-- belongs_to :item
-- belongs_to :color
-- belongs_to :size
+- belongs_to :item_list
+- has_many :items, through :item_lists
+
+## cart_recordsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true|
+|item_list_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :item_list
+- has_many :items, through :item_lists
 
 ## itemsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|price|integer|null: false|
 |name|string|null: false|
-|description|text|null: false|
 |shop_id|references|null: false, foreign_key: true|
 |brand_id|references|null: false, foreign_key: true|
-|image_url|string|null: false|
+|regular_price|integer|null: false|
+|proposed_price|integer|null: false|
+|point_get|integer|null: false, default: 0|
+|description|text|
+|gender_id|references|null: false, foreign_key: true|
+|category_id|references|null: false, foreign_key: true|
+|material|string|
+|made_in|string|
+|shipping_fee|integer|null: false, default: 200|
+|shipping_option|integer|null: false, default: 0|
+|lapping_option|integer|null: false, default: 0|
+|ident_code|integer|
 
 ### Association
 - has_many :item_lists
-- has_many :item_sub_images
-- has_many :sub_images, through: :item_sub_images
+- has_many :images
 - has_many :ordered_items
-- has_many :orders, through: :ordered_items
-- has_many :carts, through: :carts
+- has_many :dimentions
+- has_many :carts, through :item_lists
+- has_many :cart_records, through :item_lists
+- has_many :favorite_items, through :item_lists
 - belongs_to :shop
 - belongs_to :brand
-
-## item_sub_imagesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|item_id|references|null: false, foreign_key: true|
-|sub_image_id|references|null: false, foreign_key: true|
-
-### Association
-- belongs_to :item
-- belongs_to :sub_image
-
-## sub_imagesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|color_id|references|null: false, foreign_key: true|
-|img_url|string|null: false|
-
-### Association
-- has_one :item_sub_image
-- belongs_to :color
+- belongs_to :gender
+- belongs_to :category
 
 ## item_listsテーブル
 
@@ -100,20 +102,12 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :item
-- belongs_to :color
 - belongs_to :size
-
-## colorsテーブル
-
-|Column|Type|Option|
-|------|----|------|
-|color|string|
-
-### Association
+- belongs_to :color
 - has_many :carts
-- has_many :item_lists
-- has_many :sub_images
-- has_many :ordered_items
+- has_many :cart_records
+- has_many :favorite_items
+- has_many :users, through: :carts
 
 ## sizesテーブル
 
@@ -122,9 +116,18 @@ Things you may want to cover:
 |size|string|
 
 ### Association
-- has_many :carts
 - has_many :item_lists
-- has_many :ordered_items
+- has_many :dimensions
+
+## colorsテーブル
+
+|Column|Type|Option|
+|------|----|------|
+|color|string|
+
+### Association
+- has_many :item_lists
+- has_many :images
 
 ## shopsテーブル
 
@@ -134,6 +137,7 @@ Things you may want to cover:
 
 ### Association
 - has_many :items
+- has_many :favorite_shops
 
 ## brandsテーブル
 
@@ -143,42 +147,129 @@ Things you may want to cover:
 
 ### Association
 - has_many :items
+- has_many :favorite_brands
+
+## categoriesテーブル
+
+|Column|Type|Option|
+|------|----|------|
+|main|string|
+|sub|string|
+
+### Association
+- has_many :items
+
+## gendersテーブル
+
+|Column|Type|Option|
+|------|----|------|
+|gender|string|
+
+### Association
+- has_many :items
+
+## demensionsテーブル
+
+|Column|Type|Option|
+|------|----|------|
+|item_id|references|null: false, foreign_key: true|
+|size_id|references|null: false, foreign_key: true|
+|shoulder_width|integer|
+|body_width|integer|
+|arm_length|integer|
+|weight|integer|
+|waist|integer|
+|rise|integer|
+|inseam|integer|
+|hem|integer|
+|thigh|integer|
+|hip|integer|
+
+### Association
+- belongs_to :item_list
+- belongs_to :size
+
+##favorite_itemsテーブル
+
+|Column|Type|Option|
+|------|----|------|
+|user_id|references|null: false, foreign_key: true|
+|item_list_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :item_list
+
+##favorite_shopsテーブル
+
+|Column|Type|Option|
+|------|----|------|
+|user_id|references|null: false, foreign_key: true|
+|shop_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :shop
+
+##favorite_brandsテーブル
+
+|Column|Type|Option|
+|------|----|------|
+|user_id|references|null: false, foreign_key: true|
+|brand_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :brand
 
 ##ordersテーブル
 
 |Column|Type|Option|
 |------|----|------|
 |user_id|references|null: false, foreign_key: true|
+|address_list_id|references|null: false, foreign_key: true|
+|shipment_id|references|null: false, foreign_key: true|
+|shipping_schedule|datetime|
+|payment_id|references|null: false, foreign_key: true|
+|point_used|integer|null: false, default: 0|
+|point_get|integer|null: false|
 |total_price|integer|null: false|
-|status|integer|null: false|
 
 ### Association
 - belongs_to :user
-- has_many :ordered_items, dependent: :destroy
-- has_many :items, through: :ordered_items
+- belongs_to :address_list
+- belongs_to :shipment
+- belongs_to :payment
+- has_one :order_history
+
+##order_historiesテーブル
+
+|Column|Type|Option|
+|------|----|------|
+|order_id|references|null: false, foreign_key: true|
+|shipping_status_id|references|null: false, foreign_key: true|
+|order_date|datetime|
+|shipping_schedule|datetime|
+|shipped_date|date|
+
+### Association
+- belongs_to :order
+- belongs_to :shipping_status
+- has_many :ordered_items
 
 ## ordered_itemsテーブル
 
 |Column|Type|Option|
 |------|----|------|
-|order_id|references|null: false, foreign_key: true|
-|item_id|references|null: false, foreign_key: true|
-|color_id|references|null: false, foreign_key: true|
-|size_id|references|null: false, foreign_key: true|
+|ordered_history_id|references|null: false, foreign_key: true|
+|item_list_id|references|null: false, foreign_key: true|
+|item_name|string|null: flase|
+|shop_name|string|null: flase|
+|color|string|null: flase|
+|size|string|null: flase|
+|regular_price|integer|null: false|
 |quantity|integer|null: false|
 
 ### Association
-- belongs_to :order
+- belongs_to :order_history
 - belongs_to :item
-- belongs_to :color
-- belongs_to :size
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
