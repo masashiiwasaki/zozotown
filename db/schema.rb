@@ -163,8 +163,10 @@ ActiveRecord::Schema.define(version: 20180314055806) do
     t.integer  "order_id",           null: false
     t.datetime "shipping_schedule"
     t.date     "shipped_date"
+    t.integer  "shiping_status_id",  null: false
     t.integer  "shipping_status_id", null: false
     t.index ["order_id"], name: "index_order_histories_on_order_id", using: :btree
+    t.index ["shiping_status_id"], name: "index_order_histories_on_shiping_status_id", using: :btree
     t.index ["shipping_status_id"], name: "index_order_histories_on_shipping_status_id", using: :btree
   end
 
