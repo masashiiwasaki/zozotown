@@ -1,6 +1,6 @@
 %ul.form
   住所情報の登録
-  = form_for ([@user, @address_list]) do |f|
+  = form_for [@user, @address_list] do |f|
     %li
       お名前
       = f.text_field :name, required: true, placeholder: "例) 山田太郎"
