@@ -8,11 +8,12 @@
               %h1#hLogo
                 = link_to "ZOZOTOWN", "http://zozo.jp/"
               #hItemSearch.clearfix
-                %form{action:"/search", method:"get", name:"keyword"}
+                %form#searchForm{name:"keyword"}
                   %p#hKeyword
                     %input#searchText.def{type:"text",name:"p_keyv",placeholder:"何かお探しですか？",autocomplete:"off"}
                   %p#hSubmit.hBtn
-                    %input{title:"検索",type:"submit"}
+                    %input#searchSubmitBtn{title:"検索",type:"submit"}
+                #suggest
             .clearfix#hCtrl
               %ul.clearfix#hCtrlList
                 %li.hPopWrap.static#hUserName
