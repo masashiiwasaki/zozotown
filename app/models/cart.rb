@@ -3,6 +3,7 @@ class Cart < ApplicationRecord
   belongs_to :item
   belongs_to :color
   belongs_to :size
+  belongs_to :item_list
 
   def self.total_price(carts)
     total_price = 0

@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   def new
     carts = Cart.where(user_id: 1) # あとで修正
-    @items_total_price = carts.inject(0){|result, cart| result + cart.quantity * cart.item.price }
+    @items_total_price = carts.inject(0){|result, cart| result + cart.quantity * cart.item_list.item.regular_price }
   end
 
   def create
