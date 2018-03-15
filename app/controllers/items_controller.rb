@@ -13,6 +13,7 @@ class ItemsController < ApplicationController
     @checked_items = Item.where(id: session[:checked_item_ids])
     @item = Item.find(params[:id])
   end
+
   def detail_search
   end
 
@@ -23,7 +24,7 @@ class ItemsController < ApplicationController
     search_param_brand = params[:detail_search][:brand]
     search_param_shop = params[:detail_search][:shop]
     # 検索パラメータによらないSQLの共通部分
-    sql = "select i.* from items i inner join brands b on i.brand_id = b.id inner join shops s on i.shop_id = s.id where 1 = 1 "
+    sql = "select i.id from items i inner join brands b on i.brand_id = b.id inner join shops s on i.shop_id = s.id where 1 = 1 "
     # 検索パラメータの有無に応じて動的にSQL組み換え
     # バインドパラメータ（hash形式）も同時に動的作成
     bind_params_hash = {}
@@ -50,8 +51,14 @@ class ItemsController < ApplicationController
     # SQL実行
     con = ActiveRecord::Base.connection
     result = con.select_all(exe_sql)
-    @result_items = result.to_hash
-    # 暫定的にviewを表示
-    render plain: @result_items
+    # viewに詰めるためのパラメータを作成
+    item_id_array = []
+    result.to_hash.each do |result_hash|
+      item_id_array << result_hash["id"]
+    end
+    @items = Item.where("id IN (?)", item_id_array)
+    # チェック済商品を画面表示用
+    @checked_items = Item.where(id: session[:checked_item_ids])
+    render 'index'
   end
 end
