@@ -14,9 +14,9 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
   def detail_search
-    render plain: "detail_search"
   end
   def detail_search_result
+    # 暫定的にviewを表示
     render plain: "detail_search_result"
   end
 end
