@@ -82,7 +82,6 @@ ActiveRecord::Schema.define(version: 20180314055806) do
     t.index ["size_id"], name: "index_demensions_on_size_id", using: :btree
   end
 
-<<<<<<< Updated upstream
   create_table "genders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "gender"
     t.datetime "created_at", null: false
@@ -97,8 +96,6 @@ ActiveRecord::Schema.define(version: 20180314055806) do
     t.index ["color_id"], name: "index_images_on_color_id", using: :btree
     t.index ["item_id"], name: "index_images_on_item_id", using: :btree
 
-=======
->>>>>>> Stashed changes
   create_table "favorite_brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",    null: false
     t.integer  "brand_id",   null: false
@@ -126,25 +123,6 @@ ActiveRecord::Schema.define(version: 20180314055806) do
     t.index ["user_id"], name: "index_favorite_shops_on_user_id", using: :btree
   end
 
-<<<<<<< Updated upstream
-=======
-  create_table "genders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "gender"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "item_id",    null: false
-    t.string   "image_url",  null: false
-    t.integer  "color_id",   null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["color_id"], name: "index_images_on_color_id", using: :btree
-    t.index ["item_id"], name: "index_images_on_item_id", using: :btree
-  end
-
->>>>>>> Stashed changes
   create_table "item_lists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "item_id",    null: false
     t.integer  "color_id",   null: false
@@ -180,21 +158,12 @@ ActiveRecord::Schema.define(version: 20180314055806) do
   end
 
   create_table "order_histories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-<<<<<<< Updated upstream
     t.integer  "order_id",           null: false
     t.datetime "shipping_schedule"
     t.date     "shipped_date"
     t.integer  "shipping_status_id", null: false
     t.index ["order_id"], name: "index_order_histories_on_order_id", using: :btree
     t.index ["shipping_status_id"], name: "index_order_histories_on_shipping_status_id", using: :btree
-=======
-    t.integer  "order_id",          null: false
-    t.datetime "shipping_schedule"
-    t.date     "shipped_date"
-    t.integer  "shiping_status_id", null: false
-    t.index ["order_id"], name: "index_order_histories_on_order_id", using: :btree
-    t.index ["shiping_status_id"], name: "index_order_histories_on_shiping_status_id", using: :btree
->>>>>>> Stashed changes
   end
 
   create_table "ordered_items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -296,10 +265,7 @@ ActiveRecord::Schema.define(version: 20180314055806) do
   add_foreign_key "items", "brands"
   add_foreign_key "items", "shops"
   add_foreign_key "order_histories", "orders"
-<<<<<<< Updated upstream
   add_foreign_key "order_histories", "shipping_statuses"
-=======
->>>>>>> Stashed changes
   add_foreign_key "ordered_items", "colors"
   add_foreign_key "ordered_items", "order_histories"
   add_foreign_key "ordered_items", "orders"
