@@ -1,0 +1,23 @@
+%ul.form
+  住所情報の編集
+  = form_for ([@user, @address_list]) do |f|
+    %li
+      お名前
+      = f.text_field :name, required: true, value: "#{@address_list.name}"
+    %li
+      郵便番号
+      = f.text_field :postcode, required: true, value: "#{@address_list.postcode}"
+    %li
+      住所１
+      = f.text_field :address_main, required: true, value: "#{@address_list.address_main}"
+    %li
+      住所２
+      = f.text_field :address_sub, required: false, value: "#{@address_list.address_sub}"
+    %li
+      電話番号
+      = f.text_field :telephone_number, required: false, value: "#{@address_list.telephone_number}"
+    %li
+      = f.submit "PUBLISH", id: "button", class: "class"
+    %li
+      = link_to "このお届け先を削除する", "/users/#{@user.id}/address_lists/#{@address_list.id}" , method: :delete if @address_list.default_flag == 1
+
