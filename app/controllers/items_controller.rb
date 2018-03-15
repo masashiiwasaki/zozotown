@@ -15,7 +15,36 @@ class ItemsController < ApplicationController
   end
   def detail_search
   end
+
+  # 検索パラメータの有無に応じて動的にSQL組み換えて検索実行
   def detail_search_result
+    # 画面から検索パラメータを取得
+    search_param_keyword = params[:detail_search][:keyword]
+    search_param_brand = params[:detail_search][:brand]
+    search_param_shop = params[:detail_search][:shop]
+    # 検索パラメータによらないSQLの共通部分
+    sql = "select i.* from items i inner join brands b on i.brand_id = b.id inner join shops s on i.shop_id = s.id where 1 = 1 "
+    # 検索パラメータの有無に応じて動的にSQL組み換え
+    params_array = []
+    if search_param_keyword.present?
+      sql << "and i.name like :search_param_keyword"
+      params_array << {search_param_keyword: '%' +search_param_keyword + '%'}
+    end
+    # バインドパラメータ（hash形式）動的作成
+    sanitize_sql_array = []
+    sanitize_sql_array << sql
+    params_array.each do |params_hash|
+      sanitize_sql_array << params_hash
+    end
+    # SQL生成
+    sql = ActiveRecord::Base.send(
+      :sanitize_sql_array,
+      sanitize_sql_array
+    )
+    # SQL実行
+    con = ActiveRecord::Base.connection
+    result = con.select_all(sql)
+    @result_items = result.to_hash
     # 暫定的にviewを表示
     render plain: "detail_search_result"
   end
