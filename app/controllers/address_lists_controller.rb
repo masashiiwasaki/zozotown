@@ -16,9 +16,9 @@ class AddressListsController < ApplicationController
     end
     # 登録可否の判定
     if address_list.save
-      redirect_to "/users/:id", notice: 'お届け先が追加されました'
+      redirect_to user_path, notice: 'お届け先が追加されました'
     else
-      redirect_to ({ action: new }), alert: 'お届け先の追加に失敗しました'
+      render :new, alert: 'お届け先の追加に失敗しました'
      end
   end
 
@@ -29,12 +29,12 @@ class AddressListsController < ApplicationController
 
   def update
    address_list.update(address_params) if address_list.user_id == current_user.id
-    redirect_to "/users/:id", notice: "お届け先が変更されました"
+    redirect_to user_path, notice: "お届け先が変更されました"
   end
 
   def destroy
     address_list.destroy if address_list.user_id == current_user.id
-    redirect_to "/users/:id", notice: "お届け先が削除されました"
+    redirect_to user_path, notice: "お届け先が削除されました"
   end
 
   private
