@@ -6,7 +6,7 @@ class AddressListsController < ApplicationController
   end
 
   def create
-    # default_flag(基本情報)の判定
+  # default_flag(基本情報)の判定
     if AddressList.find_by(user_id: current_user.id, default_flag: 0).present?
       address_list = AddressList.new(address_params)
       address_list[:default_flag] = 1
@@ -14,12 +14,12 @@ class AddressListsController < ApplicationController
       address_list = AddressList.new(address_params)
       address_list[:default_flag] = 0
     end
-    # 登録可否の判定
+  # 登録可否の判定
     if address_list.save
       redirect_to user_path, notice: 'お届け先が追加されました'
     else
       render :new, alert: 'お届け先の追加に失敗しました'
-     end
+    end
   end
 
   def edit
