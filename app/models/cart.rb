@@ -3,6 +3,8 @@ class Cart < ApplicationRecord
   belongs_to :item_list
   has_many :items, through: :item_lists
 
+  # accepts_nested_attributes_for :cart_records
+
   def self.total_price(carts)
     total_price = 0
     carts.each do |cart|

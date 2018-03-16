@@ -1,16 +1,30 @@
 class CartsController < ApplicationController
   before_action :move_to_root
-
   def index
     user = User.find(current_user.id)
     @carts = user.carts
     @total_price = Cart.total_price(@carts)
+    @cart_records = user.cart_records.limit(6)
   end
 
   def create
-    @cart = Cart.new(cart_params)
-    @cart[:quantity] += 1
-    @cart.save
+    # カートに商品を追加
+    if Cart.find_by(user_id: current_user.id, item_list_id: cart_params[:item_list_id]).present?
+      cart = Cart.find_by(user_id: current_user.id, item_list_id: cart_params[:item_list_id])
+    else
+      cart = Cart.new(cart_params)
+    end
+    cart[:quantity] += 1
+    cart.save
+
+    # カートの履歴に商品を追加
+    if CartRecord.find_by(user_id: current_user.id, item_list_id: cart_params[:item_list_id]).present?
+      cart_record = CartRecord.find_by(user_id: current_user.id, item_list_id: cart_params[:item_list_id])
+      cart_record.destroy
+    end
+    cart_record = CartRecord.create(cart_params)
+
+    # カート画面に遷移
     redirect_to "/carts", notice: 'カートに入りました'
   end
 
@@ -27,7 +41,11 @@ class CartsController < ApplicationController
 
 private
   def cart_params
-    params.permit(:item_list_id, :quantity).merge(user_id: current_user.id)
+    params.permit(
+      :item_list_id,
+      :quantity,
+      # cart_records_attributes: [:item_list_id]
+      ).merge(user_id: current_user.id)
   end
 
   def move_to_root
