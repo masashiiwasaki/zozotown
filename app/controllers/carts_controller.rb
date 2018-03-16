@@ -19,11 +19,7 @@ class CartsController < ApplicationController
     cart.save
 
     # カートの履歴に商品を追加
-    if CartRecord.find_by(user_id: current_user.id, item_list_id: cart_params[:item_list_id]).present?
-      cart_record = CartRecord.find_by(user_id: current_user.id, item_list_id: cart_params[:item_list_id])
-      cart_record.destroy
-    end
-    cart_record = CartRecord.create(cart_params)
+    cart_record(cart_params)
 
     # カート画面に遷移
     redirect_to "/carts", notice: 'カートに入りました'
@@ -47,6 +43,14 @@ private
       :quantity,
       # cart_records_attributes: [:item_list_id]
       ).merge(user_id: current_user.id)
+  end
+
+  def cart_record(cart_params)
+    if CartRecord.find_by(user_id: current_user.id, item_list_id: cart_params[:item_list_id]).present?
+      cart_record = CartRecord.find_by(user_id: current_user.id, item_list_id: cart_params[:item_list_id])
+      cart_record.destroy
+    end
+    cart_record = CartRecord.create(cart_params)
   end
 
   def move_to_root
