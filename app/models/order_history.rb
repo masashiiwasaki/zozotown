@@ -1,0 +1,2 @@
+class CreateOrderHistory < ApplicationRecord
+end

@@ -89,7 +89,10 @@
             .clearfix.sectionHeader
               %h2 チェックしたアイテム
             #pickupItem.loader.pickupList.clearfix
-            / /#pickupItem
+              %ul.pickupList.clearfix
+                - if @checked_items.present?
+                  - @checked_items.each do |checked_item|
+                    = render partial: "item", locals: { item: checked_item }
           %section#pickupShops.section.pickup
             .clearfix.sectionHeader
               %h2 チェックしたショップ
@@ -236,7 +239,7 @@
             %li
               = link_to "コーディネートから探す","/coordinate/"
             %li
-              = link_to "こだわり条件から探す","/detail/"
+              = link_to "こだわり条件から探す","/items/detail_search"
         %section#categoryList.menuBox.section.menuCategory
           %h2 カテゴリ
           %ul.lists.static

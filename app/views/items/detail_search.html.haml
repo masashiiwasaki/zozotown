@@ -1,0 +1,62 @@
+#wrapper
+  #gblHeaderStuck
+    .header#gblHeader
+      #hWrapper
+        #hWrapperInner
+          #header.clearfix
+            .clearfix#hHeader
+              %h1#hLogo
+                = link_to "ZOZOTOWN", "http://zozo.jp/"
+              #hItemSearch.clearfix
+                %form{action:"/search", method:"get", name:"keyword"}
+                  %p#hKeyword
+                    %input#searchText.def{type:"text",name:"p_keyv",placeholder:"何かお探しですか？",autocomplete:"off"}
+                  %p#hSubmit.hBtn
+                    %input{title:"検索",type:"submit"}
+            .clearfix#hCtrl
+              %ul.clearfix#hCtrlList
+                %li.hPopWrap.static#hUserName
+                  %p#hThumbs
+                    %span#hName
+                      %span.userName.textTruncate ああああ様
+                %li.hPopWrap.static#hNotice
+                  = link_to "/notice/" do
+                    %span.ico.ico_notice
+                      %span 通知機能
+                %li#hFavoriteLink.static.hPopWrap
+                  = link_to "/_member/favoritelist/" do
+                    %span#hFavorite.ico.ico_favorite
+                      %span お気に入り
+                %li#hCart
+                  %span.clearfix
+                    = link_to "/carts" do
+                      %span.ico.ico_cart
+                        %span カート
+                %li#hServiceMap.static.hPopWrap
+                  %span.ico.ico_siteMap
+                    %span サイトマップ
+  .detail-search
+    %h1 こだわり検索
+    = form_tag('detail_search_result', method: "GET", class: "detail-search-form") do
+      %p 検索条件を指定してください。全項目に条件を指定しなくても検索できます。
+      %table
+        %tbody
+          %tr
+            %th
+              = label_tag(:keyword, "キーワード")
+            %td
+              = text_field_tag 'detail_search[keyword]'
+          %tr
+            %th
+              = label_tag(:brand, "ブランド")
+            %td
+              = text_field_tag 'detail_search[brand]'
+          %tr
+            %th
+              = label_tag(:shop, "ショップ")
+            %td
+              = text_field_tag 'detail_search[shop]'
+      = submit_tag "検索する"
+
+
+

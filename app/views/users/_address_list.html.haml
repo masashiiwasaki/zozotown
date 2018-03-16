@@ -1,0 +1,14 @@
+%li
+  名前
+  = address_list.name
+%li
+  郵便番号
+  = address_list.postcode
+%li
+  住所
+  = "#{address_list.address_main} #{address_list.address_sub}"
+%li
+  電話番号
+  = address_list.telephone_number
+%li
+  = link_to "このお届け先を編集", edit_user_address_list_path(address_list, address_list)
