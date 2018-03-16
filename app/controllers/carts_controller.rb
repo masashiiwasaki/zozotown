@@ -10,19 +10,22 @@ class CartsController < ApplicationController
 
   def create
     # カートに商品を追加
-    if Cart.find_by(user_id: current_user.id, item_list_id: cart_params[:item_list_id]).present?
-      cart = Cart.find_by(user_id: current_user.id, item_list_id: cart_params[:item_list_id])
-    else
-      cart = Cart.new(cart_params)
+    ActiveRecord::Base.transaction do
+      if Cart.find_by(user_id: current_user.id, item_list_id: cart_params[:item_list_id]).present?
+        cart = Cart.find_by(user_id: current_user.id, item_list_id: cart_params[:item_list_id])
+      else
+        cart = Cart.new(cart_params)
+      end
+      cart[:quantity] += 1
+      cart.save!
+
+      # カートの履歴に商品を追加
+      cart_record(cart_params)
     end
-    cart[:quantity] += 1
-    cart.save
-
-    # カートの履歴に商品を追加
-    cart_record(cart_params)
-
-    # カート画面に遷移
-    redirect_to "/carts", notice: 'カートに入りました'
+      # カート画面に遷移
+      redirect_to "/carts", notice: 'カートに入りました'
+    rescue => e
+      redirect_to "/carts", notice: 'error'
   end
 
   def update
@@ -48,9 +51,9 @@ private
   def cart_record(cart_params)
     if CartRecord.find_by(user_id: current_user.id, item_list_id: cart_params[:item_list_id]).present?
       cart_record = CartRecord.find_by(user_id: current_user.id, item_list_id: cart_params[:item_list_id])
-      cart_record.destroy
+      cart_record.destroy!
     end
-    cart_record = CartRecord.create(cart_params)
+    cart_record = CartRecord.create!(cart_params)
   end
 
   def move_to_root
