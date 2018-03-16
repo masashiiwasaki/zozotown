@@ -1,0 +1,51 @@
+.cartBlock.clearfix
+  .blockMain
+    %dl.clearfix
+      %dt
+        %span.img
+          %img{:alt => "", :src => "http://img5.zozo.jp/goodsimages/152/23301152/23301152B_1_D_35.jpg"}/
+        %span.txt
+          = list.color.color
+      %dd
+        %ul
+          %li#cart_did_42063854.clearfix{"data-size" => "38"}
+            .cartbox
+              .stock
+                %p
+                  %span 38 / 
+                  %span 予約可能
+                %p.zozosize
+                  %span.sizeZ
+                    %span M
+              .cart
+                %span.btn
+                  = link_to 'カートに入れる',carts_path(item_id: @item.id,color_id: @item.item_lists), method: :post
+              .bkmk
+                %form{:action => "#", :onsubmit => "return false;"}
+                  %span.btn
+                    %input{:type => "submit", :value => ""}/
+                  %input{:name => "gid", :type => "hidden", :value => "22301152"}/
+                  %input{:name => "did", :type => "hidden", :value => "42063854"}/
+                  %input{:name => "zsids", :type => "hidden", :value => ""}/
+          %li#cart_did_42063857.clearfix{"data-size" => "40"}
+            .cartbox
+              .stock
+                %p
+                  %span 40 / 
+                  %span 予約可能
+              .cart
+                %form{:action => "/_cart/default.html", :method => "post"}
+                  %input{:name => "c", :type => "hidden", :value => "put"}/
+                  %input{:name => "sid", :type => "hidden", :value => "33986648"}/
+                  %input{:name => "rid", :type => "hidden", :value => "1093"}/
+                  %input{:name => "p_seckey", :type => "hidden", :value => "7a54a0f5eefd49623471186d51aaaf73"}/
+                  %span.btn
+                    %input.btn.reserveBtn{:type => "submit", :value => "カートへ入れる"}/
+              / [***予約***]
+              .bkmk
+                %form{:action => "#", :onsubmit => "return false;"}
+                  %span.btn
+                    %input{:type => "submit", :value => ""}/
+                  %input{:name => "gid", :type => "hidden", :value => "22301152"}/
+                  %input{:name => "did", :type => "hidden", :value => "42063857"}/
+                  %input{:name => "zsids", :type => "hidden", :value => ""}/
