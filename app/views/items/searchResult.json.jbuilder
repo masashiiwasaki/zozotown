@@ -1,7 +1,5 @@
-json.array! @searchResults do |searchResult|
-  json.name searchResult.name
-  json.id searchResult.id
-  json.image_url searchResult.image_url
-  json.description searchResult.description
-  json.price searchResult.price
-end
+json.name @search_items_result.name
+json.id @search_items_result.id
+json.image_url @search_items_result.images.first.image_url
+json.description @search_items_result.description
+json.proposed_price @search_items_result.proposed_price
