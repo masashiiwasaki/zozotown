@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180316002522) do
+ActiveRecord::Schema.define(version: 20180316032153) do
 
   create_table "address_lists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",          null: false
@@ -169,6 +169,8 @@ ActiveRecord::Schema.define(version: 20180316002522) do
   end
 
   create_table "ordered_items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "order_history_id", null: false
+    t.integer  "item_id",          null: false
     t.integer  "color_id",         null: false
     t.integer  "size_id",          null: false
     t.integer  "quantity",         null: false
@@ -177,10 +179,8 @@ ActiveRecord::Schema.define(version: 20180316002522) do
     t.integer  "regular_price",    null: false
     t.string   "item_name",        null: false
     t.string   "shop_name",        null: false
-    t.string   "color",            null: false
-    t.string   "size",             null: false
-    t.integer  "order_history_id", null: false
-    t.integer  "item_id",          null: false
+    t.string   "color_name",       null: false
+    t.string   "size_name",        null: false
     t.index ["color_id"], name: "index_ordered_items_on_color_id", using: :btree
     t.index ["item_id"], name: "index_ordered_items_on_item_id", using: :btree
     t.index ["order_history_id"], name: "index_ordered_items_on_order_history_id", using: :btree
