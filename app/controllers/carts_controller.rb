@@ -1,11 +1,12 @@
 class CartsController < ApplicationController
   before_action :move_to_root, :set_cart, only:[:update, :destroy]
+  CART_RECORD_COUNT = 6
   def index
     user = User.find(current_user.id)
     @carts = user.carts
     @total_price = Cart.total_price(@carts)
     # TO DO : 現在カートに入っている商品は除外して、@cart_recordsに取り込む
-    @cart_records = user.cart_records.limit(6)
+    @cart_records = user.cart_records.limit(CART_RECORD_COUNT)
   end
 
   def create
