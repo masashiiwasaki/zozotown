@@ -18,28 +18,28 @@ $(function() {
       b = 30 * 20
       var c = 0;
       var d = setInterval(function() {
-          if (i <= c) {
-              clearInterval(d);
-              a.addClass('fix').removeAttr('style');
-              a.click(function() {
-                  $(this).blur();
-                  return false
-              })
-          } else {
-              a.css({
-                  backgroundPosition: h[c][0] + 'px ' + h[c][1] + 'px'
-              });
-              c++
-          }
+        if (i <= c) {
+          clearInterval(d);
+          a.addClass('fix').removeAttr('style');
+          a.click(function() {
+            $(this).blur();
+            return false
+          })
+        } else {
+          a.css({
+            backgroundPosition: h[c][0] + 'px ' + h[c][1] + 'px'
+          });
+          c++
+        }
       }, 30)
     }
     setTimeout(function() {
-                a.find('.pop').show();
-                setTimeout(function() {
-                    a.find('.pop').fadeOut(300, function() {
-                        $(this).remove()
-                    })
-                }, 2000)
+      a.find('.pop').show();
+      setTimeout(function() {
+        a.find('.pop').fadeOut(300, function() {
+          $(this).remove()
+        })
+      }, 2000)
     }, b)
   })
 });
