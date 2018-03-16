@@ -1,9 +1,10 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.includes(:shop).includes(:brand)
+    @items = Item.includes([:shop, :brand, :gender, :category, :images])
     # チェック済商品を画面表示
     @checked_items = Item.where(id: session[:checked_item_ids])
   end
+
   def show
     # チェックした商品をsessionに保存し、チェック済商品を画面表示できるようにする
     # sessionがない場合は初期化
@@ -12,6 +13,7 @@ class ItemsController < ApplicationController
     session[:checked_item_ids] << params[:id]
     @checked_items = Item.where(id: session[:checked_item_ids])
     @item = Item.find(params[:id])
+    @list = @item.item_lists
   end
 
   def detail_search
@@ -61,4 +63,22 @@ class ItemsController < ApplicationController
     @checked_items = Item.where(id: session[:checked_item_ids])
     render 'index'
   end
+
+  def search
+    @search_items = Item.where('name LIKE(?)', "%#{params[:keyword]}%")
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
+  def searchResult
+    @search_items_result = Item.find(params[:id])
+    respond_to do |format|
+      format.html
+      # アクション名を指定する方法ではjbuilderが読み込まれなかったため、下記の表記にしています。
+      format.json {render 'searchResult.json.jbuilder' }
+    end
+  end
+
 end
