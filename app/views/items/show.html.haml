@@ -1,41 +1,5 @@
-<!-- http://zozo.jp/shop/urbanresearchdoors/goods/22301152/?did=42063857&rid=1093 -->
 #wrapper
-  #gblHeaderStuck
-    .header#gblHeader
-      #hWrapper
-        #hWrapperInner
-          #header.clearfix
-            .clearfix#hHeader
-              %h1#hLogo
-                = link_to "ZOZOTOWN", "http://zozo.jp/"
-              #hItemSearch.clearfix
-                %form{action:"/search", method:"get", name:"keyword"}
-                  %p#hKeyword
-                    %input#searchText.def{type:"text",name:"p_keyv",placeholder:"何かお探しですか？",autocomplete:"off"}
-                  %p#hSubmit.hBtn
-                    %input{title:"検索",type:"submit"}
-            .clearfix#hCtrl
-              %ul.clearfix#hCtrlList
-                %li.hPopWrap.static#hUserName
-                  %p#hThumbs
-                    %span#hName
-                      %span.userName.textTruncate ああああ様
-                %li.hPopWrap.static#hNotice
-                  = link_to "/notice/" do
-                    %span.ico.ico_notice
-                      %span 通知機能
-                %li#hFavoriteLink.static.hPopWrap
-                  = link_to "/_member/favoritelist/" do
-                    %span#hFavorite.ico.ico_favorite
-                      %span お気に入り
-                %li#hCart
-                  %span.clearfix
-                    = link_to "/_cart/default.html" do
-                      %span.ico.ico_cart
-                        %span カート
-                %li#hServiceMap.static.hPopWrap
-                  %span.ico.ico_siteMap
-                    %span サイトマップ
+  = render 'shared/header'
   #topBanner
     = link_to "http://zozo.jp/shop/urbanresearchdoors/" do
       = image_tag("http://zozo.jp/common_2015/img/blank.gif",alt:"URBAN RESEARCH DOORS（アーバン リサーチ ドアーズ）",height:"46")
@@ -64,7 +28,7 @@
                     .innerLeft
                       #photoGallery
                         #photoMain
-                          = image_tag("http://img5.zozo.jp/goodsimages/152/23301152/23301152B_1_D_500.jpg",alt:"URBAN RESEARCH DOORS（アーバンリサーチドアーズ）の「ブロードストライプビッグシャツ（シャツ/ブラウス）」｜ホワイト")
+                          = image_tag(@item.images[0].image_url,alt:"URBAN RESEARCH DOORS（アーバンリサーチドアーズ）の「ブロードストライプビッグシャツ（シャツ/ブラウス）」｜ホワイト")
                         %ul#prevNextCtrl
                           %li#btnPrev
                             %span Prev
@@ -75,70 +39,7 @@
                           %li#did_42063857
                             #div_0
                               %span#goodsdiv_0
-                                = image_tag("http://img5.zozo.jp/goodsimages/152/23301152/23301152B_1_D_35.jpg",alt:"URBAN RESEARCH DOORS（アーバンリサーチドアーズ）の「ブロードストライプビッグシャツ（シャツ/ブラウス）」｜ホワイト")
-                            %p ホワイト
-                            %span.imCaption model:H178 着用サイズ:38
-                          %li#did_42063859
-                            #div_1
-                              %span#goodsdiv_1
-                                = image_tag("http://img5.zozo.jp/goodsimages/152/23301152/23301152B_8_D_35.jpg",alt:"URBAN RESEARCH DOORS（アーバンリサーチドアーズ）の「ブロードストライプビッグシャツ（シャツ/ブラウス）」｜ブラック")
-                            %p ブラック
-                            %span.imCaption model:H172 着用サイズ:38
-                          %li#did_50713659
-                            #div_2
-                              %span#goodsdiv_2
-                                = image_tag("http://img5.zozo.jp/goodsimages/152/23301152/23301152B_34_D_35.jpg",alt:"URBAN RESEARCH DOORS（アーバンリサーチドアーズ）の「ブロードストライプビッグシャツ（シャツ/ブラウス）」｜ブルー")
-                            %p ブルー
-                            %span.imCaption model:H172 着用サイズ:38
-                          /
-                          %li
-                            #div_3
-                              %span#goodsdiv_3
-                                = image_tag("http://img5.zozo.jp/goodsimages/152/23301152/23301152B_34_D_35.jpg",alt:"URBAN RESEARCH DOORS（アーバンリサーチドアーズ）の「ブロードストライプビッグシャツ（シャツ/ブラウス）」｜ブルー")
-                              %span.imCaption
-                            %span
-                          /
-                          %li
-                            #div_4
-                              %span#goodsdiv_4
-                                = image_tag("http://img5.zozo.jp/goodsimages/152/23301152/23301152B_34_D_35.jpg",alt:"URBAN RESEARCH DOORS（アーバンリサーチドアーズ）の「ブロードストライプビッグシャツ（シャツ/ブラウス）」｜ブルー")
-                              %span.imCaption
-                            %span
-                          /
-                          %li
-                            #div_5
-                              %span#goodsdiv_5
-                                = image_tag("http://img5.zozo.jp/goodsimages/152/23301152/23301152B_34_D_35.jpg",alt:"URBAN RESEARCH DOORS（アーバンリサーチドアーズ）の「ブロードストライプビッグシャツ（シャツ/ブラウス）」｜ブルー")
-                              %span.imCaption
-                            %span
-                          /
-                          %li
-                            #div_6
-                              %span#goodsdiv_6
-                                = image_tag("http://img5.zozo.jp/goodsimages/152/23301152/23301152B_34_D_35.jpg",alt:"URBAN RESEARCH DOORS（アーバンリサーチドアーズ）の「ブロードストライプビッグシャツ（シャツ/ブラウス）」｜ブルー")
-                              %span.imCaption model:H172 着用サイズ:38
-                            %span
-                          /
-                          %li
-                            #div_7
-                              %span#goodsdiv_7
-                                = image_tag("http://img5.zozo.jp/goodsimages/152/23301152/23301152B_34_D_35.jpg",alt:"URBAN RESEARCH DOORS（アーバンリサーチドアーズ）の「ブロードストライプビッグシャツ（シャツ/ブラウス）」｜ブルー")
-                              %span.imCaption
-                            %span
-                          /
-                          %li
-                            #div_8
-                              %span#goodsdiv_8
-                                = image_tag("http://img5.zozo.jp/goodsimages/152/23301152/23301152B_34_D_35.jpg",alt:"URBAN RESEARCH DOORS（アーバンリサーチドアーズ）の「ブロードストライプビッグシャツ（シャツ/ブラウス）」｜ブルー")
-                              %span.imCaption
-                            %span
-                          /
-                          %li
-                            #div_9
-                              %span#goodsdiv_9
-                                = image_tag("http://img5.zozo.jp/goodsimages/152/23301152/23301152B_34_D_35.jpg",alt:"URBAN RESEARCH DOORS（アーバンリサーチドアーズ）の「ブロードストライプビッグシャツ（シャツ/ブラウス）」｜ブルー")
-                              %span.imCaption
-                            %span
+                                = image_tag(@item.images[0].image_url,alt:"URBAN RESEARCH DOORS（アーバンリサーチドアーズ）の「ブロードストライプビッグシャツ（シャツ/ブラウス）」｜ホワイト",width:"40px")
                         / /.photoThumb
                       / /#photoGallery
                       #zozoReviewStatus.item_show_control.section.loadApiData
@@ -154,7 +55,7 @@
                                 %figure.feedFigure
                                   .feedThumbnail
                                     .feedThumbnail
-                                      = image_tag("http://cdn.wimg.jp/coordinate/bgxirv/20170912165136294/20170912165136294_276.jpg",alt:"ZOZOTOWN｜Yudai Ishiiさんの",class:"feedImg")
+                                      = image_tag("@item.image_url",alt:"ZOZOTOWN｜Yudai Ishiiさんの",class:"feedImg")
                                 %div
                                   .feedMeta
                                     %span.feedMetaItem  178cm / 普段のサイズ：M
@@ -203,15 +104,19 @@
                         %ul#nameList
                           %li
                             ショップ：
-                            %a{:href => "/shop/urbanresearchdoors/"} URBAN RESEARCH DOORS
+                            %a{:href => "/shop/urbanresearchdoors/"}
+                              = @item.shop.name
                           %li
                             ブランド：
-                            %a{:href => "/brand/urbanresearchdoors/"} URBAN RESEARCH DOORS
-                        %h1 ブロードストライプビッグシャツ
+                            %a{:href => "/brand/urbanresearchdoors/"}
+                              = @item.brand.name
+                        %h1
+                          = @item.name
                         #isLaterPay.clearfix
                           .priceWrapper
                             %p.price
-                              ¥8,640
+                              ¥
+                              = @item.regular_price
                               %span.tax 税込
                         #privilege
                           %p.privilegePoint 80ポイント還元（ZOZOCARD：160ポイント還元）
@@ -224,165 +129,37 @@
                           / [/グッズ情報]
                         / /#item-intro
                         / [カート関連]
-                      .cartBlock.clearfix
-                        .blockMain
-                          %dl.clearfix
-                            %dt
-                              %span.img
-                                %img{:alt => "", :src => "http://img5.zozo.jp/goodsimages/152/23301152/23301152B_1_D_35.jpg"}/
-                              %span.txt ホワイト
-                            %dd
-                              %ul
-                                %li#cart_did_42063854.clearfix{"data-size" => "38"}
-                                  .cartbox
-                                    .stock
-                                      %p
-                                        %span 38 / 
-                                        %span 予約可能
-                                      %p.zozosize
-                                        %span.sizeZ
-                                          %span M
-                                    .cart
-                                      %span.btn
-                                        = link_to 'カートに入れる',carts_path(item_id: 1,color_id: 1,size_id: 1), method: :post
-                                      / = form_for @cart,:url => { :controller => :cart, :action => :create } do |f|
-                                      /   = f.hidden_field :item_id, value: 1
-                                      /   = f.hidden_field :color_id, value: 1
-                                      /   = f.hidden_field :size_id, value: 1
-                                      /   = f.hidden_field :quantity, value: 1
-                                      / %span.btn
-                                      /   = f.submit 'カートへ入れる', class: 'btn'
-                                    / [***予約***]
-                                    .bkmk
-                                      %form{:action => "#", :onsubmit => "return false;"}
-                                        %span.btn
-                                          %input{:type => "submit", :value => ""}/
-                                        %input{:name => "gid", :type => "hidden", :value => "22301152"}/
-                                        %input{:name => "did", :type => "hidden", :value => "42063854"}/
-                                        %input{:name => "zsids", :type => "hidden", :value => ""}/
-                                %li#cart_did_42063857.clearfix{"data-size" => "40"}
-                                  .cartbox
-                                    .stock
-                                      %p
-                                        %span 40 / 
-                                        %span 予約可能
-                                    .cart
-                                      %form{:action => "/_cart/default.html", :method => "post"}
-                                        %input{:name => "c", :type => "hidden", :value => "put"}/
-                                        %input{:name => "sid", :type => "hidden", :value => "33986648"}/
-                                        %input{:name => "rid", :type => "hidden", :value => "1093"}/
-                                        %input{:name => "p_seckey", :type => "hidden", :value => "7a54a0f5eefd49623471186d51aaaf73"}/
-                                        %span.btn
-                                          %input.btn.reserveBtn{:type => "submit", :value => "カートへ入れる"}/
-                                    / [***予約***]
-                                    .bkmk
-                                      %form{:action => "#", :onsubmit => "return false;"}
-                                        %span.btn
-                                          %input{:type => "submit", :value => ""}/
-                                        %input{:name => "gid", :type => "hidden", :value => "22301152"}/
-                                        %input{:name => "did", :type => "hidden", :value => "42063857"}/
-                                        %input{:name => "zsids", :type => "hidden", :value => ""}/
-                          %dl.clearfix
-                            %dt
-                              %span.img
-                                %img{:alt => "", :src => "http://img5.zozo.jp/goodsimages/152/23301152/23301152B_8_D_35.jpg"}/
-                              %span.txt ブラック
-                            %dd
-                              %ul
-                                %li#cart_did_42063858.clearfix{"data-size" => "38"}
-                                  .cartbox
-                                    .stock
-                                      %p
-                                        %span 38 / 
-                                        %span 在庫あり
-                                    .cart
-                                      %form{:action => "/_cart/default.html", :method => "post"}
-                                        %input{:name => "c", :type => "hidden", :value => "put"}/
-                                        %input{:name => "sid", :type => "hidden", :value => "33986649"}/
-                                        %input{:name => "rid", :type => "hidden", :value => "1093"}/
-                                        %input{:name => "p_seckey", :type => "hidden", :value => "7a54a0f5eefd49623471186d51aaaf73"}/
-                                        %span.btn
-                                          %input{:type => "submit", :value => "カートへ入れる"}/
-                                    .bkmk
-                                      %form{:action => "#", :onsubmit => "return false;"}
-                                        %span.btn
-                                          %input{:type => "submit", :value => ""}/
-                                        %input{:name => "gid", :type => "hidden", :value => "22301152"}/
-                                        %input{:name => "did", :type => "hidden", :value => "42063858"}/
-                                        %input{:name => "zsids", :type => "hidden", :value => ""}/
-                                %li#cart_did_42063859.clearfix{"data-size" => "40"}
-                                  .cartbox
-                                    .stock
-                                      %p
-                                        %span 40 / 
-                                        %span 在庫あり
-                                    .cart
-                                      %form{:action => "/_cart/default.html", :method => "post"}
-                                        %input{:name => "c", :type => "hidden", :value => "put"}/
-                                        %input{:name => "sid", :type => "hidden", :value => "33986650"}/
-                                        %input{:name => "rid", :type => "hidden", :value => "1093"}/
-                                        %input{:name => "p_seckey", :type => "hidden", :value => "7a54a0f5eefd49623471186d51aaaf73"}/
-                                        %span.btn
-                                          %input{:type => "submit", :value => "カートへ入れる"}/
-                                    .bkmk
-                                      %form{:action => "#", :onsubmit => "return false;"}
-                                        %span.btn
-                                          %input{:type => "submit", :value => ""}/
-                                        %input{:name => "gid", :type => "hidden", :value => "22301152"}/
-                                        %input{:name => "did", :type => "hidden", :value => "42063859"}/
-                                        %input{:name => "zsids", :type => "hidden", :value => ""}/
-                          %dl.clearfix
-                            %dt
-                              %span.img
-                                %img{:alt => "", :src => "http://img5.zozo.jp/goodsimages/152/23301152/23301152B_34_D_35.jpg"}/
-                              %span.txt ブルー
-                            %dd
-                              %ul
-                                %li#cart_did_50713659.clearfix{"data-size" => "38"}
-                                  .cartbox
-                                    .stock
-                                      %p
-                                        %span 38 / 
-                                        %span 予約可能
-                                    .cart
-                                      %form{:action => "/_cart/default.html", :method => "post"}
-                                        %input{:name => "c", :type => "hidden", :value => "put"}/
-                                        %input{:name => "sid", :type => "hidden", :value => "40573142"}/
-                                        %input{:name => "rid", :type => "hidden", :value => "1093"}/
-                                        %input{:name => "p_seckey", :type => "hidden", :value => "7a54a0f5eefd49623471186d51aaaf73"}/
-                                        %span.btn
-                                          %input.btn.reserveBtn{:type => "submit", :value => "予約する"}/
-                                    / [***予約***]
-                                    .bkmk
-                                      %form{:action => "#", :onsubmit => "return false;"}
-                                        %span.btn
-                                          %input{:type => "submit", :value => ""}/
-                                        %input{:name => "gid", :type => "hidden", :value => "22301152"}/
-                                        %input{:name => "did", :type => "hidden", :value => "50713659"}/
-                                        %input{:name => "zsids", :type => "hidden", :value => ""}/
-                                %li#cart_did_50713660.clearfix{"data-size" => "40"}
-                                  .cartbox
-                                    .stock
-                                      %p
-                                        %span 40 / 
-                                        %span 予約可能
-                                    .cart
-                                      %form{:action => "/_cart/default.html", :method => "post"}
-                                        %input{:name => "c", :type => "hidden", :value => "put"}/
-                                        %input{:name => "sid", :type => "hidden", :value => "40573143"}/
-                                        %input{:name => "rid", :type => "hidden", :value => "1093"}/
-                                        %input{:name => "p_seckey", :type => "hidden", :value => "7a54a0f5eefd49623471186d51aaaf73"}/
-                                        %span.btn
-                                          %input.btn.reserveBtn{:type => "submit", :value => "予約する"}/
-                                    / [***予約***]
-                                    .bkmk
-                                      %form{:action => "#", :onsubmit => "return false;"}
-                                        %span.btn
-                                          %input{:type => "submit", :value => ""}/
-                                        %input{:name => "gid", :type => "hidden", :value => "22301152"}/
-                                        %input{:name => "did", :type => "hidden", :value => "50713660"}/
-                                        %input{:name => "zsids", :type => "hidden", :value => ""}/
-                          / /.blockMain
+                        / = render 'detail', collection: @list
+                        - @list.each do |list|
+                          .cartBlock.clearfix
+                            .blockMain
+                              %dl.clearfix
+                                %dt
+                                  %span.img
+                                    = image_tag(@item.images[0].image_url,alt:"ZOZOTOWN｜Yudai Ishiiさんの",class:"feedImg",width:"35px")
+                                  %span.txt
+                                    = list.color.color
+                                %dd
+                                  %ul
+                                    %li#cart_did_42063854.clearfix{"data-size" => "38"}
+                                      .cartbox
+                                        .stock
+                                          %p
+                                            %span
+                                              = list.size.size
+                                               / 
+                                            %span 予約可能
+                                        .cart
+                                          %span.btn
+                                            = link_to 'カートに入れる',carts_path(item_id: @item.id,color_id: list.color.color,size_id: list.size.size), method: :post
+                                        .bkmk
+                                          = link_to item_favorite_item_index_path(item_id: @item.id,item_list_id: 1), method: :post,remote: true,onclick: "return false" do
+                                            %span.btn
+                                              %input{:type => "submit", :value => ""}/
+                                              %input{:name => "gid", :type => "hidden", :value => "22301152"}/
+                                              %input{:name => "did", :type => "hidden", :value => "42063854"}/
+                                              %input{:name => "zsids", :type => "hidden", :value => ""}/
+
                         / /.cartBlock
                         / [/カート関連]
                       / /.infoBlock
@@ -600,31 +377,4 @@
                 #giftSampleOverray.popWinWrapper.hide
                   #sampleInfo
                 #mySizeImgOverray.popWinWrapper.hide
-                / /商品詳細
-              / /.innerMain
-            / /#main
-            / [/メイン]
-          / /#contents
-          / [/コンテンツ]
-        / /#goods
-        / ↑↑↑コンテンツここまで↑↑↑
-      / /#content
-    / /#body
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

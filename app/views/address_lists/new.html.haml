@@ -1,0 +1,21 @@
+%ul.form
+  住所情報の登録
+  = form_for [@user, @address_list] do |f|
+    %li
+      お名前
+      = f.text_field :name, required: true, placeholder: "例) 山田太郎"
+    %li
+      郵便番号
+      = f.text_field :postcode, required: true, placeholder: "半角英数7桁"
+    %li
+      住所１
+      = f.text_field :address_main, required: true, placeholder: "都道府県、市町村、番地など　例) 千葉市美浜区中瀬2-6"
+    %li
+      住所２
+      = f.text_field :address_sub, required: false, placeholder: "建物名など　例) マリブウエスト16F"
+    %li
+      電話番号
+      = f.text_field :telephone_number, required: false, placeholder: "080-0000-0000"
+    %li
+      = f.submit "PUBLISH", id: "button", class: "class"
+

@@ -1,4 +1,6 @@
 class Item < ApplicationRecord
+  has_many :colors, through: :item_lists
+  has_many :sizes, through: :item_lists
   has_many :item_lists
   has_many :images
   has_many :ordered_items
