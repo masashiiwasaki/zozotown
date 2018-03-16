@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  before_action :move_to_root
+  before_action :move_to_root, :set_cart, only:[:update, :destroy]
   def index
     user = User.find(current_user.id)
     @carts = user.carts
@@ -9,43 +9,48 @@ class CartsController < ApplicationController
   end
 
   def create
-    # カートに商品を追加
     ActiveRecord::Base.transaction do
-      if Cart.find_by(user_id: current_user.id, item_list_id: cart_params[:item_list_id]).present?
-        cart = Cart.find_by(user_id: current_user.id, item_list_id: cart_params[:item_list_id])
-      else
-        cart = Cart.new(cart_params)
-      end
-      cart[:quantity] += 1
-      cart.save!
-
+      # カートに商品を追加
+      add_cart(cart_params)
       # カートの履歴に商品を追加
       cart_record(cart_params)
     end
       # カート画面に遷移
-      redirect_to "/carts", notice: 'カートに入りました'
+      redirect_to carts_path, notice: 'カートに入りました'
     rescue => e
-      redirect_to "/carts", notice: 'error'
+      redirect_to carts_path, notice: 'カートの追加に失敗しました'
   end
 
   def update
-    cart = Cart.find(params[:id])
-    cart.update(cart_params) if cart.user_id == current_user.id
+    @cart.update(cart_params) if @cart.user_id == current_user.id
   end
 
   def destroy
-    cart = Cart.find(params[:id])
-    cart.destroy if cart.user_id == current_user.id
-    redirect_to "/carts", notice: '商品数量を変更しました。'
+    @cart.destroy if @cart.user_id == current_user.id
+    redirect_to carts_path, notice: '商品数量を変更しました。'
   end
 
 private
+  def set_cart
+    @cart = Cart.find(params[:id])
+  end
+
   def cart_params
     params.permit(
       :item_list_id,
       :quantity,
       # cart_records_attributes: [:item_list_id]
       ).merge(user_id: current_user.id)
+  end
+
+  def add_cart(cart_params)
+    if Cart.find_by(user_id: current_user.id, item_list_id: cart_params[:item_list_id]).present?
+      cart = Cart.find_by(user_id: current_user.id, item_list_id: cart_params[:item_list_id])
+    else
+      cart = Cart.new(cart_params)
+    end
+    cart[:quantity] += 1
+    cart.save!
   end
 
   def cart_record(cart_params)
