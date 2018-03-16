@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
     ActiveRecord::Base.transaction do
       # ZOZOTOWNのDBに注文データ登録
       carts = Cart.where(user_id: 1) # あとで修正
-      order = Order.new(user_id: 1, address_list_id: 1, shipment_id: 1, payment_id: 1, point_used: 0, point_get: params[:amount].to_i * 0.01, total_price: params[:amount].to_i)
+      order = Order.new(order_attributes)
       if order.save!
         ordered_id = Order.last.id
         OrderHistory.create!(order_id: ordered_id, shipping_status_id: 1)
@@ -22,5 +22,23 @@ class OrdersController < ApplicationController
     end
     rescue => e
       render plain: e
+  end
+
+  private
+
+  def order_attributes
+    order_attributes_hash = {}
+    order_attributes_hash[:user_id] = 1
+    order_attributes_hash[:address_list_id] = 1
+    order_attributes_hash[:shipment_id] = 1
+    order_attributes_hash[:payment_id] = 1
+    order_attributes_hash[:point_used] = 0
+    order_attributes_hash[:point_get] = calculate_point_get_from_amount(params[:amount].to_i)
+    order_attributes_hash[:total_price] = params[:amount].to_i
+    return order_attributes_hash
+  end
+
+  def calculate_point_get_from_amount(amount)
+    return amount * 0.01
   end
 end
