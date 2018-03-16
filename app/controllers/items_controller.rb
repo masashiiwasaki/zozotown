@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
     # チェック済商品を画面表示
     @checked_items = Item.where(id: session[:checked_item_ids])
   end
+
   def show
     # チェックした商品をsessionに保存し、チェック済商品を画面表示できるようにする
     # sessionがない場合は初期化
@@ -61,4 +62,21 @@ class ItemsController < ApplicationController
     @checked_items = Item.where(id: session[:checked_item_ids])
     render 'index'
   end
+
+  def search
+    @searchItems = Item.where('name LIKE(?)', "%#{params[:keyword]}%")
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
+  def searchResult
+    @searchItemsResult = Item.where(id: params[:id])
+    respond_to do |format|
+      format.html
+      format.json {render json: @searchItemsResult }
+    end
+  end
+
 end
