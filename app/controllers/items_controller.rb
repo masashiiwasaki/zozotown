@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.includes([:shop,:brand,:gender,:category,:images])
+    @items = Item.includes([:shop, :brand, :gender, :category, :images])
     # チェック済商品を画面表示
     @checked_items = Item.where(id: session[:checked_item_ids])
   end
