@@ -4,6 +4,7 @@ class CartsController < ApplicationController
     user = User.find(current_user.id)
     @carts = user.carts
     @total_price = Cart.total_price(@carts)
+    # TO DO : 現在カートに入っている商品は除外して、@cart_recordsに取り込む
     @cart_records = user.cart_records.limit(6)
   end
 
