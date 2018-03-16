@@ -30,20 +30,13 @@ $(function(){
                       </a>
                     </div>
                     <p class="label">${item.name}</p>
-                    <p class="price discount">${item.price}
+                    <p class="price discount">${item.proposed_price}
                       <span class="tax">税込</span>
                       <span class="off">(49%OFF)</span>
                     </p>
                   </div>
                 </li>`
     couponItem.children().append(html);
-  }
-
-  function searchSuccess(item){
-      couponItem.children().empty();
-      item.forEach(function(item){
-        addItem(item);
-      });
   }
 
   // インクリメンタルサーチの検索結果を表示しつつ、検索ボタンを押下した場合
@@ -60,7 +53,10 @@ $(function(){
           dataType: 'json'
         })
         .done(function(item){
-          searchSuccess(item);
+          couponItem.children().empty();
+          item.forEach(function(item){
+            addItem(item);
+          });
         })
         .fail(function(){
           alert("指定した商品の表示に失敗しました");
@@ -81,7 +77,8 @@ $(function(){
         dataType: 'json'
       })
       .done(function(item){
-        searchSuccess(item);
+        couponItem.children().empty();
+        addItem(item);
       })
       .fail(function(){
         alert("指定した商品の表示に失敗しました");
