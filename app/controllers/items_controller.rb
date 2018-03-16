@@ -13,6 +13,7 @@ class ItemsController < ApplicationController
     session[:checked_item_ids] << params[:id]
     @checked_items = Item.where(id: session[:checked_item_ids])
     @item = Item.find(params[:id])
+    @list = @item.item_lists
   end
 
   def detail_search
