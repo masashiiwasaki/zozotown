@@ -1,13 +1,13 @@
 %tr
   %td.photo
-    %img{src: cart.item.image_url, alt: cart.item.name}
+    %img{src: cart.item_list.item.images.first(1), alt: "商品画像"}
   %td.detail
-    %p #{cart.item.shop.name}
-    %p #{cart.item.name}
-    %p カラー : #{cart.color.color}
-    %p サイズ : #{cart.size.size}
+    %p #{cart.item_list.item.shop.name}
+    %p #{cart.item_list.item.name}
+    %p カラー : #{cart.item_list.color.color}
+    %p サイズ : #{cart.item_list.size.size}
   %td.price
-    ¥#{cart.item.price}
+    ¥#{cart.item_list.item.proposed_price}
   %td.fluctuation
     数量: #{cart.quantity}
     = link_to "削除", "/carts/#{cart.id}", method: :delete

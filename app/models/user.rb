@@ -5,7 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :orders
+  has_many :address_lists, dependent: :destroy
   has_many :carts, dependent: :destroy
-  has_many :items, through: :carts
-  has_many :address_lists
+  has_many :cart_records
+  has_many :item_lists, through: :carts
 end

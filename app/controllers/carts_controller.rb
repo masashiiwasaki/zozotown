@@ -1,9 +1,8 @@
 class CartsController < ApplicationController
-  # before_action後で設定
-  # 本実装ではログイン時の分岐を足す
+  before_action :move_to_root
+
   def index
-    user = User.find(1)
-    # user = User.find(current_user.id)
+    user = User.find(current_user.id)
     @carts = user.carts
     @total_price = Cart.total_price(@carts)
   end
@@ -17,20 +16,21 @@ class CartsController < ApplicationController
 
   def update
     cart = Cart.find(params[:id])
-    cart.update(cart_params)
-    # if cart.user_id == current_user.id
+    cart.update(cart_params) if cart.user_id == current_user.id
   end
 
   def destroy
     cart = Cart.find(params[:id])
-    cart.destroy
-    # if cart.user_id == current_user.id
+    cart.destroy if cart.user_id == current_user.id
     redirect_to "/carts", notice: '商品数量を変更しました。'
   end
 
 private
   def cart_params
-    params.permit(:item_id, :color_id, :size_id, :quantity).merge(user_id: 1)
+    params.permit(:item_list_id, :quantity).merge(user_id: current_user.id)
+  end
 
+  def move_to_root
+    redirect_to root_path unless user_signed_in?
   end
 end
