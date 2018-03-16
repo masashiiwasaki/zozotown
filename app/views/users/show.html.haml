@@ -1,0 +1,37 @@
+%ul
+  会員登録情報
+  %li
+    基本情報
+  %li
+    名前
+    = @address_default.name
+  %li
+    郵便番号
+    = @address_default.postcode
+  %li
+    住所
+    = "#{@address_default.address_main} #{@address_default.address_sub}"
+  %li
+    電話番号
+    = @address_default.telephone_number
+  %li
+    = link_to "基本情報を編集", edit_user_address_list_path(@user, @address_default)
+  %li
+    メールアドレス :
+    = @user.email
+  %li
+    パスワード : **********
+  %li
+    = link_to "メールアドレス・パスワードの変更", edit_user_registration_path
+  %li
+    ZOZOポイント:
+    = "#{@user.points} ポイント/円"
+%ul
+  お届け先リスト
+  = render :partial => "address_list", :collection => @address_lists
+%ul
+  %li
+    = link_to "お届け先を追加する", new_user_address_list_path(@user)
+%ul
+  %li
+    = link_to "退会手続き", "/users/#{@user.id}/" , method: :delete

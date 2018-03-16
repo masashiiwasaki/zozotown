@@ -359,9 +359,14 @@ body{
             height: 215px;
             .photo{
               position: relative;
-              a{
-                display: block;
-              }
+                img{
+                  display: block;
+                }
+            }
+            p.price.discount{
+              padding: 0;
+              line-height: 1.1;
+              margin: 3px 0 0;
             }
           }
           li.rank1,

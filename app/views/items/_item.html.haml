@@ -1,14 +1,14 @@
 %li
   .listInner.clearfix
-    .photo
+    .photo{'data-item-id': item.id}
       = link_to item_path(item) do
-        = image_tag(item.image_url,alt: item.description,width:"171",height:"205")
+        = image_tag(item.images.first.image_url,alt: item.description,width:"171",height:"205")
         .feed-tag-group
           .feed-tag-group-item
             %span.feed-tag.feed-tag-coupon.coupon_C3 ¥3,000クーポン
     %p.label
       = item.name
     %p.price.discount
-      = item.price
+      = item.regular_price
       %span.tax 税込
       %span.off (49%OFF)
