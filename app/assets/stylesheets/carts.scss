@@ -45,3 +45,23 @@
 #linkOrder{
   padding-top: 10px;
 }
+
+#cartRecord h1{
+  padding: 20px 0 10px 0;
+  font-size: 18px;
+}
+
+#cartRecordList{
+  list-style:none;
+  float: left;
+  padding: 0 15px 0 15px;
+}
+
+.detailRecord{
+  clear: both;
+  padding-left: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+  overflow: hidden;
+}
