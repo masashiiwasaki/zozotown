@@ -17,6 +17,7 @@
       %span
         = link_to "/orders/new" do
           %span レジへ進む
-      %table#cartRecordLists.clearfix
+      #cartRecord
         %h1 以前カートに入れたアイテム
-        = render @cart_records
+        #cartRecordLists.clearfix
+          = render @cart_records

@@ -1,6 +1,7 @@
 %tr
   %td.photo
-    %img{src: cart.item_list.item.images.first.image_url, alt: "商品画像"}
+    = link_to item_path(cart.item_list.item) do
+      = image_tag(cart.item_list.item.images.first.image_url,alt: "商品画像",width:"125",height:"150")
   %td.detail
     %p #{cart.item_list.item.shop.name}
     %p #{cart.item_list.item.name}
